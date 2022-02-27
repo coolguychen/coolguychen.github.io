@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    HBase in Action Reading Notes I |
+    
+    coolguychen&#39;s blog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-HBase-in-Action读书笔记-I" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HBase in Action Reading Notes I
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/" class="article-date">
+  <time datetime="2021-10-28T09:27:56.000Z" itemprop="datePublished">2021-10-28</time>
+</a>
+        
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="Chapter-2-2-3-amp-2-2-5"><a href="#Chapter-2-2-3-amp-2-2-5" class="headerlink" title="Chapter 2.2.3 &amp; 2.2.5"></a>Chapter 2.2.3 &amp; 2.2.5</h1><blockquote>
+<p>HBase上RegionServer的内存分为两个部分，一部分作为Memstore，主要用来写；另外一部分作为BlockCache，主要用于读数据。以下是对HBase读写操作的详细描述。</p>
+</blockquote>
+<h2 id="2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径"><a href="#2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径" class="headerlink" title="2.2.3  Under the hood: the HBase write path —— HBase写路径"></a>2.2.3  Under the hood: the HBase write path —— HBase写路径</h2><p>HBase写入操作包括两个部分：把写入操作分别记录到<strong>预写日志（WAL）</strong>和<strong>MemStore</strong>，以保证<strong>数据持久化</strong>。每只有当WAL和MemStore的变化信息都写入并确认后，才认为写操作完成。写路径如图所示：</p>
+<span id="more"></span>
+
+<p><img src="https://img-blog.csdnimg.cn/67978503ffd847af8a6484d1dbd599bd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0RBSExJQQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>MemStore是内存里的<strong>写入缓冲区</strong>，HBase中数据在永久写入磁盘前在MemStore中累积。当MemStore填满&#x2F;达到其阈值后，其中的数据会<strong>刷写</strong>(flush)到磁盘，生成一个HFile。HFile对应列族，一个列族可以有多个HFile，但一个HFile只能存储一个列族的数据。在集群的每个节点上，每个列族有一个Memstore。</p>
+<p>如果MemStore还没有将数据刷写到磁盘，服务器就崩溃了，内存中的数据就会丢失。因此，HBase采用WAL应对硬件故障：<strong>在写操作完成之前先写入WAL</strong>。HBase集群中每台服务器维护一个WAL来记录发生的变化。WAL新记录成功写入后，写操作才被认为成功完成。</p>
+<p>那么如果HBase服务器宕机，没有从MemStore里刷写到HFile的数据可以通过回放WAL来恢复（Handled under the hood by HBase as a part of the recovery process）。</p>
+<p>可见，写入WAL是写过程中非常重要的一部分。如果不写入WAL，服务器故障时HBase可能无法恢复数据，没有刷写到磁盘的所有写入数据都会丢失。MemStore和WAL确保每次写入HBase在尽可能快的同时保证持久性。</p>
+<h2 id="2-2-5-Under-the-hood-the-HBase-read-path-——-HBase读路径"><a href="#2-2-5-Under-the-hood-the-HBase-read-path-——-HBase读路径" class="headerlink" title="2.2.5 Under the hood: the HBase read path —— HBase读路径"></a>2.2.5 Under the hood: the HBase read path —— HBase读路径</h2><p>HBase能够保证通常情况下的快速读取（allowing it to serve millisecond reads in most cases）。</p>
+<p>HBase在读操作上使用LRU(Least Recent Used)缓存，也叫<u>BlockCache</u>。BlockCache目的是把经常访问的、来自HFile的数据缓存在内存中，避免读取磁盘。每个列族都有自己的BlockCache。</p>
+<p>BlockCache中的Block是HBase一次从磁盘读取的数据单元。HFile物理上是<u>一系列的block加上一个这些block的索引</u>。这意味着，读取一个block只需在索引中查找该block的位置，再从磁盘获取。</p>
+<p>Block 是建立索引的最小数据单位，也是从硬盘读取的最小数据单位。Block大小<strong>按照列族设定</strong>，默认值是64 KB。根据使用场景你可以调整block的大小。如果主要用于随机查询，你可能需要细粒度的Block 索引，小一点儿的Block 更好一些。但Block变小会导致索引变大，进而消耗更多内存。如果用于顺序扫描，一次读取多个Block，大一点儿的Block 更好一些。Block 变大意味着索引项变少，索引变小，因此节省内存。</p>
+<p>从HBase 中读出一行时，首先会检查MemStore 等待修改的队列，然后检查BlockCache看包含该行的Block 是否最近被访问过，最后访问硬盘上的对应HFile。读路径如图所示：<br><img src="https://img-blog.csdnimg.cn/c34e1dab553545d897b910176ff473ca.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0RBSExJQQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="Chapter-4-2-De-normalization-——-去规范化"><a href="#Chapter-4-2-De-normalization-——-去规范化" class="headerlink" title="Chapter 4.2 De-normalization —— 去规范化"></a>Chapter 4.2 De-normalization —— 去规范化</h1><pre><code>    Normalization对应的数据属于干净非冗余型。这有两个好处：当发生更新或删除时，**不必担心更新给定数据所有副本的复杂性**；通过保存单一副本而不是多个副本来，**减少了占用的存储空间**。在查询时需要使用SQL语句中的JOIN子句重新联结数据。
+
+    而De-normalization则允许数据冗余或者同样的数据存储于多处。这使得**查询数据更容易、更快。**（不需要昂贵、耗时的JOIN操作）
+
+    从性能的角度来看，**规范化对写操作进行优化，而去规范化对读操作进行优化**。
+</code></pre>
+<blockquote>
+<p>Normalization optimizes the table for writes; you pay the cost of combining data at read time. De-normalization optimizes for reads, but you pay the cost of writing multiple copies at write time.</p>
+</blockquote>
+<pre><code>    以TwitBase为例，当一个用户登录帐户并希望看到他们关注的人的推帖(twits)时，如果是采用规范化的关系数据库，app将获取被关注的用户和他们的推帖，并返回该信息。随着系统中用户数量的增加，这个过程可能非常耗时。此外，如果一个用户有很多followers，那么每次有follower登录时都会访问他们的推帖。管理这个用户推帖的region则会不断地回答请求（read hot pot）。解决这个问题的方法是**为每个用户维护一个推帖流**(twit stream)，当他们关注的用户发推帖时，将该推帖添加至推帖流里。由此优化读的性能。
+</code></pre>
+<h1 id="Chapter-4-5-I-x2F-O-consideration-——-I-x2F-O考虑"><a href="#Chapter-4-5-I-x2F-O-consideration-——-I-x2F-O考虑" class="headerlink" title="Chapter 4.5 I&#x2F;O consideration —— I&#x2F;O考虑"></a>Chapter 4.5 I&#x2F;O consideration —— I&#x2F;O考虑</h1><h2 id="Optimized-for-writes-——-hashing-amp-salting"><a href="#Optimized-for-writes-——-hashing-amp-salting" class="headerlink" title="Optimized for writes —— hashing &amp; salting"></a>Optimized for writes —— hashing &amp; salting</h2><pre><code>        当往HBase写入大量数据时，我们希望在RegionServer分散负载来对写操作优化。以时间序列数据为例：如果直接以时间戳作为行键，那么写入时在单个region上会遇到热点问题。如何把数据分布在多个region上？
+</code></pre>
+<ol>
+<li><p>Hashing</p>
+<p>如果写入需要扫描整个表或者每次都需要知道精确的键，使用原始数据的散列值作为行键。可以使用MD5、SHA-1等散列函数</p>
+</li>
+<li><p>Salting</p>
+<p>如果在读取时知道时间范围，不想做全表扫描，可以在时间戳前面加上一个随机数前缀。</p>
+<p>例：先计算时间戳的散列码，然后对RegionServer的数量取模生成随机salt数：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int salt = new Integer(new Long(timestamp).hashCode()).shortValue() % &lt;number </span><br><span class="line">of region servers&gt;</span><br></pre></td></tr></table></figure>
+
+<pre><code>            取得salt数后，加到时间戳前面生成行键：
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">byte[] rowkey = Bytes.add(Bytes.toBytes(salt) \</span><br><span class="line">+ Bytes.toBytes(&quot;|&quot;) + Bytes.toBytes(timestamp));</span><br><span class="line">Now rowkeys are something like:</span><br><span class="line">0|timestamp1</span><br><span class="line">0|timestamp5</span><br><span class="line">0|timestamp6</span><br><span class="line">1|timestamp2</span><br><span class="line">1|timestamp9</span><br><span class="line">2|timestamp4</span><br><span class="line">2|timestamp8</span><br></pre></td></tr></table></figure>
+
+<pre><code>            这些行将基于前缀，分布在不同的region里。
+</code></pre>
+<h2 id="Optimized-for-reads-——-put-the-last-few-data-together"><a href="#Optimized-for-reads-——-put-the-last-few-data-together" class="headerlink" title="Optimized for reads —— put the last few data together"></a>Optimized for reads —— put the last few data together</h2><pre><code>        以之前的TwitBase为例，为读优化行键时，将twit流中最新的twits存储在一起，以便于它们可以被快速读取。使用**倒序时间戳+用户ID**构成行键。那么基于用户ID扫描邻近的n行就可以找到用户需要的n条最新的twits。
+</code></pre>
+<h1 id="Chapter-4-6-From-relational-to-non-relational"><a href="#Chapter-4-6-From-relational-to-non-relational" class="headerlink" title="Chapter 4.6 From relational to non-relational"></a>Chapter 4.6 From relational to non-relational</h1><blockquote>
+<p>Relational databases and HBase are different systems and have different design properties that affect application design. A naïve migration from relational to HBase is tricky.</p>
+</blockquote>
+<h2 id="Some-basic-concepts"><a href="#Some-basic-concepts" class="headerlink" title="Some basic concepts"></a>Some basic concepts</h2><ol>
+<li><p>实体 Entity</p>
+<pre><code>  table ——&gt; table
+  关系数据库和HBase中，实体都是由表来表示的，表中 的每行代表实体的一个实例。
+</code></pre>
+</li>
+<li><p>属性 Attribute</p>
+<p>a. identifying attribute ——&gt; rowkey<br> b. non-identifying attribute ——&gt; column</p>
+</li>
+<li><p>联系 Relationship </p>
+<pre><code>关系数据库：foreign key(one to one) or junction table(one to many)
+    Hbase：没有对于联系的直接映射
+</code></pre>
+</li>
+</ol>
+<h2 id="Some-things-don’t-map"><a href="#Some-things-don’t-map" class="headerlink" title="Some things don’t map"></a>Some things don’t map</h2><ol>
+<li><p>列族</p>
+<blockquote>
+<p>One way of thinking about column families is that they model yet another kind of relationship that we didn’t talk about previously: the one-to-one relationship, where you have two tables with the same primary key, and each table has either 0 or 1 row with each primary key value. </p>
+<p>Using multiple column families in HBase is an advanced feature that you should only jump into if you’re sure you understand the trade-offs.</p>
+</blockquote>
+<p>Column是Hbase最基本的单位，若干列形成column family。关系数据库的每一列是属性，没有列族的概念。</p>
+</li>
+<li><p>索引</p>
+<blockquote>
+<p>In relational databases, the ability to easily declare indexes that are automatically maintained by the database engine is one of the most magical and helpful capabilities the software provides, and it’s nowhere to be found in HBase. For now, the answer to this question is: tough luck.</p>
+</blockquote>
+<p>HBase没有索引。（怎么理解这里的tough luck?）</p>
+</li>
+<li><p>时间版本</p>
+<blockquote>
+<p> If in your relational schema, there are places where you explicitly store timestamps, these can in many cases be subsumed into the timestamp that’s stored in HBase cells places where you explicitly store timestamps, these can in many cases be subsumed into the timestamp that’s stored in HBase cells</p>
+</blockquote>
+<p>HBase涉及到时间维度，而关系型数据库的设计并没有把时间看成一个特殊的维度，而是显式地存储时间戳。通常涉及到记录时间戳的采用HBase。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/" data-id="cl03ncm4f0000wgtt0lp74i8z"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Non-relational-Data-Storage-Technology/" rel="tag">Non-relational Data Storage Technology</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            RocksDB Learning Notes
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2022 coolguychen&#39;s blog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="coolguychen&#39;s blog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+</body>
+</html>
