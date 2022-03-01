@@ -65,6 +65,151 @@
       
         
 
+<article id="post-Github常见问题与解决方法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">Github常见问题与解决方法</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-03-01T02:22:07.000Z" itemprop="datePublished">2022-03-01</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="Problem-1：OpenSSL-SSL-read-error"><a href="#Problem-1：OpenSSL-SSL-read-error" class="headerlink" title="Problem 1：OpenSSL SSL_read error"></a>Problem 1：OpenSSL SSL_read error</h1><p>Failed Git Push&#x2F; pull: OpenSSL SSL_read: Connection was reset, errno 10054</p>
+<p>原因：这是服务器的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=SSL&spm=1001.2101.3001.7020">SSL</a>证书没有经过第三方机构的签署，所以报错。造成这个错误很有可能是<strong>网络不稳定</strong>，连接<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B6%85%E6%97%B6&spm=1001.2101.3001.7020">超时</a>导致的，如果再次尝试后依然报错。</p>
+<p>解决：服务器的SSL证书没有经过第三方机构的签署，所以报错，需要解除SSL认证。为此在Git Bash中输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify <span class="string">&quot;false&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Problem-2-Timed-out"><a href="#Problem-2-Timed-out" class="headerlink" title="Problem 2: Timed out"></a>Problem 2: Timed out</h1><p>Failed Git Clone&#x2F; Push: Failed to connect to github.com port 443: Timed out</p>
+<p>原因： 这样的问题往往是由于网络慢访问超时，这时候我们可以在终端选择使用<strong>设置代理</strong>和<strong>取消代理</strong>的命令解决。</p>
+<p>解决：</p>
+<p>设置代理：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">config</span> <span class="comment">--global http.proxy</span></span><br><span class="line">git <span class="built_in">config</span> <span class="comment">--global https.proxy</span></span><br></pre></td></tr></table></figure>
+
+<p>取消代理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+
+<p>我们直接在终端先输入设置代理的命令，再输入取消代理的命令即可解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="cl07tvepd0000n4ttdi5h8v19"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-Software-Test" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2022/01/09/Software-Test/">Software Test</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2022/01/09/Software-Test/" class="article-date">
+  <time datetime="2022-01-09T02:14:12.000Z" itemprop="datePublished">2022-01-09</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="软件测试知识点总结"><a href="#软件测试知识点总结" class="headerlink" title="软件测试知识点总结"></a>软件测试知识点总结</h1><p>Not only detect bugs, but also prevent bugs.</p>
+<p>软件测试是贯穿整个软件开发生命周期，对软件产品进验证和确认的活动过程，也是对软件产品质量持续的评估过程，其目的是<strong>尽快尽早地发现软件产品中存在的各种缺陷，尽最大可能揭示软件开发过程中所存在的产品质量风险，实现缺陷预防。</strong></p>
+<p><strong>静态测试</strong>：不执行被测对象</p>
+<p><strong>动态测试</strong>：执行被测对象</p>
+<h2 id="软件缺陷定义"><a href="#软件缺陷定义" class="headerlink" title="软件缺陷定义"></a>软件缺陷定义</h2><p>软件缺陷，通常又被叫做bug或者defect，即为软件或程序中存在的某种破坏正常运行能力的问题、错误，其存在会导致软件产品<strong>在某种程度上不能满足用户的需求</strong>。</p>
+<p>软件缺陷是指存在于软件（程序、数据、文档中的）那些不符合用户需求的问题。</p>
+        
+          <a class="article-more-link" href="/2022/01/09/Software-Test/">Read More...</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/09/Software-Test/" data-id="cl07tvepn0003n4tt8usf9ttn"
+         class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software-Test/" rel="tag">Software Test</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
 <article id="post-OOAD知识点总结" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
