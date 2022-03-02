@@ -1,389 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
     
-    coolguychen&#39;s blog</title>
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  
+    <title>
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
+    <link rel="shortcut icon" href="/images/logo.svg">
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-  
-  
-<script src="/js/pace.min.js"></script>
-
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/student.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
+
 <body>
-<main class="content">
-  <section class="jumbotron">
-  <div class="video">
+<div class="progress-bar-container">
     
-      <div class="video-frame">
-        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
-      </div>
+        <span class="scroll-progress-bar"></span>
     
-    <div class="video-media">
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
-             poster="/images/ocean/ocean.png" x5-video-player-type="h5">
-        <source src="/images/ocean/ocean.mp4" type="video/mp4">
-        <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <div class="video-overlay"></div>
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+        <div class="first-screen-container flex-center fade-in-down-animation">
+    <div class="content flex-center">
+        <div class="description">
+            Welcome to my channel!
+        </div>
+        
+            <div class="s-icon-list">
+                
+                    
+                        
+                            <span class="s-icon-item github">
+                                <a target="_blank" href="https://github.com/coolguychen">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </span>
+                        
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                            <span class="s-icon-item email">
+                                <a href="mailto:cyh010616@outlook.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </span>
+                        
+                    
+                
+            </div>
+        
     </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="/">coolguychen&#39;s blog</a></h1>
-      <p>record just for fun.</p>
-      <div><img src="/images/hexo-inverted.svg" class="brand" alt="coolguychen&#39;s blog"></div>
+</div>
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content has-first-screen">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
     </div>
-  </div>
-</section>
 
-<div id="landingpage">
-  <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
+    <div class="window-mask"></div>
 
-    
-      
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
+            <li class="home-article-item">
 
-<article id="post-Github常见问题与解决方法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                        Github常见问题与解决方法
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Problem 1: OpenSSL SSL_read errorFailed Git Push&#x2F; pull: OpenSSL SSL_read: Connection was reset, errno 10054
+原因：这是服务器的SSL...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 01 2022 10:22:07 GMT+0800">2022-03-01</span></span>
         
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">Github常见问题与解决方法</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2022-03-01T02:22:07.000Z" itemprop="datePublished">2022-03-01</time>
-</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="Problem-1：OpenSSL-SSL-read-error"><a href="#Problem-1：OpenSSL-SSL-read-error" class="headerlink" title="Problem 1：OpenSSL SSL_read error"></a>Problem 1：OpenSSL SSL_read error</h1><p>Failed Git Push&#x2F; pull: OpenSSL SSL_read: Connection was reset, errno 10054</p>
-<p>原因：这是服务器的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=SSL&spm=1001.2101.3001.7020">SSL</a>证书没有经过第三方机构的签署，所以报错。造成这个错误很有可能是<strong>网络不稳定</strong>，连接<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B6%85%E6%97%B6&spm=1001.2101.3001.7020">超时</a>导致的，如果再次尝试后依然报错。</p>
-<p>解决：服务器的SSL证书没有经过第三方机构的签署，所以报错，需要解除SSL认证。为此在Git Bash中输入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify <span class="string">&quot;false&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Problem-2-Timed-out"><a href="#Problem-2-Timed-out" class="headerlink" title="Problem 2: Timed out"></a>Problem 2: Timed out</h1><p>Failed Git Clone&#x2F; Push: Failed to connect to github.com port 443: Timed out</p>
-<p>原因： 这样的问题往往是由于网络慢访问超时，这时候我们可以在终端选择使用<strong>设置代理</strong>和<strong>取消代理</strong>的命令解决。</p>
-<p>解决：</p>
-<p>设置代理：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">config</span> <span class="comment">--global http.proxy</span></span><br><span class="line">git <span class="built_in">config</span> <span class="comment">--global https.proxy</span></span><br></pre></td></tr></table></figure>
-
-<p>取消代理：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-
-<p>我们直接在终端先输入设置代理的命令，再输入取消代理的命令即可解决。</p>
-
-      
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Git/">Git</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="cl07tvepd0000n4ttdi5h8v19"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
 
-    </footer>
+    <a href="/2022/03/01/Github%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-Software-Test" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2022/01/09/Software-Test/">Software Test</a>
-    </h2>
-  
-  
+                
 
+                <h3 class="home-article-title">
+                    <a href="/2022/01/09/Software-Test/">
+                        Software Test
+                    </a>
+                </h3>
 
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2022/01/09/Software-Test/" class="article-date">
-  <time datetime="2022-01-09T02:14:12.000Z" itemprop="datePublished">2022-01-09</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="软件测试知识点总结"><a href="#软件测试知识点总结" class="headerlink" title="软件测试知识点总结"></a>软件测试知识点总结</h1><p>Not only detect bugs, but also prevent bugs.</p>
+                <div class="home-article-content markdown-body">
+                    
+                        <h1 id="软件测试知识点总结"><a href="#软件测试知识点总结" class="headerlink" title="软件测试知识点总结"></a>软件测试知识点总结</h1><p>Not only detect bugs, but also prevent bugs.</p>
 <p>软件测试是贯穿整个软件开发生命周期，对软件产品进验证和确认的活动过程，也是对软件产品质量持续的评估过程，其目的是<strong>尽快尽早地发现软件产品中存在的各种缺陷，尽最大可能揭示软件开发过程中所存在的产品质量风险，实现缺陷预防。</strong></p>
 <p><strong>静态测试</strong>：不执行被测对象</p>
 <p><strong>动态测试</strong>：执行被测对象</p>
 <h2 id="软件缺陷定义"><a href="#软件缺陷定义" class="headerlink" title="软件缺陷定义"></a>软件缺陷定义</h2><p>软件缺陷，通常又被叫做bug或者defect，即为软件或程序中存在的某种破坏正常运行能力的问题、错误，其存在会导致软件产品<strong>在某种程度上不能满足用户的需求</strong>。</p>
 <p>软件缺陷是指存在于软件（程序、数据、文档中的）那些不符合用户需求的问题。</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Jan 09 2022 10:14:12 GMT+0800">2022-01-09</span></span>
         
-          <a class="article-more-link" href="/2022/01/09/Software-Test/">Read More...</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Software-Test/">Software Test</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/09/Software-Test/" data-id="cl07tvepn0003n4tt8usf9ttn"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software-Test/" rel="tag">Software Test</a></li></ul>
 
-    </footer>
+    <a href="/2022/01/09/Software-Test/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-OOAD知识点总结" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">OOAD Summary</a>
-    </h2>
-  
-  
+                
 
+                <h3 class="home-article-title">
+                    <a href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+                        OOAD Summary
+                    </a>
+                </h3>
 
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2022-01-06T11:13:04.000Z" itemprop="datePublished">2022-01-06</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p><em>参考书籍：《Applying UML and Patterns 3rd》</em></p>
+                <div class="home-article-content markdown-body">
+                    
+                        <p><em>参考书籍：《Applying UML and Patterns 3rd》</em></p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><strong>软件架构</strong>的定义：</p>
 <p>一个程序或计算系统的架构，是该系统的结构，由组件、组件的外部可见的特性、组件之间的关系组成。</p>
 <p>架构是一个软件系统的组织结构，可以递归地分解为多个通过接口相互作用的部件。关系定义接口的连接、约束定义部件的集成。部件包括类、组件、子系统。</p>
 <p>面向对象： 是将系统看作一组相互作用和关联的对象并建模。</p>
 <p>面向对象的特点：系统由相互关联对象组成；通过对象对系统进行描述和建模</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Jan 06 2022 19:13:04 GMT+0800">2022-01-06</span></span>
         
-          <a class="article-more-link" href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">Read More...</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Object-oriented-Analysis-and-Design/">Object-oriented Analysis and Design</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cl03sgtcc0006pwtt7l46902u"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object-oriented-Analysis-and-Design/" rel="tag">Object-oriented Analysis and Design</a></li></ul>
 
-    </footer>
+    <a href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-Functional-Programming" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/26/Functional-Programming/">
+                        Functional Programming Class Notes
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        <p>参考资料：</p>
+<p>下载Coq：<a class="link"   target="_blank" rel="noopener" href="https://coq.inria.fr/" >Welcome! | The Coq Proof Assistant (inria.fr)<i class="fas fa-external-link-alt"></i></a></p>
+<p>教材 Logical Foundations：<a class="link"   target="_blank" rel="noopener" href="https://softwarefoundations.cis.upenn.edu/lf-current/index.html" >Logical Foundations (upenn.edu)<i class="fas fa-external-link-alt"></i></a></p>
+<p>中文版：<a class="link"   target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html" >Basics: Coq 函数式编程 (coq-zh.github.io)<i class="fas fa-external-link-alt"></i></a></p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Dec 26 2021 19:28:32 GMT+0800">2021-12-26</span></span>
         
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2021/12/26/Functional-Programming/">Functional Programming Class Notes</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2021/12/26/Functional-Programming/" class="article-date">
-  <time datetime="2021-12-26T11:28:32.000Z" itemprop="datePublished">2021-12-26</time>
-</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p>参考资料：</p>
-<p>下载Coq：<a target="_blank" rel="noopener" href="https://coq.inria.fr/">Welcome! | The Coq Proof Assistant (inria.fr)</a></p>
-<p>教材 Logical Foundations：<a target="_blank" rel="noopener" href="https://softwarefoundations.cis.upenn.edu/lf-current/index.html">Logical Foundations (upenn.edu)</a></p>
-<p>中文版：<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html">Basics: Coq 函数式编程 (coq-zh.github.io)</a></p>
         
-          <a class="article-more-link" href="/2021/12/26/Functional-Programming/">Read More...</a>
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Formal-Verification/">Formal Verification</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
         
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/26/Functional-Programming/" data-id="cl03sgtbn0000pwttaqz46599"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Formal-Verification/" rel="tag">Formal Verification</a></li></ul>
 
-    </footer>
+    <a href="/2021/12/26/Functional-Programming/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-Google-File-System-读书笔记" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">GFS Reading Notes</a>
-    </h2>
-  
-  
+                
 
+                <h3 class="home-article-title">
+                    <a href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        GFS Reading Notes
+                    </a>
+                </h3>
 
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2021-11-25T11:05:18.000Z" itemprop="datePublished">2021-11-25</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="针对Google应用的问题与需求设计"><a href="#针对Google应用的问题与需求设计" class="headerlink" title="针对Google应用的问题与需求设计"></a>针对Google应用的问题与需求设计</h1><p>1、在廉价、不可靠计算机上存储大量的数据，这使得节点失效是常态而不是异常。GFS 必须能够较高容错、持续监控自身的状态，同时还要能从节点失效中快速恢复；</p>
+                <div class="home-article-content markdown-body">
+                    
+                        <h1 id="针对Google应用的问题与需求设计"><a href="#针对Google应用的问题与需求设计" class="headerlink" title="针对Google应用的问题与需求设计"></a>针对Google应用的问题与需求设计</h1><p>1、在廉价、不可靠计算机上存储大量的数据，这使得节点失效是常态而不是异常。GFS 必须能够较高容错、持续监控自身的状态，同时还要能从节点失效中快速恢复；</p>
 <p>2、纵观Google的内部应用，数据访问有以下特点：</p>
 <ol>
 <li><strong>存储内容以大文件为主</strong>。系统需要存储的内容在通常情况下由数量不多的大文件构成，每个文件通常有几百 MB 甚至是几 GB 的大小；</li>
@@ -394,269 +440,326 @@
 <p>需要对存储的文件类型和访问模式进行优化</p>
 <p>3、持久的高吞吐量、低延迟</p>
 <p>……</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Nov 25 2021 19:05:18 GMT+0800">2021-11-25</span></span>
         
-          <a class="article-more-link" href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">Read More...</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" data-id="cl03sgtbw0001pwtt58p86nj0"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Non-relational-Data-Storage-Technology/" rel="tag">Non-relational Data Storage Technology</a></li></ul>
 
-    </footer>
+    <a href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-RocksDB学习笔记" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        RocksDB Learning Notes
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        <p>RocksDB是一个<strong>可嵌入的持久性key-value存储</strong>。它是一个日志结构的数据库，并针对快速存储进行了优化。RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用，其主要的数据结构是LSM tree，保证了读写效率。业界采用RocksDB作为存储引擎的有：<a class="link"   href="https://link.zhihu.com/?target=http://myrocks.io/" >MyRocks<i class="fas fa-external-link-alt"></i></a> 、<a class="link"   target="_blank" rel="noopener" href="https://www.huaweicloud.com/theme/1034299-2-H" >华为云云数据库mongodb<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://github.com/hugegraph" >百度开源图数据库HugeGraph<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://github.com/pingcap/tidb" >国产开源分布式数据库TiDB<i class="fas fa-external-link-alt"></i></a>等等。</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Nov 10 2021 19:03:11 GMT+0800">2021-11-10</span></span>
         
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">RocksDB Learning Notes</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2021-11-10T11:03:11.000Z" itemprop="datePublished">2021-11-10</time>
-</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p>RocksDB是一个<strong>可嵌入的持久性key-value存储</strong>。它是一个日志结构的数据库，并针对快速存储进行了优化。RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用，其主要的数据结构是LSM tree，保证了读写效率。业界采用RocksDB作为存储引擎的有：<a href="https://link.zhihu.com/?target=http://myrocks.io/">MyRocks</a> 、<a target="_blank" rel="noopener" href="https://www.huaweicloud.com/theme/1034299-2-H">华为云云数据库mongodb</a>、<a target="_blank" rel="noopener" href="https://github.com/hugegraph">百度开源图数据库HugeGraph</a>、<a target="_blank" rel="noopener" href="https://github.com/pingcap/tidb">国产开源分布式数据库TiDB</a>等等。</p>
         
-          <a class="article-more-link" href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Read More...</a>
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
         
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl03sgtce0008pwttb6w7gs4f"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Non-relational-Data-Storage-Technology/" rel="tag">Non-relational Data Storage Technology</a></li></ul>
 
-    </footer>
+    <a href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
+            </li>
         
+            <li class="home-article-item">
 
-<article id="post-HBase-in-Action读书笔记-I" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/">HBase in Action Reading Notes I</a>
-    </h2>
-  
-  
+                
 
+                <h3 class="home-article-title">
+                    <a href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/">
+                        HBase in Action Reading Notes I
+                    </a>
+                </h3>
 
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/" class="article-date">
-  <time datetime="2021-10-28T09:27:56.000Z" itemprop="datePublished">2021-10-28</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h1 id="Chapter-2-2-3-amp-2-2-5"><a href="#Chapter-2-2-3-amp-2-2-5" class="headerlink" title="Chapter 2.2.3 &amp; 2.2.5"></a>Chapter 2.2.3 &amp; 2.2.5</h1><blockquote>
+                <div class="home-article-content markdown-body">
+                    
+                        <h1 id="Chapter-2-2-3-amp-2-2-5"><a href="#Chapter-2-2-3-amp-2-2-5" class="headerlink" title="Chapter 2.2.3 &amp; 2.2.5"></a>Chapter 2.2.3 &amp; 2.2.5</h1><blockquote>
 <p>HBase上RegionServer的内存分为两个部分，一部分作为Memstore，主要用来写；另外一部分作为BlockCache，主要用于读数据。以下是对HBase读写操作的详细描述。</p>
 </blockquote>
 <h2 id="2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径"><a href="#2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径" class="headerlink" title="2.2.3  Under the hood: the HBase write path —— HBase写路径"></a>2.2.3  Under the hood: the HBase write path —— HBase写路径</h2><p>HBase写入操作包括两个部分：把写入操作分别记录到<strong>预写日志（WAL）</strong>和<strong>MemStore</strong>，以保证<strong>数据持久化</strong>。每只有当WAL和MemStore的变化信息都写入并确认后，才认为写操作完成。写路径如图所示：</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Oct 28 2021 17:27:56 GMT+0800">2021-10-28</span></span>
         
-          <a class="article-more-link" href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/">Read More...</a>
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
-      
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/" data-id="cl03ncm4f0000wgtt0lp74i8z"
-         class="article-share-link">Share</a>
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Non-relational-Data-Storage-Technology/" rel="tag">Non-relational Data Storage Technology</a></li></ul>
 
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-  </article>
-  
-
-  
-</section>
+    <a href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
-  <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>&copy; 2022 coolguychen&#39;s blog</li>
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+            </li>
+        
     </ul>
-  </div>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+
+    
+</div>
+
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
 </footer>
+
+        </div>
+    </div>
+
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
 
 </main>
 
-  <aside class="sidebar">
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
     
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="coolguychen&#39;s blog"></a>
-    </div>
-  
-  <ul class="nav nav-main">
+<script src="/js/local-search.js"></script>
+
+
+
+
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
     
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="Search">
-        <i class="fe fe-search"></i>
-        Search
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
 </div>
-    </li>
-    <li class="nav-item">
-      
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/js/jquery-2.0.3.min.js"></script>
 
-
-<script src="/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/js/lazyload.min.js"></script>
-
-
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-<script src="/js/ocean.js"></script>
 
 
 </body>
