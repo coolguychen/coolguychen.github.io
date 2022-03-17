@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            编译原理与技术笔记 |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/Ryujin.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">编译原理与技术笔记</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Ryujin.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-17 11:08:49</span>
+        <span class="mobile">2022-03-17 11:08</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/object-Object/">[object Object]</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>这是2021 ~ 2022 第二学期必修课编译原理与技术的课堂笔记~</p>
+<h1 id="Lecture-01-Introduction-to-Compiling"><a href="#Lecture-01-Introduction-to-Compiling" class="headerlink" title="Lecture 01 Introduction to Compiling"></a>Lecture 01 Introduction to Compiling</h1><p>Goal:</p>
+<ul>
+<li>What’s compiling?</li>
+<li>What’s compiler?</li>
+</ul>
+<h2 id="Preliminaries-Required"><a href="#Preliminaries-Required" class="headerlink" title="Preliminaries Required"></a>Preliminaries Required</h2><ul>
+<li>Basic knowledge of CFG (Context Free Grammar ). 上下文无关语法</li>
+<li>Knowledge of a high programming language (C&#x2F;C++&#x2F;Java&#x2F;Python) for the programming assignments. C++&#x2F;Java</li>
+</ul>
+<h2 id="Course-Outline"><a href="#Course-Outline" class="headerlink" title="Course Outline"></a>Course Outline</h2><p>Introduction to Compiling</p>
+<p>Lexical Analysis </p>
+<ul>
+<li>Regular expressions, regular definitions </li>
+<li>NFA, DFA</li>
+<li>Subset construction, Thompson’s construction</li>
+</ul>
+<p>Syntax Analysis</p>
+<ul>
+<li>Context Free Grammars </li>
+<li>Top-Down Parsing, LL Parsing </li>
+<li>Bottom-Up Parsing, LR Parsing</li>
+</ul>
+<p>Syntax-Directed Translation </p>
+<ul>
+<li>Attribute Definitions </li>
+<li>Evaluation of Attribute Definitions</li>
+</ul>
+<p>Semantic Analysis, Type Checking </p>
+<p>Run-Time Organization </p>
+<p>Intermediate Code Generation </p>
+<p>Assembler Code Generation</p>
+<h2 id="Compilers"><a href="#Compilers" class="headerlink" title="Compilers"></a>Compilers</h2><p>A compiler（编译器） is a program takes a program written in a source  language and translates it into an equivalent program in a target language.</p>
+<img src="/2022/03/17/Compiler/image-20220310161900386.png" class title="image-20220310161900386">
+
+<p><strong>编译器</strong>是将源程序（用高级编程语言写的代码）“翻译”为目标程序（机器可执行形式）的软件。</p>
+<p><strong>编译：</strong>将高级编程语言编程的源程序（source program）翻译成机器可执行的形式（target program）。其中完成这项翻译工作的软件系统——编译系统，核心部分为编译器。</p>
+<h2 id="Compiling-System"><a href="#Compiling-System" class="headerlink" title="Compiling System"></a>Compiling System</h2><img src="/2022/03/17/Compiler/image-20220310161843908.png" class title="image-20220310161843908">
+
+<p>注：编译器只是整个编译过程中的一部分，但也是最核心的部分</p>
+<ul>
+<li>预处理器（Preprocessor）：聚合源程序、把宏的缩写形式转换为源语言的语句，去掉机器不需要看到的（如注释、Tab…）</li>
+<li><strong>编译器（Compiler）：输出汇编语言程序（target program）</strong></li>
+<li>汇编器（Assembler）：生成可重定位的机器代码</li>
+<li>链接器（Linker）：解决外部内存地址问题</li>
+<li>加载器（Loader）：把所有可执行目标文件放到内存中执行</li>
+</ul>
+<h2 id="The-Phases-of-a-Compiler"><a href="#The-Phases-of-a-Compiler" class="headerlink" title="The Phases of a Compiler"></a>The Phases of a Compiler</h2><p>There are two major parts of a compiler:  <strong>Analysis and Synthesis</strong>&#x2F;<strong>Front-end and Back-end</strong> (分析与综合&#x2F;前端与后端)</p>
+<img src="/2022/03/17/Compiler/image-20220310162806711.png" class title="image-20220310162806711">
+
+<img src="/2022/03/17/Compiler/image-20220310162816800.png" class title="image-20220310162816800">
+
+<p>Each phase transforms the source program from one representation  into another representation. </p>
+<p>They communicate with the symbol table（符号表）. </p>
+<p>They communicate with error handlers</p>
+<blockquote>
+<p>Why symbol table &amp; error handlers?</p>
+<p>Machine just do 2 things: calculate and store. Thus a machine is storing every time(need symbol table) and can make mistakes(need error handler) any time.</p>
+</blockquote>
+<h1 id="Lecture-02-Lexical-Analysis"><a href="#Lecture-02-Lexical-Analysis" class="headerlink" title="Lecture 02 Lexical Analysis"></a>Lecture 02 Lexical Analysis</h1><p>content: Chapter 3_1</p>
+<p>词法分析最重要的是：机器如何识别<strong>合法的单词</strong>（Token）。首先需要知道，什么才是单词？</p>
+<p>词法分析器（Lexical Analyzer Generator）的作用就是告诉机器什么叫做单词。（那么要怎么做呢？）</p>
+<p>Lexical analyzer &#x3D; scanning + lexical analysis</p>
+<h2 id="Steps-of-Lexical-Analysis"><a href="#Steps-of-Lexical-Analysis" class="headerlink" title="Steps of Lexical Analysis"></a>Steps of Lexical Analysis</h2><ol>
+<li><p>Reading the source program as a file of characters. 从源程序中<strong>读字符（character by character）</strong></p>
+</li>
+<li><p>Dividing the file up into tokens. 从字符中分割出单词</p>
+</li>
+<li><p>Store tokens into symbol table. 将单词存入Symbol Table</p>
+</li>
+</ol>
+<img src="/2022/03/17/Compiler/image-20220310192508335.png" class title="image-20220310192508335">
+
+<p><strong>识别合法单词的方法：</strong></p>
+<ul>
+<li>Regular expression 正则表达式</li>
+<li>（Transition Diagram 状态转移图）有限自动机&#x2F;语法树</li>
+</ul>
+<h2 id="Major-Terms-for-Lexical-Analysis"><a href="#Major-Terms-for-Lexical-Analysis" class="headerlink" title="Major Terms for Lexical Analysis"></a>Major Terms for Lexical Analysis</h2><ol>
+<li><p>token 单词</p>
+<p><identifier>, <number>, etc.</number></identifier></p>
+</li>
+<li><p>pattern 模式、规则</p>
+<p>The rules which characterize the set of strings for a token</p>
+</li>
+<li><p>lexeme 词素（例子）</p>
+<p>Identifiers: x, count, name, etc.</p>
+</li>
+</ol>
+<h2 id="Terminology-of-Languages"><a href="#Terminology-of-Languages" class="headerlink" title="Terminology of Languages"></a>Terminology of Languages</h2><p>Def. A language, L, is simply <code>any set of strings over a fixed alphabet</code>.</p>
+<p><strong>Alphabet:</strong> a finite set of symbols (ASCII  characters)</p>
+<p><strong>String :</strong>  </p>
+<ul>
+<li>Finite sequence of symbols on an alphabet 字母表上符号的有限序列</li>
+<li>Sentence and word are also used in terms of  string </li>
+<li>ε is the empty string</li>
+</ul>
+<p><strong>Language:</strong> sets of strings over some fixed  alphabet</p>
+<ul>
+<li>空集也是语言</li>
+<li>The set of all possible identifiers is a language. 所有可能的标识符的集合</li>
+</ul>
+<h2 id="Operations-on-Languages"><a href="#Operations-on-Languages" class="headerlink" title="Operations on Languages"></a>Operations on Languages</h2><p>有限的算子➡无限的语言</p>
+<img src="/2022/03/17/Compiler/image-20220310192848018.png" class title="image-20220310192848018">
+
+<ul>
+<li>union: 并集&#x2F;或 关系</li>
+<li>concatenation：连接</li>
+<li><strong>Kleene Closure</strong>：Kleen闭包——&gt;L* — “<strong>zero</strong> or more concatenations of “ L</li>
+<li><strong>Positive Closure</strong>：真闭包——&gt;L+ —“<strong>one</strong> or more concatenations of “ L</li>
+</ul>
+<h2 id="Regular-Expression-正则表达式——-词法分析的灵魂"><a href="#Regular-Expression-正则表达式——-词法分析的灵魂" class="headerlink" title="Regular Expression 正则表达式—— 词法分析的灵魂"></a>Regular Expression 正则表达式—— 词法分析的灵魂</h2><p>A <strong>Regular Expression</strong> is a Set of Rules &#x2F; Techniques for  <code>Constructing Sequences of Symbols (Strings) From an  Alphabet</code>.</p>
+<h3 id="Rules-for-Specifying-Regular-Expressions"><a href="#Rules-for-Specifying-Regular-Expressions" class="headerlink" title="Rules for Specifying Regular Expressions"></a>Rules for Specifying Regular Expressions</h3><p>结构归纳法构造正则表达式</p>
+<img src="/2022/03/17/Compiler/image-20220310193624617.png" class title="image-20220310193624617">
+
+<img src="/2022/03/17/Compiler/image-20220310193700154.png" class title="image-20220310193700154">
+
+<img src="/2022/03/17/Compiler/image-20220310193732208.png" class title="image-20220310193732208">
+
+<h3 id="Regular-Definitions-正则定义"><a href="#Regular-Definitions-正则定义" class="headerlink" title="Regular Definitions 正则定义"></a>Regular Definitions 正则定义</h3><blockquote>
+<p>To write regular expression for some languages can be difficult, because  their regular expressions can be quite complex. In those cases, we may use  regular definitions.</p>
+</blockquote>
+<p>A regular definition is a sequence of the definitions of the form:</p>
+<img src="/2022/03/17/Compiler/image-20220310193830247.png" class title="image-20220310193830247">
+
+<p>Homework Exercise:</p>
+<p>Some are difficult and I don’t know whether what I wrote were reasonable.</p>
+<h1 id="Lecture-03-Finite-automata-NFA-to-DFA"><a href="#Lecture-03-Finite-automata-NFA-to-DFA" class="headerlink" title="Lecture 03 Finite automata NFA to DFA"></a>Lecture 03 Finite automata NFA to DFA</h1><p>机器如何存储Tokens? ➡ 状态转移图</p>
+<p>RE(Regular Expression)——&gt;TD(Transition Diagram)</p>
+<aside>
+💡 如何将正则表达式变为计算机可识别的有限状态自动机？
+</aside>
+
+
+<p>有限状态自动机：NFA &amp; DFA</p>
+<h2 id="Constructing-Transition-Diagrams-for-Tokens"><a href="#Constructing-Transition-Diagrams-for-Tokens" class="headerlink" title="Constructing Transition Diagrams for Tokens"></a>Constructing Transition Diagrams for Tokens</h2><p><strong>Transition Diagrams (TD)</strong> are used to represent the tokens </p>
+<p>Each TD has:（TD的4大特征）</p>
+<ul>
+<li>States : Represented by Circles</li>
+<li>Actions : Represented by Arrows between states</li>
+<li>Start State : Beginning of a pattern (Arrowhead)</li>
+<li>Final State(s) : End of pattern (Concentric Circles)</li>
+</ul>
+<p>Each TD is <code>Deterministic</code>（确定性） - No need to choose between 2 different actions  不需要“选择困难” （因此对计算机来说，确定性是最优的。而对人来说，更多时候都是不确定性）</p>
+<p><strong>Example of TD:</strong></p>
+<img src="/2022/03/17/Compiler/image-20220310194536345.png" class title="image-20220310194536345">
+
+<h2 id="Finite-Automata-有限自动机"><a href="#Finite-Automata-有限自动机" class="headerlink" title="Finite Automata 有限自动机"></a>Finite Automata 有限自动机</h2><p>A finite automaton can be: <code>deterministic(DFA)</code> or <code>nondeterministic(NFA)</code></p>
+<ul>
+<li>deterministic – faster recognizer, but it may take more space 确定性的快，占更多的空间</li>
+<li>non-deterministic – slower, but it may take less space 不确定的慢（回溯），占用空间较少</li>
+<li>Deterministic automatons are widely used lexical analyzer</li>
+</ul>
+<p>First, we define regular expressions for tokens; Then we convert them into a DFA to get a lexical analyzer for our tokens.</p>
+<ul>
+<li>Algorithm1: Regular Expression ➔ NFA ➔ DFA (two steps: first to NFA, then to DFA) 先得到NFA，再转换为DFA（子集构造法：不确定的➡确定的）</li>
+<li>Algorithm2: Regular Expression ➔ DFA (directly convert a regular expression into a DFA) 直接得到DFA （Thompson, mention in next class）</li>
+</ul>
+<h3 id="Non-Deterministic-Finite-Automata"><a href="#Non-Deterministic-Finite-Automata" class="headerlink" title="Non-Deterministic Finite Automata"></a>Non-Deterministic Finite Automata</h3><p><strong>不确定的自动机</strong></p>
+<p>An NFA is a mathematical model that consists of : </p>
+<ul>
+<li>S, a set of <strong>states</strong> </li>
+<li>∑, the symbols of the <strong>input alphabet</strong></li>
+<li>move, a <strong>transition function</strong> 状态迁移函数<ul>
+<li>move(state, symbol) → set of states</li>
+<li>move: S × ∑ ∪{ε} → Pow(S) (path of word)</li>
+</ul>
+</li>
+</ul>
+<p><strong>不确定性：</strong></p>
+<ul>
+<li><strong>空转移</strong>：<strong>不做任何指令</strong>可以转变为任意状态</li>
+<li>接受某一指令后，<strong>既可以到xx状态，又可以到yy状态</strong></li>
+</ul>
+<p><strong>Representing NFAs</strong></p>
+<ul>
+<li>状态转移图</li>
+<li>状态转移表（前面注明start state &amp; final state）</li>
+</ul>
+<img src="/2022/03/17/Compiler/image-20220310201113816.png" class title="image-20220310201113816">
+
+<h3 id="Deterministic-finite-automation-DFA"><a href="#Deterministic-finite-automation-DFA" class="headerlink" title="Deterministic finite automation (DFA)"></a>Deterministic finite automation (DFA)</h3><p><strong>确定的自动机</strong></p>
+<p>A DFA is an NFA with the following restrictions:</p>
+<ul>
+<li>ε moves are <strong>not</strong> allowed 不允许空转移</li>
+<li>For every state s ∈ S, there is one and only one path from s for every input symbol a ∈ ∑ 对于任一状态，再接受某一输入字符后，只有一条路径（即转移到另一个状态）</li>
+</ul>
+<h3 id="Converting-NFA-into-DFA"><a href="#Converting-NFA-into-DFA" class="headerlink" title="Converting NFA into DFA"></a>Converting NFA into DFA</h3><h4 id="Calculate-ε-closure-计算空闭包"><a href="#Calculate-ε-closure-计算空闭包" class="headerlink" title="Calculate ε-closure 计算空闭包"></a>Calculate ε-closure 计算空闭包</h4><img src="/2022/03/17/Compiler/image-20220310194917018.png" class title="image-20220310194917018">
+
+<ul>
+<li>ε-closure(s): 状态s在识别ε后所能到达的状态集合</li>
+<li>ε-closure(T): 状态集合T中的状态在识别ε后所能到达的状态集合</li>
+<li>Move(T,a): 状态集合T中的状态在识别某一输入字符‘a’后所能到达的状态集合</li>
+</ul>
+<h4 id="Subset-construction-子集构造法"><a href="#Subset-construction-子集构造法" class="headerlink" title="Subset construction 子集构造法"></a>Subset construction 子集构造法</h4><ul>
+<li>空转移：空闭包</li>
+<li>move函数再加空闭包</li>
+</ul>
+<img src="/2022/03/17/Compiler/image-20220310201647651.png" class title="image-20220310201647651">
+
+<img src="/2022/03/17/Compiler/image-20220310201656105.png" class title="image-20220310201656105">
+
+<img src="/2022/03/17/Compiler/image-20220310201705176.png" class title="image-20220310201705176">
+
+<img src="/2022/03/17/Compiler/image-20220310201712750.png" class title="image-20220310201712750">
+
+<h1 id="Lecture-04-RE-to-NFA-Thompson-amp-RE-to-DFA-direct"><a href="#Lecture-04-RE-to-NFA-Thompson-amp-RE-to-DFA-direct" class="headerlink" title="Lecture 04 RE to NFA(Thompson) &amp; RE to DFA(direct)"></a>Lecture 04 RE to NFA(Thompson) &amp; RE to DFA(direct)</h1><h2 id="RE-to-NFA-Thompson-Construction"><a href="#RE-to-NFA-Thompson-Construction" class="headerlink" title="RE to NFA(Thompson Construction)"></a>RE to NFA(Thompson Construction)</h2><ol>
+<li>Identify subexpressions of the regular expression【类型判别】</li>
+<li>Characterize “pieces” of NFA for each subexpression</li>
+</ol>
+<p>一共六种形式：</p>
+<img src="/2022/03/17/Compiler/image-20220317144558280.png" class title="image-20220317144558280">
+
+<img src="/2022/03/17/Compiler/image-20220317144607036.png" class title="image-20220317144607036">
+
+<img src="/2022/03/17/Compiler/image-20220317144631981.png" class title="image-20220317144631981">
+
+<p>注：如果是L(s)L(t),那么N(s)的开始节点作为开始节点，N(s)的结束节点与N(t)的开始节点重合(overlap)，N(t)的结束节点作为结束节点</p>
+<img src="/2022/03/17/Compiler/image-20220317144926082.png" class title="image-20220317144926082">
+
+<h3 id="Properties-of-Construction"><a href="#Properties-of-Construction" class="headerlink" title="Properties of Construction"></a>Properties of Construction</h3><ol>
+<li>状态数目可控（是有规律地构造）</li>
+<li>只有一个开始状态和一个结束状态</li>
+<li>每个状态对应每个字符(a∈∑)只有唯一一条输出的边（确定性）</li>
+<li><em>注意从0开始标状态，<u>从左至右、从上至下</u>标状态</em></li>
+</ol>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>So, an NFA may be simulated by algorithm, when NFA is constructed using Previous techniques</p>
+<p>Algorithm run time is proportional to |N| * |x| where |N| is the number of states and |x| is the length of input</p>
+<p>Alternatively, we can construct DFA from NFA and use the resulting Dtran to recognize input:</p>
+<p>复杂度这里不太懂</p>
+<img src="/2022/03/17/Compiler/image-20220317145239375.png" class title="image-20220317145239375">
+
+<h2 id="RE-to-DFA-direct"><a href="#RE-to-DFA-direct" class="headerlink" title="RE to DFA(direct)"></a>RE to DFA(direct)</h2><h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ol>
+<li>给正则表达式后面加上<strong>终止符“#”</strong></li>
+<li>给字符<strong>标号</strong>（除了空串）</li>
+<li>画出<strong>语法树</strong></li>
+<li>每个节点的firstpos &amp; lastpos,得到每个叶子节点的followpos</li>
+<li>根据followpos得到DFA</li>
+</ol>
+<h4 id="followPOSITION函数"><a href="#followPOSITION函数" class="headerlink" title="followPOSITION函数"></a>followPOSITION函数</h4><p>在当前位置后面可能跟着的position的集合</p>
+<blockquote>
+<p>followpos(i) – is the set of positions which can follow  the position i in the strings generated by the augmented regular expression</p>
+</blockquote>
+<img src="/2022/03/17/Compiler/image-20220317150801403.png" class title="image-20220317150801403">
+
+<blockquote>
+<p>To evaluate followpos, we need three more functions to be defined for the nodes (not just for leaves) of the syntax tree</p>
+</blockquote>
+<h4 id="辅助函数firstpos-lastpos-nullable"><a href="#辅助函数firstpos-lastpos-nullable" class="headerlink" title="辅助函数firstpos, lastpos, nullable"></a><strong>辅助函数firstpos, lastpos, nullable</strong></h4><ul>
+<li>firstpos(n) – the set of the positions of the first symbols of strings generated by the sub-expression rooted by n.</li>
+<li>lastpos(n) – the set of the positions of the last symbols of strings generated by the sub-expression rooted by n.</li>
+<li>nullable(n) – true if the empty string is a member of strings generated by the sub-expression rooted by n. false otherwise.</li>
+</ul>
+<h4 id="How-to-evaluate-firstpos-lastpos-nullable"><a href="#How-to-evaluate-firstpos-lastpos-nullable" class="headerlink" title="How to evaluate firstpos, lastpos, nullable"></a>How to evaluate firstpos, lastpos, nullable</h4><img src="/2022/03/17/Compiler/image-20220317150415605.png" class title="image-20220317150415605">
+
+<h4 id="How-to-evaluate-followpos"><a href="#How-to-evaluate-followpos" class="headerlink" title="How to evaluate followpos"></a>How to evaluate followpos</h4><p>Two-rules define the function followpos: </p>
+<ol>
+<li>If n is concatenation-node with left child c1 and right child c2 , and i is a  position in lastpos(c1 ), then all positions in firstpos(c2 ) are in followpos(i). </li>
+<li>If n is a star-node, and i is a position in lastpos(n), then all positions in  firstpos(n) are in followpos(i).</li>
+</ol>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><img src="/2022/03/17/Compiler/image-20220317150504722.png" class title="image-20220317150504722">
+
+<img src="/2022/03/17/Compiler/image-20220317150522966.png" class title="image-20220317150522966">
+
+
+
+
+
+<p>&lt;——–update———&gt;</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/object-Object/">#[object Object]</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">计算机病毒与防治</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/03/Review-of-Computer-Networking/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Review of Computer Networking</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-01-Introduction-to-Compiling"><span class="nav-text">Lecture 01 Introduction to Compiling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preliminaries-Required"><span class="nav-text">Preliminaries Required</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Course-Outline"><span class="nav-text">Course Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compilers"><span class="nav-text">Compilers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiling-System"><span class="nav-text">Compiling System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Phases-of-a-Compiler"><span class="nav-text">The Phases of a Compiler</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-02-Lexical-Analysis"><span class="nav-text">Lecture 02 Lexical Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps-of-Lexical-Analysis"><span class="nav-text">Steps of Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Terms-for-Lexical-Analysis"><span class="nav-text">Major Terms for Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminology-of-Languages"><span class="nav-text">Terminology of Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operations-on-Languages"><span class="nav-text">Operations on Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-Expression-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E2%80%94%E2%80%94-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E7%81%B5%E9%AD%82"><span class="nav-text">Regular Expression 正则表达式—— 词法分析的灵魂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rules-for-Specifying-Regular-Expressions"><span class="nav-text">Rules for Specifying Regular Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Definitions-%E6%AD%A3%E5%88%99%E5%AE%9A%E4%B9%89"><span class="nav-text">Regular Definitions 正则定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-03-Finite-automata-NFA-to-DFA"><span class="nav-text">Lecture 03 Finite automata NFA to DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructing-Transition-Diagrams-for-Tokens"><span class="nav-text">Constructing Transition Diagrams for Tokens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finite-Automata-%E6%9C%89%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-text">Finite Automata 有限自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Deterministic-Finite-Automata"><span class="nav-text">Non-Deterministic Finite Automata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deterministic-finite-automation-DFA"><span class="nav-text">Deterministic finite automation (DFA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Converting-NFA-into-DFA"><span class="nav-text">Converting NFA into DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculate-%CE%B5-closure-%E8%AE%A1%E7%AE%97%E7%A9%BA%E9%97%AD%E5%8C%85"><span class="nav-text">Calculate ε-closure 计算空闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subset-construction-%E5%AD%90%E9%9B%86%E6%9E%84%E9%80%A0%E6%B3%95"><span class="nav-text">Subset construction 子集构造法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-04-RE-to-NFA-Thompson-amp-RE-to-DFA-direct"><span class="nav-text">Lecture 04 RE to NFA(Thompson) &amp; RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-NFA-Thompson-Construction"><span class="nav-text">RE to NFA(Thompson Construction)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-of-Construction"><span class="nav-text">Properties of Construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-DFA-direct"><span class="nav-text">RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps"><span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#followPOSITION%E5%87%BD%E6%95%B0"><span class="nav-text">followPOSITION函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0firstpos-lastpos-nullable"><span class="nav-text">辅助函数firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-firstpos-lastpos-nullable"><span class="nav-text">How to evaluate firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-followpos"><span class="nav-text">How to evaluate followpos</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

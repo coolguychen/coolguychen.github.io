@@ -215,7 +215,7 @@
         
 
         <div class="article-content markdown-body">
-            <p>RocksDB是一个<strong>可嵌入的持久性key-value存储</strong>。它是一个日志结构的数据库，并针对快速存储进行了优化。RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用，其主要的数据结构是LSM tree，保证了读写效率。业界采用RocksDB作为存储引擎的有：<a class="link"   href="https://link.zhihu.com/?target=http://myrocks.io/" >MyRocks<i class="fas fa-external-link-alt"></i></a> 、<a class="link"   target="_blank" rel="noopener" href="https://www.huaweicloud.com/theme/1034299-2-H" >华为云云数据库mongodb<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://github.com/hugegraph" >百度开源图数据库HugeGraph<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://github.com/pingcap/tidb" >国产开源分布式数据库TiDB<i class="fas fa-external-link-alt"></i></a>等等。</p>
+            <p>RocksDB是一个<strong>可嵌入的持久性key-value存储</strong>。它是一个日志结构的数据库，并针对快速存储进行了优化。RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用，其主要的数据结构是LSM tree，保证了读写效率。业界采用RocksDB作为存储引擎的有：<a class="link" href="https://link.zhihu.com/?target=http://myrocks.io/">MyRocks<i class="fas fa-external-link-alt"></i></a> 、<a class="link" target="_blank" rel="noopener" href="https://www.huaweicloud.com/theme/1034299-2-H">华为云云数据库mongodb<i class="fas fa-external-link-alt"></i></a>、<a class="link" target="_blank" rel="noopener" href="https://github.com/hugegraph">百度开源图数据库HugeGraph<i class="fas fa-external-link-alt"></i></a>、<a class="link" target="_blank" rel="noopener" href="https://github.com/pingcap/tidb">国产开源分布式数据库TiDB<i class="fas fa-external-link-alt"></i></a>等等。</p>
 <span id="more"></span>
 
 <h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p>RocksDB的数据模型是带版本号的K-V存储。每个对DB的修改都会有一个全局排序并且单调递增的序列号。对于每个key，RocksDB保留操作的历史。</p>
@@ -232,7 +232,7 @@
 
         ……
 </code></pre>
-<h1 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h1><h2 id="基础架构"><a href="#基础架构" class="headerlink" title="基础架构"></a>基础架构</h2><img src="https://img-blog.csdnimg.cn/20190817230604430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1bzIyMg==,size_16,color_FFFFFF,t_70" alt="img" style="zoom: 80%;" />
+<h1 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h1><h2 id="基础架构"><a href="#基础架构" class="headerlink" title="基础架构"></a>基础架构</h2><img src="https://img-blog.csdnimg.cn/20190817230604430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1bzIyMg==,size_16,color_FFFFFF,t_70" alt="img" style="zoom: 80%;">
 
 <hr>
 <p>上图是Rocksdb的基础架构。Rocksdb中引入了ColumnFamily(列族, CF)的概念，所有的读写操作都需要先指定列族。</p>
@@ -249,7 +249,7 @@
 <p>Current，负责记录当前最新的Manifest文件名。</p>
 <p><strong>注：</strong> 每个ColumnFamily有自己的Memtable， SST文件，所有ColumnFamily共享WAL、Current、Manifest文件。</p>
 <h2 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h2><p>RocksDB 是基于 LSM-Tree 的，存储机制大概如下：</p>
-<img src="https://img-blog.csdnimg.cn/322fa45ab171477cad6ef74ac76c12e9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0phbmljaw==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="RocksDB主要组成 & 读、写和压缩操作流程图解" style="zoom:80%;" />
+<img src="https://img-blog.csdnimg.cn/322fa45ab171477cad6ef74ac76c12e9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0phbmljaw==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="RocksDB主要组成 & 读、写和压缩操作流程图解" style="zoom:80%;">
 
 <p>首先，任何的写入都会先写到 WAL，然后再写入MemTable。</p>
 <p>当一个 MemTable 写满了之后，就会变成 ImmuTable，RocksDB 在后台会通过一个 flush 线程将这个 Memtable刷写到磁盘，生成一个 Sorted String Table(SST) 文件，放在 Level 0 层。当 Level 0 层的 SST 文件个数超过阈值之后，就会通过 <strong>Compaction 策略</strong>（去除相同key的多条记录）将其放到 Level 1 层，以此类推。</p>
@@ -302,11 +302,11 @@
 </ol>
 <hr>
 <p><em>参考资料</em></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/facebook/rocksdb/wiki/RocksDB-Overview" >RocksDB Overview · facebook&#x2F;rocksdb Wiki · GitHub<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://rocksdb.org.cn/doc/Home.html" >欢迎使用RocksDB RocksDB中文网 | 一个持久型的key-value存储<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1352666#:~:text=RocksDB%20%E5%92%8C%20LevelDB%20%E9%80%9A%E8%BF%87%E5%90%8E%E5%8F%B0%E7%9A%84%20compaction%20%E6%9D%A5%E5%87%8F%E5%B0%91%E8%AF%BB%E6%94%BE%E5%A4%A7%EF%BC%88%E5%87%8F%E5%B0%91%20SST%20%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%EF%BC%89%E5%92%8C%E7%A9%BA%E9%97%B4%E6%94%BE%E5%A4%A7%EF%BC%88%E6%B8%85%E7%90%86%E8%BF%87%E6%9C%9F%E6%95%B0%E6%8D%AE%EF%BC%89%EF%BC%8C%E4%BD%86%E4%B9%9F%E5%9B%A0%E6%AD%A4%E5%B8%A6%E6%9D%A5%E4%BA%86%E5%86%99%E6%94%BE%E5%A4%A7%EF%BC%88Write,%E6%AD%A3%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8CHDD/SSD%20%E8%A7%82%E5%AF%9F%E5%88%B0%E7%9A%84%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E5%A4%9A%E4%BA%8E%E4%B8%8A%E5%B1%82%E7%A8%8B%E5%BA%8F%E5%86%99%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82%20%E5%9C%A8%20HDD%20%E4%BD%9C%E4%B8%BA%E4%B8%BB%E6%B5%81%E5%AD%98%E5%82%A8%E7%9A%84%E6%97%B6%E4%BB%A3%EF%BC%8CRocksDB%20%E7%9A%84%20compaction%20%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%86%99%E6%94%BE%E5%A4%A7%E9%97%AE%E9%A2%98%E5%B9%B6%E6%B2%A1%E6%9C%89%E9%9D%9E%E5%B8%B8%E6%98%8E%E6%98%BE%E3%80%82" >LSM-Tree 的写放大写放大、读放大、空间放大RockDB 写放大简单分析参考文档<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/73fa1d4e4273" >Rocksdb的优劣及应用场景分析 - 简书 (jianshu.com)<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://mongoing.com/archives/78714" >一文带你了解Mongo on RocksDB | MongoDB中文社区 (mongoing.com)<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://github.com/facebook/rocksdb/wiki/RocksDB-Overview">RocksDB Overview · facebook&#x2F;rocksdb Wiki · GitHub<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://rocksdb.org.cn/doc/Home.html">欢迎使用RocksDB RocksDB中文网 | 一个持久型的key-value存储<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1352666#:~:text=RocksDB%20%E5%92%8C%20LevelDB%20%E9%80%9A%E8%BF%87%E5%90%8E%E5%8F%B0%E7%9A%84%20compaction%20%E6%9D%A5%E5%87%8F%E5%B0%91%E8%AF%BB%E6%94%BE%E5%A4%A7%EF%BC%88%E5%87%8F%E5%B0%91%20SST%20%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%EF%BC%89%E5%92%8C%E7%A9%BA%E9%97%B4%E6%94%BE%E5%A4%A7%EF%BC%88%E6%B8%85%E7%90%86%E8%BF%87%E6%9C%9F%E6%95%B0%E6%8D%AE%EF%BC%89%EF%BC%8C%E4%BD%86%E4%B9%9F%E5%9B%A0%E6%AD%A4%E5%B8%A6%E6%9D%A5%E4%BA%86%E5%86%99%E6%94%BE%E5%A4%A7%EF%BC%88Write,%E6%AD%A3%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8CHDD/SSD%20%E8%A7%82%E5%AF%9F%E5%88%B0%E7%9A%84%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E5%A4%9A%E4%BA%8E%E4%B8%8A%E5%B1%82%E7%A8%8B%E5%BA%8F%E5%86%99%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82%20%E5%9C%A8%20HDD%20%E4%BD%9C%E4%B8%BA%E4%B8%BB%E6%B5%81%E5%AD%98%E5%82%A8%E7%9A%84%E6%97%B6%E4%BB%A3%EF%BC%8CRocksDB%20%E7%9A%84%20compaction%20%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%86%99%E6%94%BE%E5%A4%A7%E9%97%AE%E9%A2%98%E5%B9%B6%E6%B2%A1%E6%9C%89%E9%9D%9E%E5%B8%B8%E6%98%8E%E6%98%BE%E3%80%82">LSM-Tree 的写放大写放大、读放大、空间放大RockDB 写放大简单分析参考文档<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/73fa1d4e4273">Rocksdb的优劣及应用场景分析 - 简书 (jianshu.com)<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://mongoing.com/archives/78714">一文带你了解Mongo on RocksDB | MongoDB中文社区 (mongoing.com)<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
