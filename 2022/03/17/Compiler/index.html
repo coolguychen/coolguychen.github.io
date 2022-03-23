@@ -192,7 +192,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/object-Object/">[object Object]</a>&nbsp;
+                        <a href="/tags/Compilers-Principals-and-Techniquess/">Compilers Principals and Techniquess</a>&nbsp;
                     </li>
                 
             </ul>
@@ -203,7 +203,7 @@
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>10 分钟</span>
         </span>
     
     
@@ -295,7 +295,7 @@
 </ul>
 <h2 id="Major-Terms-for-Lexical-Analysis"><a href="#Major-Terms-for-Lexical-Analysis" class="headerlink" title="Major Terms for Lexical Analysis"></a>Major Terms for Lexical Analysis</h2><ol>
 <li><p>token 单词</p>
-<p><identifier>, <number>, etc.</number></identifier></p>
+<p>&lt; identifier &gt;,  &lt; number &gt;, etc.</p>
 </li>
 <li><p>pattern 模式、规则</p>
 <p>The rules which characterize the set of strings for a token</p>
@@ -470,10 +470,10 @@
 </ul>
 <h4 id="How-to-evaluate-firstpos-lastpos-nullable"><a href="#How-to-evaluate-firstpos-lastpos-nullable" class="headerlink" title="How to evaluate firstpos, lastpos, nullable"></a>How to evaluate firstpos, lastpos, nullable</h4><img src="/2022/03/17/Compiler/image-20220317150415605.png" class title="image-20220317150415605">
 
-<h4 id="How-to-evaluate-followpos"><a href="#How-to-evaluate-followpos" class="headerlink" title="How to evaluate followpos"></a>How to evaluate followpos</h4><p>Two-rules define the function followpos: </p>
+<h4 id="How-to-evaluate-followpos"><a href="#How-to-evaluate-followpos" class="headerlink" title="How to evaluate followpos"></a>How to evaluate followpos</h4><p>Two-rules define the function followpos: （根据以下两条规则 看Followpos）</p>
 <ol>
-<li>If n is concatenation-node with left child c1 and right child c2 , and i is a  position in lastpos(c1 ), then all positions in firstpos(c2 ) are in followpos(i). </li>
-<li>If n is a star-node, and i is a position in lastpos(n), then all positions in  firstpos(n) are in followpos(i).</li>
+<li>If n is concatenation-node with left child c1 and right child c2(如果是连接节点) , and i <u>is a position in lastpos(c1)</u>, then <code>all positions in firstpos(c2 ) are in followpos(i)</code>. </li>
+<li>If n is a star-node(如果是Kleene闭包), and <u>i is a position in lastpos(n)</u>, then <code>all positions in firstpos(n) are in followpos(i)</code>.</li>
 </ol>
 <h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><img src="/2022/03/17/Compiler/image-20220317150504722.png" class title="image-20220317150504722">
 
@@ -481,8 +481,33 @@
 
 
 
+<h1 id="Lecture-05-Minimizing-DFA-amp-Review-of-Chapter-3"><a href="#Lecture-05-Minimizing-DFA-amp-Review-of-Chapter-3" class="headerlink" title="Lecture 05 Minimizing DFA &amp; Review of Chapter 3"></a>Lecture 05 Minimizing DFA &amp; Review of Chapter 3</h1><h2 id="Minimizing-DFA"><a href="#Minimizing-DFA" class="headerlink" title="Minimizing DFA"></a>Minimizing DFA</h2><p>DFA与 NFA相比，状态数较多，占空间比较多，可以简化。</p>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><ol>
+<li>首先将状态集分为两组，G1代表接收&#x2F;结束状态集，G2代表非接收状态:<ul>
+<li>G1: set of accepting states</li>
+<li>G2: set of non-accepting states</li>
+</ul>
+</li>
+<li>对于状态集G中的状态，识别任意字符，若到达同一状态集(Group)，则不分解；若达到不同状态集，分解。</li>
+<li>上述操作循环直至状态集不能再分。</li>
+<li>将新的状态集合组合成最简的DFA。</li>
+</ol>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><img src="/2022/03/17/Compiler/image-20220323105717173.png" class title="image-20220323105717173">
 
+<img src="/2022/03/17/Compiler/image-20220323105728239.png" class title="image-20220323105728239">
 
+<h2 id="Review-amp-Exercise"><a href="#Review-amp-Exercise" class="headerlink" title="Review &amp; Exercise"></a>Review &amp; Exercise</h2><img src="/2022/03/17/Compiler/image-20220323105737544.png" class title="image-20220323105737544">
+
+<ul>
+<li>基本概念</li>
+<li>核心概念<ul>
+<li>正则表达式</li>
+<li>正则定义</li>
+<li>注意需要自己给定约束&#x2F;限制</li>
+</ul>
+</li>
+<li>四大算法（考试要求手写出来）</li>
+</ul>
 <p>&lt;——–update———&gt;</p>
 
         </div>
@@ -493,7 +518,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/object-Object/">#[object Object]</a>&nbsp;
+                        <a href="/tags/Compilers-Principals-and-Techniquess/">#Compilers Principals and Techniquess</a>&nbsp;
                     </li>
                 
             </ul>
@@ -650,7 +675,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-01-Introduction-to-Compiling"><span class="nav-text">Lecture 01 Introduction to Compiling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preliminaries-Required"><span class="nav-text">Preliminaries Required</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Course-Outline"><span class="nav-text">Course Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compilers"><span class="nav-text">Compilers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiling-System"><span class="nav-text">Compiling System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Phases-of-a-Compiler"><span class="nav-text">The Phases of a Compiler</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-02-Lexical-Analysis"><span class="nav-text">Lecture 02 Lexical Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps-of-Lexical-Analysis"><span class="nav-text">Steps of Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Terms-for-Lexical-Analysis"><span class="nav-text">Major Terms for Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminology-of-Languages"><span class="nav-text">Terminology of Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operations-on-Languages"><span class="nav-text">Operations on Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-Expression-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E2%80%94%E2%80%94-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E7%81%B5%E9%AD%82"><span class="nav-text">Regular Expression 正则表达式—— 词法分析的灵魂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rules-for-Specifying-Regular-Expressions"><span class="nav-text">Rules for Specifying Regular Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Definitions-%E6%AD%A3%E5%88%99%E5%AE%9A%E4%B9%89"><span class="nav-text">Regular Definitions 正则定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-03-Finite-automata-NFA-to-DFA"><span class="nav-text">Lecture 03 Finite automata NFA to DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructing-Transition-Diagrams-for-Tokens"><span class="nav-text">Constructing Transition Diagrams for Tokens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finite-Automata-%E6%9C%89%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-text">Finite Automata 有限自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Deterministic-Finite-Automata"><span class="nav-text">Non-Deterministic Finite Automata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deterministic-finite-automation-DFA"><span class="nav-text">Deterministic finite automation (DFA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Converting-NFA-into-DFA"><span class="nav-text">Converting NFA into DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculate-%CE%B5-closure-%E8%AE%A1%E7%AE%97%E7%A9%BA%E9%97%AD%E5%8C%85"><span class="nav-text">Calculate ε-closure 计算空闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subset-construction-%E5%AD%90%E9%9B%86%E6%9E%84%E9%80%A0%E6%B3%95"><span class="nav-text">Subset construction 子集构造法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-04-RE-to-NFA-Thompson-amp-RE-to-DFA-direct"><span class="nav-text">Lecture 04 RE to NFA(Thompson) &amp; RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-NFA-Thompson-Construction"><span class="nav-text">RE to NFA(Thompson Construction)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-of-Construction"><span class="nav-text">Properties of Construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-DFA-direct"><span class="nav-text">RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps"><span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#followPOSITION%E5%87%BD%E6%95%B0"><span class="nav-text">followPOSITION函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0firstpos-lastpos-nullable"><span class="nav-text">辅助函数firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-firstpos-lastpos-nullable"><span class="nav-text">How to evaluate firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-followpos"><span class="nav-text">How to evaluate followpos</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-01-Introduction-to-Compiling"><span class="nav-text">Lecture 01 Introduction to Compiling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preliminaries-Required"><span class="nav-text">Preliminaries Required</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Course-Outline"><span class="nav-text">Course Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compilers"><span class="nav-text">Compilers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiling-System"><span class="nav-text">Compiling System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Phases-of-a-Compiler"><span class="nav-text">The Phases of a Compiler</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-02-Lexical-Analysis"><span class="nav-text">Lecture 02 Lexical Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps-of-Lexical-Analysis"><span class="nav-text">Steps of Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Terms-for-Lexical-Analysis"><span class="nav-text">Major Terms for Lexical Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminology-of-Languages"><span class="nav-text">Terminology of Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operations-on-Languages"><span class="nav-text">Operations on Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-Expression-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E2%80%94%E2%80%94-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E7%81%B5%E9%AD%82"><span class="nav-text">Regular Expression 正则表达式—— 词法分析的灵魂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rules-for-Specifying-Regular-Expressions"><span class="nav-text">Rules for Specifying Regular Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Definitions-%E6%AD%A3%E5%88%99%E5%AE%9A%E4%B9%89"><span class="nav-text">Regular Definitions 正则定义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-03-Finite-automata-NFA-to-DFA"><span class="nav-text">Lecture 03 Finite automata NFA to DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructing-Transition-Diagrams-for-Tokens"><span class="nav-text">Constructing Transition Diagrams for Tokens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finite-Automata-%E6%9C%89%E9%99%90%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-text">Finite Automata 有限自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Deterministic-Finite-Automata"><span class="nav-text">Non-Deterministic Finite Automata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deterministic-finite-automation-DFA"><span class="nav-text">Deterministic finite automation (DFA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Converting-NFA-into-DFA"><span class="nav-text">Converting NFA into DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculate-%CE%B5-closure-%E8%AE%A1%E7%AE%97%E7%A9%BA%E9%97%AD%E5%8C%85"><span class="nav-text">Calculate ε-closure 计算空闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subset-construction-%E5%AD%90%E9%9B%86%E6%9E%84%E9%80%A0%E6%B3%95"><span class="nav-text">Subset construction 子集构造法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-04-RE-to-NFA-Thompson-amp-RE-to-DFA-direct"><span class="nav-text">Lecture 04 RE to NFA(Thompson) &amp; RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-NFA-Thompson-Construction"><span class="nav-text">RE to NFA(Thompson Construction)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-of-Construction"><span class="nav-text">Properties of Construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RE-to-DFA-direct"><span class="nav-text">RE to DFA(direct)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Steps"><span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#followPOSITION%E5%87%BD%E6%95%B0"><span class="nav-text">followPOSITION函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0firstpos-lastpos-nullable"><span class="nav-text">辅助函数firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-firstpos-lastpos-nullable"><span class="nav-text">How to evaluate firstpos, lastpos, nullable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-evaluate-followpos"><span class="nav-text">How to evaluate followpos</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-05-Minimizing-DFA-amp-Review-of-Chapter-3"><span class="nav-text">Lecture 05 Minimizing DFA &amp; Review of Chapter 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimizing-DFA"><span class="nav-text">Minimizing DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-amp-Exercise"><span class="nav-text">Review &amp; Exercise</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
