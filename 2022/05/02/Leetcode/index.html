@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            Leetcode |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/Ryujin.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Leetcode</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Ryujin.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-05-02 10:24:52</span>
+        <span class="mobile">2022-05-02 10:24</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/study/">study</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/study/intern/">intern</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Leetcode/">Leetcode</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>29 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>A Leetcode Grinding Guide (Java Ver.)</p>
+<p>记录一下本菜鸡的刷题之路。跟着谷歌大佬刷力扣。浅浅仿照做个笔记，以后比较好复习。</p>
+<h1 id="算法篇"><a href="#算法篇" class="headerlink" title="算法篇"></a>算法篇</h1><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p>顾名思义，贪心算法或贪心思想采用贪心的策略，保证<u>每次操作都是局部最优</u>的，从而使最后得到的结果是<u>全局最优</u>的。</p>
+<h3 id="分配问题"><a href="#分配问题" class="headerlink" title="分配问题"></a>分配问题</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/assign-cookies/">455. 分发饼干<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：有一群孩子和一堆饼干，每个孩子有一个饥饿度，每个饼干都有一个大小。每个孩子只能吃 最多一个饼干，且只有饼干的大小大于孩子的饥饿度时，这个孩子才能吃饱。求解最多有多少孩 子可以吃饱。</p>
+<p>题解：贪心策略为给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干。先对孩子和饼干分别进行<strong>排序</strong>。这样我们就可以从饥饿度最小的孩子和大小最小的饼干出发，计算有多少个对子可以满足条件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findContentChildren</span><span class="params">(<span class="type">int</span>[] g, <span class="type">int</span>[] s)</span> &#123;</span><br><span class="line">        <span class="comment">//先对孩子胃口和饼干数量进行排序</span></span><br><span class="line">        Arrays.sort(g);</span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//维护双指针</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = <span class="number">0</span>; i &lt; g.length &amp;&amp; j &lt; s.length; i++, j++) &#123;</span><br><span class="line">            <span class="comment">//不够胃口，i不变， 看下一块饼干</span></span><br><span class="line">            <span class="keyword">while</span> (j &lt; s.length &amp;&amp; g[i] &gt; s[j]) j++;</span><br><span class="line">            <span class="comment">//不经过循环或跳出循环 ==&gt; j &gt;= s.length || g[i] &lt;= s[j] 够胃口 cnt++</span></span><br><span class="line">            <span class="comment">//如果j&lt;s.length 说明是够胃口 cnt++</span></span><br><span class="line">            <span class="keyword">if</span> (j &lt; s.length) cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/candy/">135. 分发糖果<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：一群孩子站成一排，每一个孩子有自己的评分。现在需要给这些孩子发糖果，规则是如果一 个孩子的评分比自己身旁的一个孩子要高，那么这个孩子就必须得到比身旁孩子更多的糖果；所 有孩子至少要有一个糖果。求解最少需要多少个糖果。</p>
+<p>题解：设学生A和学生B左右相邻，A在B左边；</p>
+<ul>
+<li>左规则： 当 ratings_B &gt; ratings_A时，B的糖比 A的糖数量多。</li>
+<li>右规则： 当 ratings_A &gt; ratings_B时，A的糖比 B的糖数量多。</li>
+</ul>
+<blockquote>
+<p>相邻的学生中，评分高的学生必须获得更多的糖果 等价于 所有学生满足左规则且满足右规则。</p>
+</blockquote>
+<p>我们只需要简单的两次遍历即可：把所有孩子的糖果数初始化为 1； 先从左往右遍历一遍，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的 糖果数加 1；再从右往左遍历一遍，如果左边孩子的评分比右边的高，<u>且左边孩子当前的糖果数不大于右边孩子的糖果数</u>，则左边孩子的糖果数更新为右边孩子的糖果数加 1。通过这两次遍历， 分配的糖果就可以满足题目要求了。这里的贪心策略即为，<strong>在每次遍历中，只考虑并更新相邻一侧的大小关系</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">candy</span><span class="params">(<span class="type">int</span>[] ratings)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> ratings.length;</span><br><span class="line">        <span class="comment">//维护一个数组表示每个孩子分配到的最少的糖果数</span></span><br><span class="line">        <span class="type">int</span>[] candyNum = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            candyNum[i] = <span class="number">1</span>; <span class="comment">//每个孩子至少分配到一个糖果</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//从左至右遍历，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的糖果数加 1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &gt; ratings[i - <span class="number">1</span>]) <span class="comment">//若右边的更大</span></span><br><span class="line">                candyNum[i] = candyNum[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//再从右往左遍历一遍，如果左边孩子的评分比右边的高，且左边孩子当前的糖果数</span></span><br><span class="line">        <span class="comment">//不大于右边孩子的糖果数，则左边孩子的糖果数更新为右边孩子的糖果数加 1。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ratings[i] &lt; ratings[i - <span class="number">1</span>]) <span class="comment">//若左边的更大</span></span><br><span class="line">                candyNum[i - <span class="number">1</span>] = Math.max(candyNum[i - <span class="number">1</span>], candyNum[i] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            num += candyNum[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="区间问题"><a href="#区间问题" class="headerlink" title="区间问题"></a>区间问题</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">435. 无重叠区间<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定多个区间，计算让这些区间互不重叠所需要移除区间的最少个数。起止相连不算重叠。</p>
+<p>题解：在选择要保留区间时，区间的结尾十分重要：<strong>选择的区间结尾越小，余留给其它区间的空间就越大，就越能保留更多的区间</strong>。区间结束早的先安排，因为这样后面才【有可能】安排到更多的区间。</p>
+<p>因此，我们采取的贪心策略为，<strong>优先保留结尾小且不相交的区 间</strong>。 具体实现方法为，<u>先把区间按照结尾的大小进行增序排序，每次选择结尾最小且和前一个选择的区间不重叠的区间</u>。我们这里使用 Java的 Comparator，结合 Array.sort() 函数进行自定义排 序。</p>
+<p>注意：需要根据实际情况判断按<strong>区间开头</strong>排序还是按<strong>区间结尾</strong>排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">eraseOverlapIntervals</span><span class="params">(<span class="type">int</span>[][] intervals)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//按照右端数值(endi)进行升序排序</span></span><br><span class="line">        Arrays.sort(intervals, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;() &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span>[] interval1, <span class="type">int</span>[] interval2)</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> interval1[<span class="number">1</span>] - interval2[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> intervals.length;</span><br><span class="line">        <span class="comment">//维护right指向右端点</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> intervals[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="comment">//如果li &gt;= right 说明不重合 ans++ 并将right更新为ri</span></span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &gt;= right) &#123;</span><br><span class="line">                ++ans;</span><br><span class="line">                right = intervals[i][<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n - ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Exercise</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/can-place-flowers/">605. 种花问题<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">121. 买卖股票的最佳时机<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">452. 用最少数量的箭引爆气球<i class="fas fa-external-link-alt"></i></a> (与435. 无重叠区间类似)</p>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多 个数组的多个指针。 若两个指针指向同一数组，遍历方向相同且不会相交，则也称为滑动窗口（两个指针包围的 区域即为当前的窗口），经常用于区间搜索。</p>
+<p>Java 指针：</p>
+<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">167. 两数之和 II - 输入有序数组<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：在一个增序的整数数组里找到两个数，使它们的和为给定值。已知有且只有一对解。</p>
+<p>题解：因为<strong>数组已经排好序</strong>（重要前提），我们可以采用方向相反的双指针来寻找这两个数字，一个初始指向最 小的元素，即数组最左边，向右遍历；一个初始指向最大的元素，即数组最右边，向左遍历。</p>
+<p>如果两个指针指向元素的和等于给定值，那么它们就是我们要的结果。如果两个指针指向元素的和小于给定值，我们把左边的指针右移一位，使得当前的和增加一点。如果两个指针指向元 素的和大于给定值，我们把右边的指针左移一位，使得当前的和减少一点。 可以证明，对于<strong>排好序且有解的数组</strong>，双指针一定能遍历到最优解。</p>
+<p>证明方法如下：假设最优解的两个数的位置分别是 l 和 r。我们假设在左指针在 l 左边的时候，右指针已经移动到了 r； 此时两个指针指向值的和小于给定值，因此左指针会一直右移直到到达 l。同理，如果我们假设 在右指针在 r 右边的时候，左指针已经移动到了 l；此时两个指针指向值的和大于给定值，因此 右指针会一直左移直到到达 r。所以双指针在任何时候都不可能处于 (l,r) 之间，又因为不满足条 件时指针必须移动一个，所以最终一定会收敛在 l 和 r。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> nums[i] + nums[j];</span><br><span class="line">            <span class="keyword">if</span> (s &lt; target) i++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s &gt; target) j--;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nums[i], nums[j]&#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并两个有序数组"><a href="#归并两个有序数组" class="headerlink" title="归并两个有序数组"></a>归并两个有序数组</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-sorted-array/">88. 合并两个有序数组<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] nums1, <span class="type">int</span> m, <span class="type">int</span>[] nums2, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">//双指针</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="number">0</span>, p2 = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span>[] sorted = <span class="keyword">new</span> <span class="title class_">int</span>[m + n];</span><br><span class="line">        <span class="type">int</span> cur;</span><br><span class="line">        <span class="keyword">while</span> (p1 &lt; m || p2 &lt; n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p1 == m) &#123;</span><br><span class="line">                cur = nums2[p2++];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p2 == n) &#123;</span><br><span class="line">                cur = nums1[p1++];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[p1] &lt; nums2[p2]) &#123;</span><br><span class="line">                cur = nums1[p1++];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cur = nums2[p2++];</span><br><span class="line">            &#125;</span><br><span class="line">            sorted[p1 + p2 - <span class="number">1</span>] = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//合并后数组不应由函数返回，而是存储在数组 nums1 中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m + n; ++i) &#123;</span><br><span class="line">            nums1[i] = sorted[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定一个链表，如果有环路，找出环路的开始点</p>
+<p>题解：</p>
+<p><strong>1.哈希表法：</strong></p>
+<p>我们遍历链表中的每个节点，并将它记录下来；一旦遇到了此前遍历过的节点，就可以判定链表中存在环。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">detectCycle</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">p</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;ListNode, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//遍历链表 记录在map中</span></span><br><span class="line">        <span class="keyword">while</span>(p!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//出现之前遍历过的节点 说明有环</span></span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(p)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//否则 记录到map中</span></span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                map.put(p, index++);</span><br><span class="line">                p = p.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//跳出循环 要么是p指向空（无环） 要么是p指向环开始的节点</span></span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>空间复杂度为O(n)。</p>
+<p><strong>2.快慢指针</strong></p>
+<p>对于链表找环路的问题，有一个通用的解法——<strong>快慢指针（Floyd 判圈法）</strong>。给定两个指针， 分别命名为 slow 和 fast，起始位置在链表的开头。每次 fast 前进两步，slow 前进一步。如果 fast 可以走到尽头，那么说明没有环路；如果 fast 可以无限走下去，那么说明一定有环路，且<strong>一定存在一个时刻 slow 和 fast 相遇</strong>。当 slow 和 fast 第一次相遇时，我们将 fast 重新移动到链表开头，并 让 slow 和 fast 每次都前进一步。当 slow 和 fast 第二次相遇时，相遇的节点即为环路的开始点。</p>
+<ol>
+<li>f&#x3D;2s （快指针每次2步，路程刚好2倍）</li>
+<li>f &#x3D; s + nb (相遇时，刚好多走了n圈，b指的是环的长度）</li>
+</ol>
+<p>推出：s &#x3D; nb。从head结点走到入环点需要走 ： a + nb， 而slow已经走了nb，那么slow再走a步就是入环点了。</p>
+<p>如何知道slow刚好走了a步？ 从head开始，和slow指针一起走，相遇时刚好就是a步。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">detectCycle</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">fast</span> <span class="operator">=</span> head, slow = head;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast == <span class="literal">null</span> || fast.next == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            <span class="comment">//fast每次走2步，slow每次走1步，若有环必相遇</span></span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            <span class="comment">//fast &amp; slow第一次相遇 slow = nb</span></span><br><span class="line">            <span class="keyword">if</span> (fast == slow) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    	<span class="comment">//再让fast从head开始走，slow继续向后走，每次走1步 与slow再次相遇即到达入环点</span></span><br><span class="line">        fast = head;</span><br><span class="line">        <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>优点是空间复杂度为常数。</p>
+<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-window-substring/">76. 最小覆盖子串<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定两个字符串 S 和 T，求 S 中包含 T 所有字符的最短连续子字符串的长度，同时要求时间复杂度不得超过 O(n)。</p>
+<p>题解：本题使用滑动窗口求解，即两个指针 l 和 r 都是<strong>从最左端向最右端移动</strong>，且 l 的位置一定在 r 的左边或重合。如何判断当前的窗口包含所有T所需的字符呢？我们可以用一个哈希表表示T中所有的字符以及它们的个数，用一个哈希表动态维护窗口中所有的字符以及它们的个数，如果这个动态表中包含T的哈希表中的所有字符，并且对应的个数都不小于T的哈希表中各个字符的个数，那么当前的窗口是「可行」的。</p>
+<h3 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">524. 通过删除字母匹配到字典里最长单词<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/one-away-lcci/">面试题 01.05. 一次编辑<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>以下是一些最基本的排序算法。虽然在 Java里可以通过Array.sort()快速排序，而且刷题时很少需要自己手写排序算法，但是熟习各种排序算法可以加深自己对算法的基本理解，以及解出由这些排序算法引申出来的题目。</p>
+<h3 id="常用的排序算法"><a href="#常用的排序算法" class="headerlink" title="常用的排序算法"></a>常用的排序算法</h3><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123; <span class="comment">// 递归终止条件</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">pivotpos</span> <span class="operator">=</span> partition(nums, l, r);</span><br><span class="line">            <span class="comment">//递归</span></span><br><span class="line">            quickSort(nums, l, pivotpos - <span class="number">1</span>);</span><br><span class="line">            quickSort(nums, pivotpos + <span class="number">1</span>, r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//依据pivot划分数组，并返回pivot所在的位置的下标</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">        <span class="comment">//选取第一个元素为pivot</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">pivot</span> <span class="operator">=</span> nums[l];</span><br><span class="line">        <span class="comment">//用l, r搜索pivot的最终位置</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[r] &gt;= pivot) r--;</span><br><span class="line">            nums[l] = nums[r];</span><br><span class="line">            <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[l] &lt;= pivot) l++;</span><br><span class="line">            nums[r] = nums[l];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//pivot放到最终位置</span></span><br><span class="line">        nums[l] = pivot;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MergeSort</span> &#123;</span><br><span class="line">    <span class="comment">//手撕归排</span></span><br><span class="line">    <span class="type">int</span>[] tmp;<span class="comment">//需要辅助数组O(n)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortArray(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        tmp = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        <span class="comment">//递归调用入口</span></span><br><span class="line">        mergeSort(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对nums中[l, r]区间内的数进行排序</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">        <span class="comment">//递归终止条件Base case:只有一个数字，它是sorted的。</span></span><br><span class="line">        <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//递归调用函数使两个子序列有序</span></span><br><span class="line">        mergeSort(nums, l, mid);</span><br><span class="line">        mergeSort(nums, mid + <span class="number">1</span>, r);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//线性合并两个子序列，双指针i,j  O(n)</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> l, j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">            <span class="comment">//按照大小顺序放入辅助数组tmp中</span></span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt;= nums[j]) &#123;</span><br><span class="line">                tmp[cnt++] = nums[i++];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                tmp[cnt++] = nums[j++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//若还有数组没放完</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid) &#123;</span><br><span class="line">            tmp[cnt++] = nums[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= r) &#123;</span><br><span class="line">            tmp[cnt++] = nums[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最后，将tmp的值复制到nums相应的位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; r - l + <span class="number">1</span>; k++) &#123;</span><br><span class="line">            nums[k + l] = tmp[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//插入排序</span><br><span class="line">    int[] insertionSort(int[] nums)&#123;</span><br><span class="line">        int i, j, temp;</span><br><span class="line">        //双重循环</span><br><span class="line">        for (i = 1; i &lt; nums.length; ++i) &#123;</span><br><span class="line">            if(nums[i] &lt; nums[i-1]) &#123; //当前元素小于前驱</span><br><span class="line">                temp = nums[i]; //temp暂存nums[i]</span><br><span class="line">                //遍历前面已排序的数组</span><br><span class="line">                for (j = i-1; j &gt; 0 &amp;&amp; nums[j] &gt; temp; j--) &#123;</span><br><span class="line">                    nums[j+1] = nums[j]; //所有比temp大的元素都后移</span><br><span class="line">                &#125;</span><br><span class="line">                nums[j+1] = temp; //复制到应插入的位置</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return nums;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="快速选择"><a href="#快速选择" class="headerlink" title="快速选择"></a>快速选择</h3><p>快速选择一般用于求解 k-th Element 问题，可以在 O(n) 时间复杂度，O(1) 空间复杂度完成求解工作。快速选择的实现和快速排序相似，不过只需要找到<strong>第 k 大的枢（pivot）</strong>即可，不需要对其左右再进行排序。与快速排序一样，快速选择一般需要先打乱数组&#x2F;随机选择pivot，否则最坏情况下时间复杂 度为 O(n^2 )，我们这里为了方便省略掉了打乱的步骤，选择每个子数组的第一位数为pivot。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//主函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findKthLargest</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="comment">//改进的快排</span></span><br><span class="line">        <span class="comment">//所以只要某次划分的pivot的位置为倒数第k个下标的时候，就是第k大的元素</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> nums.length - k; <span class="comment">//倒数第k个下标</span></span><br><span class="line">        quickSelect(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>, target);</span><br><span class="line">        <span class="keyword">return</span> nums[nums.length - k];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//改进的快速排序（辅函数）</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">quickSelect</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> index)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(l &lt; r) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">pivotpos</span> <span class="operator">=</span> partition(nums, l, r);</span><br><span class="line">            <span class="keyword">if</span>(index == pivotpos) <span class="keyword">return</span>; <span class="comment">//此时已找到倒数第k个数 退出递归</span></span><br><span class="line">            quickSelect(nums, l, pivotpos-<span class="number">1</span>, index);</span><br><span class="line">            quickSelect(nums, pivotpos+<span class="number">1</span>, r, index);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pivot</span> <span class="operator">=</span> nums[l];</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r  &amp;&amp; nums[r] &gt;= pivot) r--;</span><br><span class="line">            <span class="comment">//遇到小于pivot</span></span><br><span class="line">            nums[l] = nums[r];</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r &amp;&amp; nums[l] &lt;= pivot) l++;</span><br><span class="line">            <span class="comment">//遇到大于pivot的</span></span><br><span class="line">            nums[r] = nums[l];</span><br><span class="line">        &#125;</span><br><span class="line">        nums[l] = pivot;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-elements/">347. 前 K 个高频元素<i class="fas fa-external-link-alt"></i></a></p>
+<p>顾名思义，桶排序的意思是为每个值设立一个桶，桶内记录这个值出现的次数（或其它属性），然后对桶进行排序。</p>
+<p>这里可以用<strong>hashmap</strong>存储数字及出现频率的映射关系。</p>
+<blockquote>
+<p>getOrDefault() 方法获取指定 key 对应对 value，如果找不到 key ，则返回设置的默认值。getOrDefault() 方法的语法为：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashmap.getOrDefault(Object key, V defaultValue)</span><br></pre></td></tr></table></figure>
+
+<p>接着我们对<strong>桶的频次进行排序</strong>，前 k 大个桶即是前 k 个频繁的数。</p>
+<p>这里借助到<strong>Java PriorityQueue</strong>的特性。与普通队列不同，优先队列元素是<strong>按排序顺序</strong>检索的。假设我们想以升序检索元素。在这种情况下，优先队列的头是最小的元素。检索到该元素后，下一个最小的元素将成为队列的头。</p>
+<p>需要注意的是，优先队列的元素可能没有排序。但是，元素总是按排序顺序检索的。</p>
+<p>创建PriorityQueue:</p>
+<p>为了创建优先级队列，我们必须导入java.util.PriorityQueue包。导入程序包后，可以使用以下方法在Java中创建优先级队列。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue&lt;Integer&gt; numbers = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>这里，我们创建了一个没有任何参数（默认升序）的优先级队列。在这种情况下，优先级队列的头是队列中最小的元素。元素将按<strong>升序</strong>从队列中移除。</p>
+<p>但是，我们可以<strong>借助 Comparator 接口自定义元素的顺序</strong>。</p>
+<p>PriorityQueue 比较器(comparator)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span>[] topKFrequent(<span class="type">int</span>[] nums, <span class="type">int</span> k) &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> n : nums)&#123;</span><br><span class="line">            map.put(n, map.getOrDefault(n, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优先级队列 按value降序排序 从大到小 然后取出前k个</span></span><br><span class="line">        PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; queue = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;((e1, e2) -&gt; e2.getValue() - e1.getValue());</span><br><span class="line">        queue.addAll(map.entrySet());</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; k &amp;&amp; !queue.isEmpty(); ++i)&#123;</span><br><span class="line">            ans[i] = queue.poll().getKey();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Exercise-1"><a href="#Exercise-1" class="headerlink" title="Exercise"></a>Exercise</h3><p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-characters-by-frequency/">451. 根据字符出现频率排序<i class="fas fa-external-link-alt"></i></a></p>
+<p>和347类似。</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-colors/">75. 颜色分类<i class="fas fa-external-link-alt"></i></a></p>
+<p>荷兰国旗问题。</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p><strong>深度优先搜索</strong>和<strong>广度优先搜索</strong>是两种最常见的优先搜索方法，它们被广泛地运用在图和树等结构中进行搜索。</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">94. 二叉树的中序遍历<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定一个二叉树的根节点 <code>root</code> ，返回 <em>它的 <strong>中序</strong> 遍历</em> 。</p>
+<p>题解：中序遍历顺序为：左边节点-中间节点-右边节点。在夫函数inorder里面进行递归调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">inorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">//传值or传引用?</span></span><br><span class="line">        inorder(res, root);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//dfs 递归 &amp; 回溯</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">inorder</span><span class="params">(List&lt;Integer&gt; res, TreeNode root)</span>&#123;</span><br><span class="line">        <span class="comment">//递归终止条件</span></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//左子树递归</span></span><br><span class="line">        inorder(res, root.left);</span><br><span class="line">        <span class="comment">//根节点的值加入res中</span></span><br><span class="line">        res.add(root.val);</span><br><span class="line">        <span class="comment">//右子树递归</span></span><br><span class="line">        inorder(res, root.right);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/max-area-of-island/">695. 岛屿的最大面积<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定一个二维的 0-1 矩阵，其中 0 表示海洋，1 表示陆地。单独的或相邻的陆地可以形成岛 屿，每个格子只与其<em>上下左右</em>四个格子相邻。求最大的岛屿面积。</p>
+<p>题解：此题是十分标准的搜索题，我们可以拿来练手<strong>深度优先搜索dfs</strong>。一般来说，深度优先搜索类型的题可以分为<strong>主函数</strong>和<strong>辅函数</strong>，<u>主函数用于遍历所有的搜索位置</u>，判断是否可以开始搜索，如果可以即在辅函数进行搜索。<u>辅函数则负责深度优先搜索的<strong>递归调用</strong></u>。在辅函数里，一定要注意的是辅函数内<strong>递归搜索</strong>时，<strong>边界条件的判定</strong>。</p>
+<ul>
+<li>找出所有岛屿的面积，取出最大值</li>
+<li>找出某一岛屿面积的思路：<ol>
+<li>从某位置出发，向四个方向探寻相连的岛屿</li>
+<li>每探寻到一块土地，面积+1</li>
+<li>确保每块土地只会被探寻一次</li>
+</ol>
+</li>
+</ul>
+<p>经典图的遍历算法：DFS &amp; BFS</p>
+<ul>
+<li>DFS：每次沿路径到不能再前进时才退回到最近的岔路口。</li>
+<li>BFS：每次以“扩散”的方式向外访问节点</li>
+</ul>
+<p>最终思路：利用<strong>深搜</strong>对每个岛屿进行遍历，找出最大值。</p>
+<ul>
+<li>从每一块陆地出发，遍历该陆地所在的岛屿</li>
+<li>在遍历某一岛屿时：<ol>
+<li>从隶属于该岛屿的某一块陆地出发，向四个方向进行<strong>递归地DFS</strong></li>
+<li>每次递归对下标进行判断，以<strong>区域的边界作为递归的边界</strong></li>
+<li>为保证每块陆地只访问一次，将<strong>已访问过的陆地置为0</strong></li>
+<li>递归地返回整块岛屿的面积</li>
+</ol>
+</li>
+<li>找出所有岛屿面积的最大值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxAreaOfIsland</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    	<span class="comment">//遍历整个区域</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; grid.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; grid[i].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">1</span>) &#123; <span class="comment">//如果找到岛屿 进入dfs</span></span><br><span class="line">                    res = Math.max(res, dfs(i, j, grid));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 每次找到岛屿，则直接把找到的岛屿改成0，保证每块只被访问一次</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="comment">//终止条件:越界或不是岛屿 i&lt;0 || j&lt;0 || i &gt;= len || j &gt;=len || grid[i][j] == 0</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt;= grid.length || j &gt;= grid[i].length || grid[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        grid[i][j] = <span class="number">0</span>; <span class="comment">//沉岛思想，即把岛屿标为visited</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//递归的思想，分别看它的上下左右是否是岛屿</span></span><br><span class="line">        num += dfs(i + <span class="number">1</span>, j, grid);</span><br><span class="line">        num += dfs(i - <span class="number">1</span>, j, grid);</span><br><span class="line">        num += dfs(i, j + <span class="number">1</span>, grid);</span><br><span class="line">        num += dfs(i, j - <span class="number">1</span>, grid);</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，我们也可以使用栈 （stack）实现深度优先搜索，但因为栈与递归的调用原理相同，而递归相对便于实现，因此刷题时 笔者推荐使用递归式写法，同时也方便进行回溯。不过在实际工程上，直接使用栈可 能才是最好的选择，一是因为便于理解，二是更不易出现递归栈满的情况。我们先展示使用栈的写法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxAreaOfIsland</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    	<span class="comment">//遍历所有情况</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i != grid.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j != grid[<span class="number">0</span>].length; ++j) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">                <span class="comment">//维护2个队列 分别代表区域的两个下标</span></span><br><span class="line">                Queue&lt;Integer&gt; queuei = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">                Queue&lt;Integer&gt; queuej = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">                <span class="comment">//将位置的(x,y)坐标push进队列</span></span><br><span class="line">                queuei.offer(i);</span><br><span class="line">                queuej.offer(j);</span><br><span class="line">                <span class="keyword">while</span> (!queuei.isEmpty()) &#123;</span><br><span class="line">                    <span class="comment">//出队</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">cur_i</span> <span class="operator">=</span> queuei.poll(), cur_j = queuej.poll();</span><br><span class="line">                    <span class="comment">//越界 或 不是陆地</span></span><br><span class="line">                    <span class="keyword">if</span> (cur_i &lt; <span class="number">0</span> || cur_j &lt; <span class="number">0</span> || cur_i == grid.length || cur_j == grid[<span class="number">0</span>].length || grid[cur_i][cur_j] != <span class="number">1</span>) &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//面积++</span></span><br><span class="line">                    ++cur;</span><br><span class="line">                    <span class="comment">//将已访问的陆地标记为0 防止重复访问</span></span><br><span class="line">                    grid[cur_i][cur_j] = <span class="number">0</span>;</span><br><span class="line">                    <span class="type">int</span>[] di = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">                    <span class="type">int</span>[] dj = &#123;<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>; index &lt; <span class="number">4</span>; ++index) &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">next_i</span> <span class="operator">=</span> cur_i + di[index], next_j = cur_j + dj[index];</span><br><span class="line">                        <span class="comment">//将附近（上下左右）的区域坐标push进去</span></span><br><span class="line">                        queuei.offer(next_i);</span><br><span class="line">                        queuej.offer(next_j);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                ans = Math.max(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-provinces/">547. 省份数量<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目描述：给定一个二维的 0-1 矩阵，如果第 (i, j) 位置是 1，则表示第 i 个人和第 j 个人是朋友。已知 朋友关系是可以传递的，即如果 a 是 b 的朋友，b 是 c 的朋友，那么 a 和 c 也是朋友，换言之这 三个人处于同一个朋友圈之内。求一共有多少个朋友圈。</p>
+<p>题解：对于题目 695，图的表示方法是，每个位置代表一个节点，每个节点与上下左右四个节点相 邻。而在这一道题里面，每一行（列）表示一个节点，它的每列（行）表示是否存在一个相邻节 点。因此题目 695 拥有 m × n 个节点，每个节点有 4 条边；而本题拥有 n 个节点，每个节点最多 有 n 条边，表示和所有人都是朋友，最少可以有 1 条边，表示自己与自己相连。</p>
+<p><strong>深度优先</strong>的解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//深度优先 DFS</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findCircleNum_dfs</span><span class="params">(<span class="type">int</span>[][] isConnected)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cities</span> <span class="operator">=</span> isConnected.length; <span class="comment">//一共n个城市 n*n矩阵</span></span><br><span class="line">        <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[cities];</span><br><span class="line">        <span class="type">int</span> <span class="variable">provinces</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//遍历所有的城市，对每个城市，若该城市尚未被访问过，那么从该城市开始深度优先搜索</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; cities; i++) &#123;</span><br><span class="line">            <span class="comment">//若城市i未被访问过</span></span><br><span class="line">            <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">                dfs1(isConnected, visited, cities, i);</span><br><span class="line">                provinces++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> provinces;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs1</span><span class="params">(<span class="type">int</span>[][] isConnected, <span class="type">boolean</span>[] visited, <span class="type">int</span> cities, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">        <span class="comment">//对于城市i，遍历其他城市</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; cities; j++) &#123;</span><br><span class="line">            <span class="comment">//若i,j连通，且j未被访问过</span></span><br><span class="line">            <span class="keyword">if</span>(isConnected[i][j] == <span class="number">1</span> &amp;&amp; !visited[j]) &#123;</span><br><span class="line">                <span class="comment">//将j标记为访问过</span></span><br><span class="line">                visited[j] = <span class="literal">true</span>;</span><br><span class="line">                <span class="comment">//继续深搜城市j</span></span><br><span class="line">                dfs1(isConnected, visited, cities, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>广度优先</strong>的解法：对于每个城市，如果该城市尚未被访问过，则从该城市开始广度优先搜索，直到同一个连通分量中的所有城市都被访问到，即可得到一个省份。</p>
+<p>&#x2F;&#x2F;这代码还是看不太懂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findCircleNum</span><span class="params">(<span class="type">int</span>[][] isConnected)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cities</span> <span class="operator">=</span> isConnected.length;</span><br><span class="line">        <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[cities];</span><br><span class="line">        <span class="type">int</span> <span class="variable">provinces</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        Queue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; cities; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">                queue.offer(i);</span><br><span class="line">                <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                    visited[j] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; cities; k++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (isConnected[j][k] == <span class="number">1</span> &amp;&amp; !visited[k]) &#123;</span><br><span class="line">                            queue.offer(k);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                provinces++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> provinces;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>并查集：是一种数据结构。</p>
+<ul>
+<li>并（Union），代表合并</li>
+<li>查（Find），代表查找</li>
+<li>集（Set），代表这是一个以字典为基础的数据结构，它的基本功能是合并集合中的元素，查找集合中的元素</li>
+<li>并查集的典型应用是有关连通分量的问题</li>
+</ul>
+<p>并查集解决单个问题（添加，合并，查找）的时间复杂度都是O(1)。</p>
+<p>并查集跟树有些类似，只不过她跟树是相反的。在树这个数据结构里面，每个节点会记录它的子节点。在并查集里，每个节点会记录它的<strong>父节点</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UnionFind</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;Integer,Integer&gt; father;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/02/Leetcode/1609980000-ofFjdW-%E5%B9%BB%E7%81%AF%E7%89%871.JPG" class title="幻灯片1.JPG">
+
+<p>可以看到，如果节点是相互连通的（从一个节点可以到达另一个节点），那么他们在同一棵树里，或者说在同一个集合里，或者说他们的<strong>祖先是相同的</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UnionFind</span> &#123;</span><br><span class="line">    <span class="comment">// 记录父节点</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;Integer,Integer&gt; father;</span><br><span class="line">    <span class="comment">// 记录集合的数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">numOfSets</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//用Hashmap实现并查集</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UnionFind</span><span class="params">()</span> &#123;</span><br><span class="line">        father = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer,Integer&gt;();</span><br><span class="line">        numOfSets = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//**初始化**：当把一个新节点添加到并查集中，它的父节点应该为空</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!father.containsKey(x)) &#123;</span><br><span class="line">            father.put(x, <span class="literal">null</span>);</span><br><span class="line">            <span class="comment">//新增 集合数++</span></span><br><span class="line">            numOfSets++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//**合并两个节点：**如果发现两个节点是连通的（怎么知道是连通的？），那么就要把他们合并，也就是他们的祖先是相同的。这里究竟把谁当做父节点一般是没有区别的。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">rootX</span> <span class="operator">=</span> find(x);</span><br><span class="line">        <span class="type">int</span> <span class="variable">rootY</span> <span class="operator">=</span> find(y);</span><br><span class="line">        <span class="comment">//若不是同一个祖先，则要将他们祖先合并,从而使得x与y连通</span></span><br><span class="line">        <span class="keyword">if</span> (rootX != rootY)&#123;</span><br><span class="line">            father.put(rootX,rootY);</span><br><span class="line">            <span class="comment">//合并 集合数--</span></span><br><span class="line">            numOfSets--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//**查找祖先：**如果节点的父节点不为空，那就不断迭代。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">find</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">root</span> <span class="operator">=</span> x;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(father.get(root) != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//root向上移动 直至root的父节点为null</span></span><br><span class="line">            root = father.get(root);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//若x不是祖先节点 继续迭代直至x=root</span></span><br><span class="line">        <span class="keyword">while</span>(x != root)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">original_father</span> <span class="operator">=</span> father.get(x);</span><br><span class="line">            father.put(x,root);</span><br><span class="line">            x = original_father;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//**两节点是否连通：**我们判断两个节点是否处于同一个连通分量的时候，就需要判断它们的祖先是否相同</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isConnected</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> find(x) == find(y);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//获取集合的数量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getNumOfSets</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> numOfSets;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findCircleNum</span><span class="params">(<span class="type">int</span>[][] isConnected)</span> &#123;</span><br><span class="line">        <span class="type">UnionFind</span> <span class="variable">uf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UnionFind</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; isConnected.length;i++)&#123;</span><br><span class="line">            <span class="comment">//初始化 每个节点加入并查集</span></span><br><span class="line">            uf.add(i);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; i;j++)&#123;</span><br><span class="line">                <span class="comment">//再看其他节点是否与i连通 若连通则要将他们合并</span></span><br><span class="line">                <span class="keyword">if</span>(isConnected[i][j] == <span class="number">1</span>)&#123;</span><br><span class="line">                    uf.merge(i,j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> uf.getNumOfSets();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a class="link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/pacific-atlantic-water-flow/">417. 太平洋大西洋水流问题<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h2><h1 id="数学篇"><a href="#数学篇" class="headerlink" title="数学篇"></a>数学篇</h1><h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h1 id="数据结构篇"><a href="#数据结构篇" class="headerlink" title="数据结构篇"></a>数据结构篇</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>Dijkstra 单源最短路径</p>
+<p>优化：优先级队列，不用遍历数组Unvisited.</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Leetcode/">#Leetcode</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/06/12/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">软件需求</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/17/Compiler/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%AF%87"><span class="nav-text">算法篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-text">贪心算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98"><span class="nav-text">分配问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98"><span class="nav-text">区间问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-text">双指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text">两数之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="nav-text">归并两个有序数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="nav-text">快慢指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-text">滑动窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise"><span class="nav-text">Exercise</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-text">排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-text">常用的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-text">选择排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9"><span class="nav-text">快速选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F"><span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise-1"><span class="nav-text">Exercise</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95"><span class="nav-text">分治法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E7%AF%87"><span class="nav-text">数学篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-text">位运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AF%87"><span class="nav-text">数据结构篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-text">链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91"><span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-text">图</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
