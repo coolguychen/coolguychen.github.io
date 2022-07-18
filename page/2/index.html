@@ -154,6 +154,68 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        GFS Reading Notes
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        <h1 id="针对Google应用的问题与需求设计"><a href="#针对Google应用的问题与需求设计" class="headerlink" title="针对Google应用的问题与需求设计"></a>针对Google应用的问题与需求设计</h1><p>1、在廉价、不可靠计算机上存储大量的数据，这使得节点失效是常态而不是异常。GFS 必须能够较高容错、持续监控自身的状态，同时还要能从节点失效中快速恢复；</p>
+<p>2、纵观Google的内部应用，数据访问有以下特点：</p>
+<ol>
+<li><strong>存储内容以大文件为主</strong>。系统需要存储的内容在通常情况下由数量不多的大文件构成，每个文件通常有几百 MB 甚至是几 GB 的大小；</li>
+<li>数据访问特点多为顺序访问，比较常见的场景是数据分析，应用程序会顺序遍历数据文件，产生<strong>顺序读</strong>行为；</li>
+<li>多客户端<strong>并发追加</strong>场景很常见，极少有随机写行为；</li>
+<li><strong>一次写入，多次读取</strong>，例如互联网上的网页存储。</li>
+</ol>
+<p>需要对存储的文件类型和访问模式进行优化</p>
+<p>3、持久的高吞吐量、低延迟</p>
+<p>……</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Nov 25 2021 19:05:18 GMT+0800">2021-11-25</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Study/">Study</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                         RocksDB Learning Notes
                     </a>
