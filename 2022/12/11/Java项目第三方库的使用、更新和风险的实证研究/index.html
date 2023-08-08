@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            Java项目第三方库的使用、更新和风险的实证研究 |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Java项目第三方库的使用、更新和风险的实证研究</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-12-11 22:32:57</span>
+        <span class="mobile">2022-12-11 22:32</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Study/Research/">Research</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Dependency/">Dependency</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%AE%BA%E6%96%87%E6%B1%87%E6%8A%A5/">论文汇报</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>18 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>💡  论文内容讲解顺序</p>
+<ol>
+<li>论文解决什么问题（研究背景及意义）</li>
+<li>问题分析，和以前的方法相比多考虑什么因素，或者多了什么输入？（现有研究 创新点）</li>
+<li>方法路线</li>
+<li>实验数据</li>
+<li>从那几个方面进行实验对比，用了那几个指标，有哪些新颖的图</li>
+<li>论文的有效性威胁</li>
+<li>论文结论和进一步工作</li>
+<li>相关工作的分类</li>
+<li>论文结构编排</li>
+</ol>
+<h1 id="研究背景及意义"><a href="#研究背景及意义" class="headerlink" title="研究背景及意义"></a>研究背景及意义</h1><p>第三方库是开发软件系统的核心构建块，给开发带来好处，提高生产力。但是，如果使用过时的第三方库，开发人员通常不太了解潜在的风险。<br><strong>从开发者的角度</strong>来看，开发人员缺乏有效的机制来意识到使用和更新第三方库时的潜在风险（比如说API不兼容）。<br><strong>从第三方库的角度</strong>来看，第三方库的开发者也缺乏有效的渠道来了解自己的第三方库在客户端项目中的使用和更新情况，此类信息无法反馈到库的开发周期以改进第三方库的设计。<br>因此，对第三方库的使用、更新和风险进行定量和整体研究可持续地改善生态系统。<br>那么为了可持续地改善这种情况，本文回答以下三个研究问题：第一，第三方库的使用强度和使用时效如何？第二，第三方库的更新强度和更新延迟如何？第三，使用和更新过时的第三方库有什么潜在风险？<br>通过以上三个问题的分析，本文定量和全面地描述 Java 生态系统中第三方库的使用、更新和风险，并为改善生态系统提供切实可行的见解。【提供了有关维护第三方库（例如，智能警报和自动更新过时库）的问题和潜在解决方案的实用见解。】</p>
+<blockquote>
+<p>由此，本文对806个维护良好的Java开源项目和13565个第三方库进行库使用分析和库更新分析，对806个项目和13565个第三方库中的544个安全漏洞进行库风险分析。 本研究中的数据爬取和分析在台式机上花费了大约四个月的时间。  （可借鉴，数据集大）<br>可行的见解是什么？——&gt;对于使用了有bug的库的项目，报告、建议了的更新库的版本</p>
+</blockquote>
+<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/image-20230119211143873.png" class title="image-20230119211143873">
+
+<h2 id="Usage-Analysis"><a href="#Usage-Analysis" class="headerlink" title="Usage Analysis"></a>Usage Analysis</h2><p>关于库的使用分析，现有研究包括：</p>
+<p>M和K对库版本的使用趋势和流行度进行了研究</p>
+<p>Z等人分析了项目中使用的库版本和类的数量。</p>
+<blockquote>
+<p>他们报告一个项目的库使用情况，但不报告整个项目的库使用情况。</p>
+</blockquote>
+<p>L等人仅针对一个特定的库或项目在方法级别进行库使用分析，但没有衡量一系列库和项目的汇总结果。<br>总之，现有的 Java 生态系统库使用分析都只提供了有关库使用的部分方面。而本文是第一个在细粒度级别上全面分析项目和第三方库库使用情况的研究。  </p>
+<h2 id="Update-Analysis"><a href="#Update-Analysis" class="headerlink" title="Update Analysis"></a>Update Analysis</h2><p>关于库的更新分析，现有研究包括：<br>Bavota等人分析了开发人员更新依赖项的时间和原因，他们发现大量错误修复是依赖项更新的主要原因。</p>
+<p>F等人探讨了库的发布周期与库版本更新之间的关系。</p>
+<p>K等人分析了第三方库更新的实践，发现开发者很少更新库。</p>
+<p>与这些研究不同的是，本文分别从项目和库的角度量化更新强度、更新延迟和更新风险。  </p>
+<h2 id="Risk-Analysis"><a href="#Risk-Analysis" class="headerlink" title="Risk Analysis"></a>Risk Analysis</h2><p>关于库的风险分析，现有研究包括：</p>
+<p>D等人分析了 Java 程序和依赖项的更新风险，发现 75% 的版本更新不兼容。</p>
+<p>C等人提出了一个警报系统来报告具有安全漏洞的 Java 库依赖项。</p>
+<p>而本文则是量化了这种不兼容性，通过调用图对库 API 的更改进行细粒度的分析。</p>
+<blockquote>
+<p>缺陷库api数量和调用次数</p>
+</blockquote>
+<h1 id="研究方法和路线"><a href="#研究方法和路线" class="headerlink" title="研究方法和路线"></a>研究方法和路线</h1><h2 id="研究设计"><a href="#研究设计" class="headerlink" title="研究设计"></a>研究设计</h2><p>对于三个研究问题，设计的方法路线如下。</p>
+<p>首先对于<strong>使用分析</strong>，分别从项目和库的角度分析对第三方库的依赖程度和使用时效，由此量化在项目开发中使用库的重要性以及不断发展的库的影响。</p>
+<p>其次是<strong>更新分析</strong>，分别从项目和库的角度分析对第三方库更新程度和更新延迟。</p>
+<p>最后是<strong>风险分析</strong>，对于项目，分析使用了多个有缺陷的库以及调用了有缺陷的库中的api数量；</p>
+<p>对于库，分析存在多少安全漏洞，以及多少api不同于安全的库版本。由此量化使用过时的库的安全风险和API不兼容的风险。</p>
+<p>然后就是对实验对象进行选取，也就是语料库选择。</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/image-20230119211235223.png" class title="image-20230119211235223">
+
+<h2 id="语料库选择"><a href="#语料库选择" class="headerlink" title="语料库选择"></a>语料库选择</h2><p>本文研究者对从 GitHub 中选择的 Java 开源项目语料库进行了这项研究。本文专注于 Java，因为它被广泛使用，因此研究的发现可能对更广泛的受众有益。</p>
+<p>具体来说，首先选择了github上 200 stars以上的 Java 项目，以确保项目质量，从而产生了最初的 2,216 个项目。<br>在这些项目中，我们筛选使用 Maven 或 Gradle 作为自动构建工具的项目，以便于提取项目中已声明的库依赖项，范围缩小到1,828 个项目中。</p>
+<p>再次选择了在过去三个月内提交的活跃且维护良好的项目，因为来自维护良好的项目的受众可能更具代表性。最后，得到 806 个项目作为数据集，用大写的 P 表示。</p>
+<h1 id="研究问题"><a href="#研究问题" class="headerlink" title="研究问题"></a>研究问题</h1><p>本文具体研究这三个问题。</p>
+<h2 id="RQ1-Library-Use-Analysis"><a href="#RQ1-Library-Use-Analysis" class="headerlink" title="RQ1 Library Use Analysis"></a>RQ1 Library Use Analysis</h2><p>第一个研究问题，研究第三方库的使用情况。<br>为了研究库的使用，本文开发了 library-extractor 以在一次提交中从每个项目的配置文件中提取库依赖项。<br>库依赖项 d 表示为 这个4 元组 &lt;p, f, com, v&gt;<br>运行lib-extracter:</p>
+<blockquote>
+<p>对 P 中每个项目的最新提交运行 lib-extractor，并获得 164,470 个库依赖项，表示为 Dus，24,205 个库版本，表示为 Vus &#x3D; {d.v | d ∈Dus}，以及 13,565 个库，表示为 Lus &#x3D; {v.l | v∈Vus}。  </p>
+</blockquote>
+<h3 id="Usage-Intensity"><a href="#Usage-Intensity" class="headerlink" title="Usage Intensity"></a>Usage Intensity</h3><p>首先是对第三方库使用强度的分析。</p>
+<p>从项目和库的角度分别定义第三方库使用强度：</p>
+<p>一是项目 p 的方法调用第三方库 API 的百分比，二是库 l 的 API 被其他项目调用的百分比。</p>
+<p>要计算这两个参数 usip 和 usil，我们需要提取第三方库的 API、项目中的方法和项目方法中对第三方库的 API 调用。这里借助了Soot和javaparser两个代码分析工具。  </p>
+<blockquote>
+<ol>
+<li>通过爬取jar包得到类文件</li>
+<li>使用Soot提取库中的API</li>
+</ol>
+<p>这里我们保守地将<strong>公共类中的公共方法和字段</strong>视为库 API。  </p>
+<ol start="3">
+<li>使用 JavaParser 解析项目使用了库中的哪些api，项目方法，表示为 M，以及项目方法中的 API 调用，  表示为C。</li>
+</ol>
+<p>m ∈ M &lt;p, method&gt; p表示项目，method表示项目中的方法；<br>c ∈ C &lt;a, m&gt; a表示库的api，m表示项目中调用a的方法</p>
+</blockquote>
+<blockquote>
+<p>通过上述几个参数（P Vus Lus A M C），可以计算usip &amp; usil</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670468909486-6cfe97b1-8de4-4521-bf5a-d1255213d2a4.png" class title="image.png">
+<p><strong>解释一下公式</strong>：如图所示，项目使用密集度可以<br>usip &#x3D; 调用第三方库的方法数目&#x2F;项目总的方法数目<br>我的理解是：对于同一第三方库的不同版本 usil &#x3D; 被调用的api数目&#x2F;该第三方库所有api数目 取最大值</p>
+</blockquote>
+<h4 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h4><p>最后得到统计计算结果，结果如下：</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670469105688-8677fa31-811c-409b-97c1-0c4fe94e3246.png" class title="image.png">
+
+<ul>
+<li>图1.a: 纵坐标表示项目数量，横坐标表示调用第三方库api的百分比。</li>
+<li>图1.b:横坐标表示库的数量，横坐标表示跨库调用的百分比。</li>
+</ul>
+<p>可以看到，从项目角度来看，小部分项目不调用库 API，大部分项目对库依赖性在10%~40%之间。<br>从第三方库的角度，60.0%的库最多只有 2% 的 API 被其他项目调用；只有3.9%个库有超过 40% 的 API 被其他项目调用。</p>
+<p>可以看出：<strong>项目通常对库 API 具有适度的依赖性。这种具体的使用依赖性也反映了库的维护所需的努力。 第二是 大多数库中只有非常小的一部分库API被使用。说明库的开发人员可以去除一些未使用的库功能。</strong></p>
+<h3 id="Usage-Outdateness"><a href="#Usage-Outdateness" class="headerlink" title="Usage Outdateness"></a>Usage Outdateness</h3><p>第二点就是关于库使用是否过时的评估。</p>
+<p>本文定义一个库依赖 d 的使用过时度，表示为 use-outdate，作为在库爬取时具有更高版本号的库发布的数量。</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670469720193-24ffb52d-8b09-4c57-affa-10529afb35fe.png" class title="image.png">
+
+<p>并从项目和库的角度分别定义第三方库使用过时度：一是项目 p 库依赖项的<strong>平均使用过时度</strong>uso_l–库 l 的库依赖项的<strong>平均使用过时度</strong>。</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670599907528-cd837e8b-ab7e-4f19-9eb0-bcd8074260d3.png" class title="image.png">
+
+<h4 id="Findings-1"><a href="#Findings-1" class="headerlink" title="Findings"></a>Findings</h4><p>得到统计结果如图所示：</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670471257614-8ff6c220-d794-4536-9d0d-7d6be3f31ec5.png" class title="image.png">
+<p>研究结果发现只有 3.5%项目使用最新的库版本。10.3%项目使用的库平均最多与最新版本相差两个版本。 剩下大部分项目采用的库与最新版本相差较大。</p>
+<p>对于第三方库， <strong>在所有使用它们的项目中</strong>，45.2%个调用的库已经是最新的，1,419 (19.6%) 个调用的库平均最多与最新版本相差两个版本，14.2% 库是最新的调用的平均分别与最新版本相差超过 10个版本。<br>可以得到：</p>
+<p><strong>几乎每个项目都会采用过时的库。</strong>项目所使用的第三方库版本通常与最新版本的距离很大。<strong>因此，需要有机制让项目开发人员意识到过时库的风险</strong>（例如，安全漏洞）或新版本的好处（例如，新功能)。</p>
+<p>于是就有了之后两个研究。</p>
+<h2 id="RQ2-Library-Update-Analysis"><a href="#RQ2-Library-Update-Analysis" class="headerlink" title="RQ2 Library Update Analysis"></a>RQ2 Library Update Analysis</h2><p>关于研究问题2，为了研究库的升级，本文开发了 update-extractor 来从项目的提交历史中提取库版本更新。  </p>
+<blockquote>
+<p>它扫描项目 p 的提交以识别每个更改 p 的配置文件的提交 com。然后在 com 和 com 之前的提交上使用 lib-extractor（见 Sec.IV），分别提取 com 之前和之后的库依赖。最后，利用这两组库依赖，通过搜索版本号发生变化的库依赖来识别库版本更新。</p>
+</blockquote>
+<blockquote>
+<p>每个库版本更新 u 表示为一个 6 元组 &lt;p, f, com, l, ver1,ver2&gt;，其中 p, f, com 和 l 分别表示 u 所在的项目、配置文件、提交和库，以及ver1和ver2分别表示更新前后的版本号。  </p>
+</blockquote>
+<h3 id="Update-Intensity"><a href="#Update-Intensity" class="headerlink" title="Update Intensity"></a>Update Intensity</h3><p>从项目和库的角度分别定义第三方库更新强度：upip:  项目 p 当前声明的库依赖项其版本号在 p 的提交中更新所占的百分比；upil，调用库l的项目中，对库l进行更新的项目所占百分比</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670471551992-fc179326-036e-4501-b46f-386c19e38e16.png" class title="image.png">
+
+<h4 id="Findings-2"><a href="#Findings-2" class="headerlink" title="Findings"></a>Findings</h4><p>得到统计结果如图所示：</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670471778765-230b9752-e4f4-4c82-ab5d-6fedc6cce2f1.png" class title="image.png">
+<p>项目角度来看，14.1%的项目没有更新任何当前声明的库依赖项。大部分项目更新了20%-50%的库依赖项，少部分项目更新了超过80% 的库依赖项。  </p>
+<p>第三方库的角度来看，<strong>4,414 (32.5%) 个库在所有依赖它们的项目中从未更新过</strong>。 65.4%的库在超过一半的依赖它们的项目中没有被更新。</p>
+<p>可以看出，<strong>大部分项目的开发人员确实会更新库。尽管如此，仍有一半的项目让其超过一半的第三方库从未更新；三分之一的库在使用它们的项目中没有被更新过。考虑到所选项目维护良好，但是更新实践相对差。由此可见，应该提高对更新库的重要性的认识。</strong>  </p>
+<h3 id="Update-Delay"><a href="#Update-Delay" class="headerlink" title="Update Delay"></a>Update Delay</h3><p>那么开发者对库更新的敏感程度如何呢？本文定义一个库版本更新 u 的更新延迟，记为 update delay-u，作为 u 的<strong>提交日期</strong>和 u 之后的<strong>库版本发布日期之间的延迟</strong>。<br>对于每一个版本更新u，爬取库的发布数据。<br>并且从项目和第三方库的角度分别去分析更新延迟。</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670481251290-44103c14-8e55-41a7-954a-3cb1ae6a3ef8.png" class title="image.png">
+
+<h4 id="Findings-3"><a href="#Findings-3" class="headerlink" title="Findings"></a>Findings</h4><p>得到统计结果：</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670481364216-06f04645-2da5-4609-8aea-e27fd0f0c0fb.png" class title="image.png">
+<p>从项目的角度来看，23.1%的项目最多延迟 30 天更新其库依赖项。大部分项目的更新延迟s超过 60天。</p>
+<p>从库的角度来看，72.6%个库的更新延迟最多为 30 天。剩下库的更新延迟超过 60天。<br>可以看出，<strong>开发人员对新库的发布反应迟缓。库发布新版本，开发人员延迟更新，可能会增加使用过时库的风险（例如，安全漏洞)，甚至会增加更新到新版本的难度，因为在此时间窗口内其他项目可能将使用更多的过时库 API。</strong></p>
+<h2 id="RQ3-Library-Risk-Analysis"><a href="#RQ3-Library-Risk-Analysis" class="headerlink" title="RQ3 Library Risk Analysis"></a>RQ3 Library Risk Analysis</h2><p>那么使用过时的库风险情况如何呢？为了研究库的风险，本文开发了 bug-extractor来收集库中的安全漏洞，首先从 Veracode 的漏洞数据库中爬取每个安全漏洞的元数据。</p>
+<blockquote>
+<p>【Veracode静态源代码分析服务平台是全球商业运营最好的平台，全球数千家 软件科技公司都在使用其服务发现软件安全漏洞、质量缺陷】 中搜索，然后爬取每个安全漏洞的元数据（例如，受影响的库版本和安全补丁）。 </p>
+</blockquote>
+<h3 id="Usage-Risk"><a href="#Usage-Risk" class="headerlink" title="Usage Risk"></a>Usage Risk</h3><p>我们将一个项目的使用风险定义为两个指标：一是一个项目使用的有缺陷的库版本的数量；二是一个项目使用的有缺陷的库版本中的安全漏洞的数量。<br>将库版本的使用风险定义为<strong>库版本中的安全漏洞数量</strong>。</p>
+<h4 id="Findings-4"><a href="#Findings-4" class="headerlink" title="Findings"></a>Findings</h4><p>计算得到统计结果：</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670484785513-df7b8ec5-c4a5-487d-9ddf-7dfbbbd5030f.png" class title="image.png">
+<p>可以得到，56.0%的项目采用有缺陷的库版本；其中大部分缺陷库版本在1-5个之间，少部分使用超过5个有缺陷的库版本。<br>在这么多个库版本中，只有31.2%个库版本没有安全漏洞。 34.2%的库版本有 1 个安全漏洞。剩下的超过2个安全漏洞。<br>可以看出，**超过一半的项目使用包含安全漏洞的库版本。三分之二的库版本包含安全漏洞。安全漏洞的相对普遍存在表明，如果项目开发人员没有意识到使用库中的安全漏洞或延迟库更新，项目将面临潜在风险。  **</p>
+<h3 id="Update-Risk"><a href="#Update-Risk" class="headerlink" title="Update Risk"></a>Update Risk</h3><p>但是如果开发者贸然更新库也会存在更新风险。<br>本文将项目的更新风险定义为两个指标：一是项目使用的有缺陷的库版本调用 API 的数量（调用了有bug库的多少api），二是对项目使用的错误库版本的 API 调用次数。<br>将有缺陷的版本的更新风险定义为两个指标：一是安全的库版本中删除的缺陷库版本中的 API 数量；二是安全的库版本中修改的缺陷库版本中的 API 数量</p>
+<h4 id="Findings-5"><a href="#Findings-5" class="headerlink" title="Findings"></a>Findings</h4><p>得到统计结果</p>
+<img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/1670689071599-2e9642aa-e7c8-42fe-af9d-12d85ac6e7cd.png" class title="image.png">
+<p>在451个采用有bug的库版本的项目中，三分之一的项目在使用的bug库版本中没有调用API，大部分调用了1-20个API，少部分项目调用超过40个API。</p>
+<p>38.3%有缺陷的库版本在安全的库版本中修改了不到 40 个 API，而 24.4%个有缺陷的库版本在安全库版本中修改了超过 100 个 API。2,065 (17.2%) 个有缺陷的库版本在安全库版本中删除了不到 40 个 API。4,236 (35.3%) 个有缺陷的库版本在安全版本中删除了 300 多个 API。</p>
+<p>由此可以得到结论： <strong>使用有缺陷的库的API存在中度风险。需要工具结合项目中使用的库 API 和在安全版本中更改的库 API 来提供对风险的严格估计，以便开发人员更有把握地更新有缺陷的库。</strong></p>
+<h1 id="研究结果"><a href="#研究结果" class="headerlink" title="研究结果"></a>研究结果</h1><img src="/.com//12/11/Java%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E6%9B%B4%E6%96%B0%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6/image-20230119211623358.png" class title="image-20230119211623358">
+
+<p>并没有找到如何使用这个系统？看不到直观的结果。无法测试自己的数据。开源的只有研究结果和数据集和工具代码。<br>基于上述量化指标和统计结果，本文设计了一个<strong>针对有缺陷库的安全错误驱动警报系统</strong>。包括两个主要模块：风险分析和（更新库版本建议的）工作量分析。<br>然后本研究针对 451 个使用了有缺陷的库的项目运行了这个警报系统，看有问题的库是否影响系统。我们发现 413 个项目不受 bug 库的影响并且可以是安全的。剩下34个受bug影响的项目。<br>表1列出了10个受有bug的库影响的项目，其中 BL 是影响项目的错误库数量，NB、NA 和 NC 是风险分析中报告的指标（其中安全错误总数、调用库 API 和对库 API 的调用列在括号中），SL 是建议库版本的数量，其他列列出了一个建议库版本的工作量分析指标。<br>但是这个警报系统并不是开源&amp;可视化的，在网站上只能看到对节选项目的研究结果。</p>
+<blockquote>
+<p>不能测试自己的项目数据，没有得到更直观的数据。</p>
+</blockquote>
+<blockquote>
+<p>开源的只有数据集。以及基础代码（爬取的代码）</p>
+</blockquote>
+<h1 id="有效性威胁"><a href="#有效性威胁" class="headerlink" title="有效性威胁"></a>有效性威胁</h1><p>最后，本研究讨论了可能的有效性威胁，包括</p>
+<ol>
+<li><strong>（关于）间接依赖。本研究重点在于直接依赖的库</strong>，即在项目配置文件中声明的库。如果考虑间接库依赖，对库的依赖会更重，安全漏洞方面的潜在风险会更高。如果继续深挖、考虑间接依赖，会十分复杂。</li>
+<li><strong>（数据的）主体代表性。</strong>本研究使用维护良好的项目，而筛选掉了不活跃的项目。需要对那些维护不好的项目进行独立研究，以比较结果。此外，研究者无法爬取一些库的 jar 文件和发布日期，因此它们在一些分析中被排除。但是由于数据集规模庞大，研究的数据仍然具有代表性和意义。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>最后对论文进行一个总结，本文主要做了以下工作：</p>
+<ul>
+<li>一是进行了<strong>大规模</strong>的实证分析，定量、全面地分析了第三方库在 Java 开源项目中的使用、更新和风险。  </li>
+<li>二是向开发人员和研究人员提供了<strong>实际意义</strong>，发布了数据集，并提出了一个原型系统<strong>LIBRARY-SECURIFY</strong>，用于协助开发者在更新过时的第三方库时，通过量化风险做出更有把握的决定。证明了研究发现的有用性。</li>
+</ul>
+<h1 id="论文结构"><a href="#论文结构" class="headerlink" title="论文结构"></a>论文结构</h1><p>最后是论文的结构。分为以下八个部分：研究背景及意义、研究现状、实证研究方法、第三方库的使用、更新、风险分析、以及关于论文的讨论和总结。</p>
+<p>以上就是我关于这篇论文的汇报，谢谢大家。</p>
+<hr>
+<h1 id="个人思考"><a href="#个人思考" class="headerlink" title="个人思考"></a>个人思考</h1><h2 id="可借鉴-x2F-优点："><a href="#可借鉴-x2F-优点：" class="headerlink" title="可借鉴&#x2F;优点："></a>可借鉴&#x2F;优点：</h2><ol>
+<li>工作量大，数据集大</li>
+</ol>
+<p>数据集爬取耗费四个月，并且进行了筛选，数据集庞大，具有可信性和代表性。</p>
+<ol start="2">
+<li>这篇文章提到的许多的相关工作可以去细看一下，比如说JavaParser</li>
+<li>量化评估指标，使研究更具有可行性代表性</li>
+</ol>
+<p>思想上有哪些值得学习的地方？</p>
+<p>既考虑到项目开发者，反馈所使用库的缺陷</p>
+<p>又考虑到第三方库的开发者，</p>
+<p>从两个方面共同促进软件生态。</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><p>项目数据集开源，但是系统并未开源（？）</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Dependency/">#Dependency</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%BA%E6%96%87%E6%B1%87%E6%8A%A5/">#论文汇报</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/01/22/%E3%80%8AMaven%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《Maven实战》阅读笔记</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">深度学习入门</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E5%8F%8A%E6%84%8F%E4%B9%89"><span class="nav-text">研究背景及意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-text">相关工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage-Analysis"><span class="nav-text">Usage Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-Analysis"><span class="nav-text">Update Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-Analysis"><span class="nav-text">Risk Analysis</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E5%92%8C%E8%B7%AF%E7%BA%BF"><span class="nav-text">研究方法和路线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">研究设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%96%99%E5%BA%93%E9%80%89%E6%8B%A9"><span class="nav-text">语料库选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="nav-text">研究问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RQ1-Library-Use-Analysis"><span class="nav-text">RQ1 Library Use Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage-Intensity"><span class="nav-text">Usage Intensity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings"><span class="nav-text">Findings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage-Outdateness"><span class="nav-text">Usage Outdateness</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings-1"><span class="nav-text">Findings</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RQ2-Library-Update-Analysis"><span class="nav-text">RQ2 Library Update Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-Intensity"><span class="nav-text">Update Intensity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings-2"><span class="nav-text">Findings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-Delay"><span class="nav-text">Update Delay</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings-3"><span class="nav-text">Findings</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RQ3-Library-Risk-Analysis"><span class="nav-text">RQ3 Library Risk Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage-Risk"><span class="nav-text">Usage Risk</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings-4"><span class="nav-text">Findings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-Risk"><span class="nav-text">Update Risk</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Findings-5"><span class="nav-text">Findings</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E7%BB%93%E6%9E%9C"><span class="nav-text">研究结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E6%80%A7%E5%A8%81%E8%83%81"><span class="nav-text">有效性威胁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E6%9E%84"><span class="nav-text">论文结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83"><span class="nav-text">个人思考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%80%9F%E9%89%B4-x2F-%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-text">可借鉴&#x2F;优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#todo"><span class="nav-text">todo</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

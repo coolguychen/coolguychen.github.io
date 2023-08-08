@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            OOAD Summary |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">OOAD Summary</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-06 19:13:04</span>
+        <span class="mobile">2022-01-06 19:13</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Object-oriented-Analysis-and-Design/">Object-oriented Analysis and Design</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>27 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><em>参考书籍：《Applying UML and Patterns 3rd》</em></p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><strong>软件架构</strong>的定义：</p>
+<p>一个程序或计算系统的架构，是该系统的结构，由组件、组件的外部可见的特性、组件之间的关系组成。</p>
+<p>架构是一个软件系统的组织结构，可以递归地分解为多个通过接口相互作用的部件。关系定义接口的连接、约束定义部件的集成。部件包括类、组件、子系统。</p>
+<p>面向对象： 是将系统看作一组相互作用和关联的对象并建模。</p>
+<p>面向对象的特点：系统由相互关联对象组成；通过对象对系统进行描述和建模</p>
+<span id="more"></span>
+
+<h1 id="Thinking-in-OO"><a href="#Thinking-in-OO" class="headerlink" title="Thinking in OO"></a>Thinking in OO</h1><p><strong>OOA:</strong> 发现并描述问题领域里的<strong>对象或概念</strong>(找出问题领域里的概念类)</p>
+<p><strong>OOD：定义</strong>软件<strong>对象</strong>，以及<strong>它们之间如何协作完成功能的</strong></p>
+<blockquote>
+<p>OOD的输入：包括<u>领域模型&#x2F;概念模型、系统顺序图、用例图、补充规格说明</u>等。<br>OOD输出：Interactions(用例实现–SSD), class diagram(类图),交互图(顺序图、通信图) etc</p>
+</blockquote>
+<p><strong>领域模型&#x2F;概念模型：</strong> 对问题领域的对象或现实事物的可视化表示。</p>
+<p>CRC表示职责：Class + Responsibility + Collaboration</p>
+<p><strong>Unviersal steps of OOD:</strong> </p>
+<ol>
+<li><p>After identifying your requirements and <strong>creating a domain<br>model</strong>,(明确需求 创建领域模型) </p>
+</li>
+<li><p>then <strong>add methods</strong> to the appropriate classes, (为适当的类添加方法)</p>
+</li>
+<li><p>and <strong>define the messaging</strong> between the objects to fulfill the<br>requirements(定义对象之间的消息以实现需求)</p>
+</li>
+</ol>
+<p><strong>OOAD：</strong></p>
+<ol>
+<li>Use Case</li>
+<li>Domain </li>
+<li>Interaction</li>
+<li>Design Class Diagram <ol>
+<li><strong>LRG 低表示差异</strong>，既概念类与软件类差异不大</li>
+</ol>
+</li>
+</ol>
+<p><strong>OOAD最基本过程</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/4cf7645f323a4940b4b92296886ee8ee.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="OOAD-Review"><a href="#OOAD-Review" class="headerlink" title="OOAD Review"></a>OOAD Review</h1><p><strong>类和对象关系：</strong> 类是共享相同属性、操作、方法、关系或者行为的一组对象的描述符。</p>
+<p><strong>多态：</strong> 同一类族的不同对象，可以用不同的行为处理同一条消息。比如，父类定义的方法、操作，子类可以重新实现（override）。</p>
+<p><strong>组合与聚合：</strong> 聚合–整体与部分是has-a的关系，部分可以独立于整体存在；组合–整体与部分是part-of的关系，部分无法独立于整体存在，整体没了部分就没了，整体对象控制部分对象的生命周期。</p>
+<blockquote>
+<p>Q:为什么能用组合的地方不用继承？</p>
+<p>A:如果使用继承，父类和子类之间耦合较重，组合相对继承的耦合性更低，组合的可维护性更强。</p>
+</blockquote>
+<p><strong>封装：</strong> 是<strong>隐藏对象的实现细节</strong>的过程。 接口<strong>是唯一访问对象数据的方法</strong>。</p>
+<p><strong>接口：</strong> 为类或者构件设定了一个<strong>外部行为规范</strong>。</p>
+<p><strong>抽象：</strong> 过滤掉对象的一部分特性和操作，直到只剩下你所需要的属性和操作。</p>
+<p>抽象的两个重要指标：内聚性和耦合度</p>
+<ul>
+<li><p>内聚性：如果抽象能够简洁地代表一种清晰的概念，那么抽象是内聚的。</p>
+</li>
+<li><p>耦合度：即与相关联的类的耦合程度。如果耦合度高，那么重用性就低，因为该抽象与系统中的其它模块相关以致于很难单独维护。</p>
+</li>
+</ul>
+<h1 id="UP-Process"><a href="#UP-Process" class="headerlink" title="UP Process"></a>UP Process</h1><p><strong>RUP-Rational Unified Process</strong> 统一开发过程</p>
+<p>RUP最重要的它有三大特点：1）软件开发是一个<strong>迭代</strong>过程，2）软件开发是由<strong>Use Case驱动</strong>的，3）软件开发是<strong>以架构设计（Architectural Design）为中心</strong>的。</p>
+<p><strong>SDP</strong>: Software Development Process 软件开发过程</p>
+<p><strong>SDLC</strong>: Software Development Life Cycle 软件开发生命周期</p>
+<p><strong>瀑布生命周期</strong>(Waterfall Lifecycle)：试图<strong>在编程前详细定义所有或大部分需求</strong>。通常于编程前创建出完整的设计。</p>
+<p><strong>迭代生命周期</strong>(Iterative lifecycle): 在这种生命周期中，开发被组织成一系列<strong>固定的短期小项目</strong>，称为<strong>迭代</strong>；<u>每次迭代都经过测试、集成为可执行的局部系统。每次迭代都有各自的需求分析、设计、实现和测试活动。</u></p>
+<blockquote>
+<p>Q: 为什么迭代开发不是面向对象的？<br>A：迭代开发 是一种<strong>开发过程</strong>，不是<strong>设计方法</strong>，<strong>当然也不是面向对象的</strong>。面向对象是一种<strong>设计方法</strong>。<code>在每一次迭代中都可以用面向对象或其他的设计方法完成设计工作</code>。</p>
+</blockquote>
+<p>理解UP的4个阶段: <code>初始-细化-构建-交付</code></p>
+<p><strong>Inception：</strong> approximate vision, business case, scope, vague estimates.大体上的构想、业务案例、范围和模糊评估。（分析项目的可行性，不是定义所有的需求）</p>
+<ul>
+<li>包括需求分析、关键非功能性需求的确定等。</li>
+<li><strong>10% high risk list:</strong><code>(1)具有重要的架构意义；(2)具有高业务价值；(3)具有高风险</code></li>
+<li><em>初始阶段不是需求阶段，而是<strong>研究可行性</strong>的阶段</em></li>
+</ul>
+<p><strong>Elaboration：</strong> refined vision, iterative implementation of the core architecture, resolution of high risks, identification of most requirements and scope, more realistic estimates. <em>已精华的构想、核心架构的迭代实现、高风险的解决，确定大多数需求</em></p>
+<p><strong>Construction：</strong> iterative implementation of the remaining lower risk and easier elements, and preparation for deployment. <em>对遗留下的风险较低和较简单的元素进行迭代实现，准备部署</em></p>
+<p><strong>Transition：</strong> beta tests, deployment. <em>调试&amp;部署</em></p>
+<p>进化式需求 Evolutionary Requirements</p>
+<ul>
+<li>Functional: behavioral</li>
+<li>Non-functional: others 非功能需求 如安全性，可拓展性等</li>
+</ul>
+<p><strong>SRS ：</strong> System Requirements Specification</p>
+<p> 一个好的SRS应该是： 明确的；完整的； 可证实的；一致的；可修改的；可追溯的。</p>
+<p>FURPS+：Function Use Reliable Performance Support</p>
+<p><strong>SSD</strong>：系统顺序图</p>
+<p>把要开发的<strong>整个系统看作一个黑盒子</strong>，在<strong>系统边界提供接口，研究与参与者的交互</strong>。</p>
+<h1 id="Op-Contract"><a href="#Op-Contract" class="headerlink" title="Op Contract"></a>Op Contract</h1><p>对于一些复杂的系统操作（细粒度软件的系统操作），需要编写操作契约以获得更多分析细节。</p>
+<p><strong>Design by Contract (DbC)</strong></p>
+<ul>
+<li><strong>Software reliability</strong>: requires precise specifications which are honored by both the supplier and  the client. </li>
+<li>DbC uses <strong>assertions</strong> (pre and postconditions,  invariants) as a contract between supplier and client. </li>
+<li>DbC works equally well under inheritance.</li>
+</ul>
+<blockquote>
+<p>细粒度软件类的操作，需要定义“契约”，契约不是针对整个系统的操作（大粒度软件类）</p>
+</blockquote>
+<p><strong>大部分契约在细化阶段进行编写</strong>。只<strong>对最复杂最微妙的系统操作编写契约</strong>(获得分析细节)。</p>
+<p>操作契约使用前置条件和后置条件的形式，<strong>描述领域模型里对象的详细变化</strong>，并作为系统操作的结果。</p>
+<p>格式：</p>
+<ul>
+<li>操作：<strong>操作的名称和参数</strong></li>
+<li>交叉引用：会发生此操作的<strong>用例</strong></li>
+<li>前置条件：执行操作前，对系统或领域模型<strong>对象状态的重要假设</strong>。这些假设比较重要，应该告诉读者</li>
+<li>后置条件：最重要的部分，<strong>完成操作后，领域模型对象的状态</strong>。<code>创建实例，形成关联，修改属性。过去式。</code></li>
+</ul>
+<h1 id="GRASP-——-抽象的设计原则（理念）"><a href="#GRASP-——-抽象的设计原则（理念）" class="headerlink" title="GRASP —— 抽象的设计原则（理念）"></a>GRASP —— 抽象的设计原则（理念）</h1><p>GRASP全称: General Responsibility Assignment Software Patterns 通用的职责分配原则</p>
+<p>GRASP原则将用于<strong>产生可维护、可重用、可理解和易于开发软件</strong>。</p>
+<p>GRASP原则可以帮助设计人员理解面向对象设计的本质，并以一种有条理的、理性的、可解释的方式应用这些设计原则。</p>
+<blockquote>
+<p>OOD的输入：包括<u>领域模型&#x2F;概念模型、系统顺序图、用例图、补充规格说明</u>等。</p>
+<p>OOD输出：Interactions(用例实现–SSD), class diagram(类图),交互图(顺序图、通信图) etc</p>
+</blockquote>
+<p><strong>RDD: 职责驱动设计 Responsibility-Driven Design</strong> —— <strong>设计时考虑对象做什么（行为职责）、或者知道什么（认知职责）</strong></p>
+<p><em>-Doing (行为职责）</em></p>
+<ul>
+<li>Do it yourself: such as creating an object or doing a calculation 自身执行一些行为，如创建对象或计算</li>
+<li>initiating action in other objects 初始化其他对象</li>
+<li>controlling and coordinating activities in other objects 控制&amp;协调其他对象</li>
+</ul>
+<p><em>-Knowing（认知职责）</em></p>
+<ul>
+<li>knowing about private encapsulated data 对私有封装数据的认知</li>
+<li>knowing about related objects 对相关对象的认知</li>
+<li>knowing about things it can derive or calculate 对派生&#x2F;可计算数据的认知</li>
+</ul>
+<p>The translation of responsibilities into classes and methods is influenced by the <code>granularity</code> of the responsibility. （职责的<code>粒度</code>影响到职责到类与方法的转换）</p>
+<p>大粒度职责有数百个类与方法，而小粒度职责可能只有一个方法（一个类）。</p>
+<blockquote>
+<p><strong>职责是一种抽象，而方法实现了职责。</strong></p>
+</blockquote>
+<p>Pattern: Name + Problem + Solution</p>
+<h2 id="Rule1-Creator"><a href="#Rule1-Creator" class="headerlink" title="Rule1: Creator"></a>Rule1: Creator</h2><p><strong>Name</strong>: 创建者</p>
+<p><strong>Problem</strong>: 谁负责创建对象？</p>
+<p><strong>Solution</strong>: Assign class B the responsibility to create an instance of class A if one of these is true (the more the better) :</p>
+<ol>
+<li>B “contains” or compositely aggregates A  B包含A</li>
+<li>B records A  B记录A</li>
+<li>B closely uses A  B频繁使用A</li>
+<li>B has the initializing data for A that will be passed to A when it is created (B is an expert with respect to A)<br>如果有一个以上的选项适用，通常首选 聚集 或包含A的类</li>
+</ol>
+<h2 id="Rule2-Information-Expert"><a href="#Rule2-Information-Expert" class="headerlink" title="Rule2: Information Expert"></a>Rule2: Information Expert</h2><p><strong>Name</strong>: 信息专家</p>
+<p><strong>Problem</strong>: 给对象分配职责的基本原则是什么？</p>
+<p><strong>Solution</strong>: Assign responsibility to the class that has the information necessary to fulfill responsibility（把职责分配给<strong>具有完成该职责所需信息</strong>的那个类）</p>
+<h2 id="Rule3-Low-Coupling"><a href="#Rule3-Low-Coupling" class="headerlink" title="Rule3: Low Coupling"></a>Rule3: Low Coupling</h2><p><strong>Name</strong>: 低耦合</p>
+<p><strong>Problem</strong>: 如何减少因变化产生的影响</p>
+<p><strong>Solution</strong>: 在分配职责时，始终保持低耦合（通常用作我们评估方案的原则）</p>
+<p>下面这些情况会造成类 A、B 之间的耦合：</p>
+<p>a、A 是 B 的属性<br>b、A 调用 B 的实例的方法<br>c、A 的方法中引用的 B，例如 B 是 A 方法的返回值或参数。<br>d、A 是 B 的子类，或者 A 实现 B</p>
+<p>为什么期望 低耦合？</p>
+<p>低耦合往往能够<code>减少修改软件需要的时间、工作量和缺陷</code>。</p>
+<p><code>Note</code>: 为什么信息专家会导致低耦合？<u>因为信息专家在分配职责时，是将职责分给具有该职责信息的类，所以模块自己能把大部分职责完成，不需要关联其他模块。</u></p>
+<p>没有任何耦合也是不行的，这样系统中模块都是离散的。我们的原则是要保证低耦合，但要有一些耦合，系统仍然是多个对象协作的整体。</p>
+<blockquote>
+<p>Q: 什么情况下允许高耦合&#x2F;低内聚?<br>A:与稳定的，得到大众广泛认可的元素&#x2F;模块直接耦合是可以的。比如Java J2EE应用程序可以安全地将自己与Java库直接耦合。便于客户使用。</p>
+</blockquote>
+<h2 id="Rule4-High-Cohesion"><a href="#Rule4-High-Cohesion" class="headerlink" title="Rule4: High Cohesion"></a>Rule4: High Cohesion</h2><p> 在分配职责时，始终保持高内聚</p>
+<p><strong>Goal:</strong> （专注 做少量事情）</p>
+<blockquote>
+<p>内聚：模块内操作之间联系的紧密程度</p>
+<p>耦合：两个子模块之间联系的紧密程度</p>
+<p>为什么内聚要越高越好？一个模块自己就能把职责做完</p>
+</blockquote>
+<h2 id="Rule5-Controller"><a href="#Rule5-Controller" class="headerlink" title="Rule5: Controller"></a>Rule5: Controller</h2><p><strong>Name</strong>: 控制器</p>
+<p><strong>Problem</strong>: 谁负责在UI层之上 首先接收和处理系统操作消息？</p>
+<p><strong>Solution</strong>: Assign the responsibility to a class representing one of the following choices:</p>
+<ol>
+<li><p><code>Facade(外观) Controller</code>: <u>整个系统、根对象</u>等</p>
+<p>represents the overall system, a root object, a device that the object is running within, or a major sub-system（为子系统中的一组接口提供一个一致的界面）</p>
+</li>
+<li><p><code>Use Case or Session Controller</code>: 代表<u>用例或会话</u></p>
+<p>represents a use case scenario within which the system event occurs</p>
+</li>
+</ol>
+<p><strong>Delegation pattern 委派模式</strong>——负责任务的调度和分配任务</p>
+<pre><code>UI层通常收到消息并不自己处理（不包括应用逻辑），而是**委托给其他对象**处理。
+</code></pre>
+<h2 id="Rule6-Polymorphism"><a href="#Rule6-Polymorphism" class="headerlink" title="Rule6: Polymorphism"></a>Rule6: Polymorphism</h2><p><strong>Name</strong>: 多态</p>
+<p><strong>Problem</strong>: 如何处理基于类型的选择？</p>
+<p><strong>Solution</strong>: 使用多态操作，根据类型变化，动态地分配职责</p>
+<p>GoF相关模式；Adapter, Command, Composite, Strategy</p>
+<blockquote>
+<p>Q：多态与PV之间的关系。</p>
+<p>A：多态是实现PV的方式之一。多态提供一种机制（接口），使系统的局部能适应类型的变化。<strong>只要实现了父类的接口，子类实现的细节可以多种多样</strong>，而实现的改变不会影响使用接口的人，使得我们不用改变现有代码就能基于类型提供不同的行为。</p>
+</blockquote>
+<h2 id="Rule7-Pure-Fabrication"><a href="#Rule7-Pure-Fabrication" class="headerlink" title="Rule7: Pure Fabrication"></a>Rule7: Pure Fabrication</h2><p><strong>Problem</strong>: 既不违反低耦合、高内聚或其他的原则，但<strong>依据信息专家原则获得的解决方案又不合适</strong>的情况下，<strong>如何把职责分配给对象？</strong></p>
+<p><strong>Solution</strong>: 把<strong>高度内聚</strong>的职责<strong>分配给人为虚构出来的一个类</strong>，（强调）<u>这个类在领域模型里没有对应的概念</u>。</p>
+<p>GoF相关模式；Adapter, Command, Strategy</p>
+<h2 id="Rule8-Indirection"><a href="#Rule8-Indirection" class="headerlink" title="Rule8: Indirection"></a>Rule8: Indirection</h2><p><strong>Name</strong>: 间接</p>
+<p><strong>Problem</strong>: 为了避免两个或多个事物之间的直接耦合，应该如何分配职责？</p>
+<p><strong>Solution</strong>: 把职责分配给中介对象（通常是抽象类或接口），以在其他组件或服务之间进行协作，从而使它们不直接耦合。</p>
+<p>GoF Example: Adapter, Facade, Observer</p>
+<blockquote>
+<p>Q：纯虚构与间接的区别？<br>A：出发点不一样：</p>
+<p>纯虚构： 把功能相对集中的、专一的职责分配给一个新定义的<strong>虚拟的类</strong>，而在领域模型中没有这个类对应的物理概念；一般用于将功能过于强大的类再细分，划分出单一功能的类，实现高内聚低耦合。</p>
+<p>间接： 是为了把两个类之间的<strong>直接耦合改为通过一个中间概念</strong>，这个中间概念一般为 接口、或者抽象类。</p>
+</blockquote>
+<h2 id="Rule9-Protected-Variations"><a href="#Rule9-Protected-Variations" class="headerlink" title="Rule9: Protected Variations"></a>Rule9: Protected Variations</h2><p><strong>Name:</strong> 隔离变化</p>
+<p><strong>Problem</strong>: 如何设计 使得内部的变化或不稳定性不会对其他元素产生不良影响？</p>
+<p><strong>Solution</strong>: 使用<strong>一个稳定的接口来封装变更的可以预知点</strong>。如数据封装，多态。接口等。</p>
+<p><em>识别在程序中的那些多变的特征，并且把它们和稳定的特征分离开来。</em></p>
+<h2 id="Object-Design-Examples-with-GRASP"><a href="#Object-Design-Examples-with-GRASP" class="headerlink" title="Object Design Examples with GRASP"></a>Object Design Examples with GRASP</h2><p>使用GRASP进行对象设计</p>
+<p><strong>用例实现</strong>：用<strong>系统顺序图的方式展示用例的功能在设计方案下能否实现</strong>。</p>
+<p>MVC：</p>
+<ul>
+<li><p>M即Model模型是指模型，表示业务规则。</p>
+</li>
+<li><p>V即View视图是指用户看到并与之交互的界面。似我们说的 Panel。</p>
+</li>
+<li><p>C即Controller控制器，接受来自UI的请求，然后进行处理。负责系统的内部的控制、协调。</p>
+</li>
+<li><p>使应用程序的输入、处理和输出分开。</p>
+<blockquote>
+<p>注：MVC是一种架构风格，关注的是软件组织架构，而不是设计模式。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Refactor"><a href="#Refactor" class="headerlink" title="Refactor"></a>Refactor</h2><p>可见性 Visibility:</p>
+<p>一个对象看见其他对象或引用其他对象的能力。</p>
+<ul>
+<li>属性——B是A的属性</li>
+<li>参数——B是A中方法的参数</li>
+<li>局部——B是A 中方法的局部对象</li>
+<li>全局——B是具有某种方式的全局可见性</li>
+</ul>
+<p><strong>重构</strong>：<code>重写或重新构建已有代码的结构化和规律性方法。但不改变系统的外部功能。</code><strong>本质上是一小步保留行为的转换</strong>，<u>每次转换都要重新执行单元测试</u>。</p>
+<p>重构是为了得到优秀的代码：</p>
+<ul>
+<li>去除冗余</li>
+<li>改善清晰度</li>
+<li>增强可读性</li>
+<li>提升代码结构</li>
+<li>……</li>
+</ul>
+<p>TDD: Test Driven Development 测试驱动开发——TFD + Refactor</p>
+<p>首先编写测试，并通过不断地重构代码以改进质量。</p>
+<p>Refactor: Name the Condition 引入解释变量，将表达式部分或完整结果置入临时变量中，该变量名能够说明表达式的目的。</p>
+<h2 id="开闭原则（OCP）"><a href="#开闭原则（OCP）" class="headerlink" title="开闭原则（OCP）"></a>开闭原则（OCP）</h2><p><strong>Def.</strong> 模块应该同时开放（可拓展性）和封闭（对影响客户的更改，尽量不改现有的代码）。</p>
+<p>当应用的需求改变时，在<strong>不修改软件实体的源代码</strong>的前提下，可以<strong>扩展模块的功能</strong>，使其满足新的需求。</p>
+<p>可以提高：可拓展性、可复用性、可维护性。</p>
+<h2 id="依赖倒置（DIP）"><a href="#依赖倒置（DIP）" class="headerlink" title="依赖倒置（DIP）"></a>依赖倒置（DIP）</h2><p><strong>Def.</strong> 高层模块不应该依赖低层模块，两者都应该依赖其抽象；抽象不应该依赖细节，细节应该依赖抽象。其核心思想是：<code>要面向接口编程，不要面向实现编程。</code></p>
+<p>依赖倒置原则是<code>实现开闭原则的重要途径之一</code>，它降低了<u>客户与实现模块之间的耦合。</u></p>
+<p><u>相对于面向过程编程的上层依赖下层模块的方式</u>，在面向对象设计时，<strong>上层和下层都依赖抽象</strong>，故称为 “倒置”。<strong>本质就是面向接口编程，而不是面向实现（即底层）编程</strong>。 </p>
+<h2 id="迪米特法则（LoD）"><a href="#迪米特法则（LoD）" class="headerlink" title="迪米特法则（LoD）"></a>迪米特法则（LoD）</h2><p><strong>Def.</strong> 如果两个软件实体无须直接通信，那么就不应当发生直接的相互调用，可以通过第三方转发该调用。其目的是<strong>降低类之间的耦合度，提高模块的相对独立性</strong>。（开闭）</p>
+<p>只与你的直接朋友交谈，不跟“陌生人”说话。</p>
+<p>迪米特法则中的“朋友”是指：<u>当前对象本身、当前对象的成员对象、当前对象所创建的对象、当前对象的方法参数</u>等，这些对象同当前对象存在关联、聚合或组合关系，可以直接访问这些对象的方法。</p>
+<h2 id="里氏替换原则（LSP）"><a href="#里氏替换原则（LSP）" class="headerlink" title="里氏替换原则（LSP）"></a>里氏替换原则（LSP）</h2><p><strong>Def.</strong> 通俗来讲就是：<strong>子类可以扩展父类的功能，但不能改变父类原有的功能。</strong><u>子类继承父类时，除添加新的方法、完成新增功能外，尽量不要重写父类的方法。</u></p>
+<p>对里氏替换原则的定义可以总结如下：</p>
+<ul>
+<li>子类可以实现父类的抽象方法，但不能覆盖父类的非抽象方法</li>
+<li>子类中可以增加自己特有的方法</li>
+<li>当子类的方法重载父类的方法时，方法的前置条件（即方法的输入参数）要比父类的方法更宽松</li>
+<li>当子类的方法实现父类的方法时（重写&#x2F;重载或实现抽象方法），方法的后置条件（即方法的的输出&#x2F;返回值）要比父类的方法更严格或相等</li>
+</ul>
+<h1 id="GoF-——-具体的设计模式（代码）"><a href="#GoF-——-具体的设计模式（代码）" class="headerlink" title="GoF —— 具体的设计模式（代码）"></a>GoF —— 具体的设计模式（代码）</h1><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p><strong>是一套被反复使用、得到大众认可的代码经验的总结。</strong> 它关注系统中类、对象、接口的关系，描述设计过程中经常发生的问题，并提出解决方案。目的是生产可重用、可维护、易于理解（代码可读性）和开发的软件产品。</p>
+<blockquote>
+<p>软件设计模式（Software Design Pattern），又称设计模式，是一套<u>被反复使用、多数人知晓的、经过分类编目的、<strong>代码设计经验的总结</strong></u>。它描述了在软件设计过程中的一些不断重复发生的问题，以及该问题的解决方案。也就是说，它是解决特定问题的一系列套路，是前辈们的代码设计经验的总结，具有一定的普遍性，可以反复使用。**其目的是为了提高代码的可重用性、代码的可读性和代码的可靠性。</p>
+</blockquote>
+<p>主要是为了：</p>
+<ul>
+<li>Reuse Design <u>重用设计</u>    </li>
+<li>Common Vocabulary 为设计<u>提供共同的词汇，便于交流</u></li>
+<li>Easy Documentation <u>编写开发文档更加容易</u></li>
+<li>Easy refactor 应用设计模式可以<u>让重构系统变得容易</u></li>
+</ul>
+<h2 id="SingleTon-单例模式"><a href="#SingleTon-单例模式" class="headerlink" title="SingleTon 单例模式"></a>SingleTon 单例模式</h2><ul>
+<li>名称：单实例类</li>
+<li>问题：希望只有唯一实例的类。对象需要全局可见性和单点访问。</li>
+<li>解决方案：通过静态方法返回单实例</li>
+</ul>
+<p>单例（Singleton）模式的定义：<strong>指一个类只有一个实例，且该类能自行创建这个实例的一种模式。</strong></p>
+<p>SingleTon的三个关键点</p>
+<p>1）私有的： 构造函数(防止被默认地实例化)</p>
+<p>2）私有的：成员变量，记录这个单实例</p>
+<p>3）公有的get函数：<strong>没有实例时创建它</strong>；已有实例则返回该实例。</p>
+<p>相关模式：单实例模式通常运用于工厂对象和外观对象。</p>
+<ul>
+<li>Abstract Factory, Builder, and Prototype can use Singleton in their implementation</li>
+<li>Facade objects are often Singletons because <em>only one Facade object is required</em></li>
+</ul>
+<h2 id="Adapter-适配器"><a href="#Adapter-适配器" class="headerlink" title="Adapter 适配器"></a>Adapter 适配器</h2><p>Problem: 如何解决不相容的接口问题，或者如何为具有不同接口的类似构件提供稳定的接口？</p>
+<p>Solution: 使用 <strong><code>中介</code>适配器对象</strong>，将原有接口转换为其他接口。</p>
+<p>将<strong>一个类的接口转换成客户希望的另外一个接口</strong>。Adapter模式使原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190117145221678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNjU4Njc3,size_16,color_FFFFFF,t_70" alt="img"><br>相关模式：隐藏外部系统的资源适配器可视作外观对象。</p>
+<h2 id="Facade-外观模式"><a href="#Facade-外观模式" class="headerlink" title="Facade 外观模式"></a>Facade 外观模式</h2><p>Problem: 对<strong>一组完全不同的实现或接口需要公共、统一的接口</strong>。可能会与子系统内部的大量事物产生耦合，或者子系统的实现可能会改变。怎么办？</p>
+<p>Solution: 对子系统定义唯一的接触点——使用外观对象封装子系统。该外观对象提供了唯一和统一的接口，并负责与子系统构建进行协作。</p>
+<p>外观（Facade）模式是一种通过<strong>为多个复杂的子系统提供一个一致的接口</strong>，而使这些子系统更加容易被访问的模式。该模式对外有一个统一接口，外部<strong>应用程序不用关心内部子系统的具体细节</strong>(隔离变化)，这样会大大降低应用程序的复杂度，提高了程序的可维护性。</p>
+<h3 id="适配器与外观模式的区别"><a href="#适配器与外观模式的区别" class="headerlink" title="适配器与外观模式的区别"></a>适配器与外观模式的区别</h3><p>适配器：将一个接口<strong>转换</strong>为客户希望的另外一个接口。<strong>主要是对适配对象进行调整，以便适合客户的需求</strong>。</p>
+<p>外观模式：<strong>定义一个新的</strong>、更简单接口（simpler）来封装多个接口（子系统），以封装子系统实现的变化，减少客户与子系统之间的耦合。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lzhp/p/3400928.html">适配器模式和外观模式（head first设计模式——6） - haiziguo - 博客园 (cnblogs.com)</a></p>
+<h3 id="外观模式与适配器模式的比较"><a href="#外观模式与适配器模式的比较" class="headerlink" title="外观模式与适配器模式的比较"></a>外观模式与适配器模式的比较</h3><ul>
+<li>外观定义了新的接口，适配器使用旧的接口；</li>
+<li>适配器使得两个不一致的接口协同工作，而不是定义一个新的；</li>
+<li>外观模式的本意是产生一个轻便的接口，适配器的本意是把现有的接口转换一下；</li>
+<li>一个外观接口可能包装了多个现有系统的对象，也可能增加了一些功能，而适配器只是包装了一个对象；</li>
+<li>多数情况下，外观是单实例的。</li>
+</ul>
+<h2 id="GoF-and-GRASP"><a href="#GoF-and-GRASP" class="headerlink" title="GoF and GRASP"></a>GoF and GRASP</h2><p>GRASP是一般性的，基础的原则，比较笼统、抽象。GRASP原则是对其他设计模式的归纳。</p>
+<p>GoF Design  Pattern: <strong>实现GRASP</strong>的精神（更加具体的实现方式）</p>
+<p><code>一句话解释，GRASP是抽象的理念，GoF是具体的代码。</code></p>
+<p>PV is the most fundamental principle!!!<br>Specific GOF patterns are concrete applications of GRASP!!!</p>
+<h2 id="Observer-观察者模式"><a href="#Observer-观察者模式" class="headerlink" title="Observer 观察者模式"></a>Observer 观察者模式</h2><p>Name: 观察者&#x2F;发布-订阅</p>
+<p>Problem: 不同类型的订阅者对象关注于发布者对象的状态变化或事件，并且想要在发布者产生事件时以自己独特的方式作出反应。此外，发布者想要保持与订阅者的低耦合。如何对此进行设计呢？</p>
+<p>Solution: 定义“订阅者”(Subscriber)或“监听器”(Observer)接口。订阅者实现此接口。发布者可以动态注册关注某事件的订阅者，并在事件发生时通知它们。</p>
+<p><img src="https://img-blog.csdnimg.cn/e0b9cc60473e4c5fb4668dd7ec48bc78.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>什么时候使用观察者模式？</p>
+<ul>
+<li>某一个对象的状态发生变化的时候，某些其它的对象需做出相应的改变。</li>
+<li>观察者模式定义了一种<strong>一对多的依赖关系</strong>，让<strong>多个观察者对象同时监听某一个主题对象。</strong></li>
+</ul>
+<h3 id="信息推送的2种形式"><a href="#信息推送的2种形式" class="headerlink" title="信息推送的2种形式"></a>信息推送的2种形式</h3><p><strong>推模式：</strong> 当通知消息来之时，把<u>所有相关信息都<code>通过参数的形式</code>“推给”观察者。</u></p>
+<p>（1）优点</p>
+<ul>
+<li>所有信息通过参数传递过来，直接、简单，观察者可以马上进行处理，高效、实时。</li>
+<li>观察者与被观察者<strong>没有一点联系，两者几乎没有耦合</strong></li>
+</ul>
+<p>（2）缺点</p>
+<ul>
+<li>所有信息都强迫推给观察者，不管有用与否。</li>
+<li>如果想添加一个参数，那就需要修改所有观察者的接口函数。</li>
+</ul>
+<p><strong>拉模式：</strong> 当通知消息来之时，<u>通知的函数不带任何相关的信息</u>，而是要观察者主动去被观察的对象那里去“拉”信息。 (只起通知作用)</p>
+<p>（1）优点</p>
+<ul>
+<li>可以主动去取自己感兴趣的信息。</li>
+<li>如要添加一个参数，无需修改观察者。</li>
+</ul>
+<p>（2）缺点</p>
+<ul>
+<li>观察者与被观察者有一定的联系。（Subject与Observer交互变多）</li>
+</ul>
+<h2 id="Strategy-策略模式"><a href="#Strategy-策略模式" class="headerlink" title="Strategy 策略模式"></a>Strategy 策略模式</h2><p>Problem: 如何设计变化但相关的算法或政策？如何设计才能使这些算法或政策具有可变更的能力？</p>
+<p>Solution: 在单独的类中分别定义每种算法&#x2F;政策&#x2F;策略，并且使其具有共同接口（封装到一系列策略类里面，作为一个抽象类的子类）。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/58b87f51a26b6b6ea8c33717c83f9124.gif" alt="策略模式的结构图"></p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>策略模式的主要优点如下。</p>
+<ol>
+<li>多重条件语句不易维护，而使用策略模式可以<strong>避免使用多重条件语句</strong>，如 if…else 语句、switch…case 语句。</li>
+<li>策略模式提供了一系列的可供重用的算法族，恰当使用继承可以把算法族的公共代码转移到父类里面，从而避免重复的代码。</li>
+<li>策略模式可以<strong>提供相同行为的不同实现</strong>（多态），客户可以根据不同时间或空间要求选择不同的。</li>
+<li>策略模式<strong>提供了对开闭原则的完美支持，可以在不修改原代码的情况下，灵活增加新算法</strong>。</li>
+<li>策略模式把<strong>算法的使用</strong>放到环境类中，而<strong>算法的实现</strong>移到具体策略类中，实现了<strong>二者的分离</strong>。</li>
+</ol>
+<p>其主要缺点如下。</p>
+<ol>
+<li><strong>客户端必须理解所有策略算法的区别，以便适时选择恰当的算法类。</strong></li>
+<li>策略模式造成<strong>很多的策略类，增加维护难度</strong>。</li>
+</ol>
+<h2 id="Factory-工厂模式"><a href="#Factory-工厂模式" class="headerlink" title="Factory 工厂模式"></a>Factory 工厂模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>工厂方法<strong>定义了一个创建产品对象的工厂接口，将实际创建工作推迟到子类中</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/2872406de51740478ba50214086d33a0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h3><p>将<strong>所有创建对象的逻辑集中到一个核心工厂</strong>中，违背了OCP(新增一个产品，都要修改FactoryMethod)和高内聚职责分配（专注做少量的事）</p>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式是简单工厂的进一步抽象和推广。<strong>核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给子类去做。</strong> 这个<u>核心类仅仅负责给出具体工厂必须实现的接口</u>，而不负责产品类被实例化这种细节，这<u>使得工厂方法模式可以允许系统在不修改工厂角色的情况下引进新产品</u>。（符合OCP和高内聚）</p>
+<h3 id="抽象工厂"><a href="#抽象工厂" class="headerlink" title="抽象工厂"></a>抽象工厂</h3><p>自己看书理解，有点难理解。</p>
+<h3 id="工厂模式的优缺点和适用场景"><a href="#工厂模式的优缺点和适用场景" class="headerlink" title="工厂模式的优缺点和适用场景"></a>工厂模式的优缺点和适用场景</h3><p>优点：</p>
+<ol>
+<li>代码结构清晰，有效封装变化。Client<strong>只关心产品的接口</strong>就可以了，至于具体的实现无需关心。即使变更了具体的实现，对Client来说没有任何影响。</li>
+<li>可扩展性，新产品创建只需要多写一个工厂类（OCP）</li>
+<li>降低耦合度。Client只需要知道产品的抽象类，无须关心其他实现类，解开Client与具体实现的耦合（LoD 迪米特法则）。</li>
+</ol>
+<p>缺点：</p>
+<p>每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中<strong>类的个数增加</strong>，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。</p>
+<h2 id="Command-命令模式"><a href="#Command-命令模式" class="headerlink" title="Command 命令模式"></a>Command 命令模式</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>命令模式将一<strong>个请求封装成一个对象</strong>，将发出请求和执行请求的职责分开。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/099f0378495b26360e1b8c16703490bb.gif" alt="命令模式的结构图"></p>
+<ol>
+<li>抽象命令类（Command）角色：声明执行命令的接口，拥有执行命令的抽象方法 execute()。</li>
+<li>具体命令类（Concrete Command）角色：是抽象命令类的具体实现类，它拥有接收者对象，并通过调用接收者的功能来完成命令要执行的操作。</li>
+<li>实现者&#x2F;接收者（Receiver）角色：执行命令功能的相关操作，是具体命令对象业务的真正实现者。</li>
+<li>调用者&#x2F;请求者（Invoker）角色：是请求的发送者，它通常拥有很多的命令对象，并通过访问命令对象来执行相关请求，它不直接访问接收者。</li>
+</ol>
+<h3 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ol>
+<li>通过引入中间件（抽象command接口）降低系统的耦合度。</li>
+<li>扩展性良好，增加或删除命令非常方便。采用命令模式增加与删除命令不会影响其他类，满足OCP。</li>
+<li>可以实现宏命令。命令模式可以与<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1373.html">组合模式</a>结合，将多个命令装配成一个组合命令，即宏命令。</li>
+<li>方便实现 Undo 和 Redo 操作。命令的撤销与恢复。</li>
+<li>可以在现有命令的基础上，增加额外功能。比如日志记录，结合装饰器模式会更加灵活。</li>
+</ol>
+<p>缺点：可能产生<strong>大量具体的命令类</strong>。因为<strong>每一个具体操作都需要设计一个具体命令类</strong>，这会增加系统的复杂性。</p>
+<h2 id="Composite-组合模式"><a href="#Composite-组合模式" class="headerlink" title="Composite 组合模式"></a>Composite 组合模式</h2><p>Problem:  如何能够像处理非组合（原子）对象一样，（多态地）处理一组对象或具有组合结构的对象呢？&#x2F; 如何处理冲突的定价策略？&#x2F; 如何使销售对象（sale）不需要知道是否要处理一个或多个定价策略，而且同时还能够提供一种设计来解决冲突？ </p>
+<p>Solution: 定义原子类和组合类，让它们去实现相同的接口(Component)</p>
+<h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>部分整体模式，是用于<strong>把一组相似的对象当作一个单一的对象</strong>。组合模式依据<strong>树形结构</strong>来组合对象，用来表示部分以及整体层次。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/b0c8532062e4ff49e3bed35db64d5eca.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/bacbdb8d3cc7dd25937048f6e5f4b84c.png" alt="img"></p>
+<h3 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ol>
+<li>高层模块&#x2F;Client调用简单。可以一致地处理组合对象和单个对象，而不必关心自己处理的是单个对象还是整个组合结构。</li>
+<li>节点自由增加，满足OCP。</li>
+</ol>
+<p>缺点：使用组合模式时，其叶子和树枝的声明都是实现类，而不是接口，违反了依赖倒转原则。违背ICP</p>
+<h2 id="DP-OO-Principle"><a href="#DP-OO-Principle" class="headerlink" title="DP_OO_Principle"></a>DP_OO_Principle</h2><p>僵硬性 Rigidity</p>
+<ul>
+<li>难以更改代码</li>
+<li>从管理的角度，拒绝任何的变化成为一种制度</li>
+</ul>
+<p>易碎性 Fragility</p>
+<ul>
+<li>即使是小小的改动也会导致级联性的后果</li>
+<li>代码在意想不到的地方终止</li>
+</ul>
+<p>固定性 Immobility</p>
+<ul>
+<li>代码纠缠在一起根本不可能重用</li>
+</ul>
+<p>黏滞性 Viscosity</p>
+<ul>
+<li>宁愿重新编写也不愿意修改</li>
+</ul>
+<p>OCP&amp;DIP 回顾</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Object-oriented-Analysis-and-Design/">#Object-oriented Analysis and Design</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/09/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Software Test</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Functional Programming Class Notes</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thinking-in-OO"><span class="nav-text">Thinking in OO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOAD-Review"><span class="nav-text">OOAD Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UP-Process"><span class="nav-text">UP Process</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Op-Contract"><span class="nav-text">Op Contract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GRASP-%E2%80%94%E2%80%94-%E6%8A%BD%E8%B1%A1%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E7%90%86%E5%BF%B5%EF%BC%89"><span class="nav-text">GRASP —— 抽象的设计原则（理念）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule1-Creator"><span class="nav-text">Rule1: Creator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule2-Information-Expert"><span class="nav-text">Rule2: Information Expert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule3-Low-Coupling"><span class="nav-text">Rule3: Low Coupling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule4-High-Cohesion"><span class="nav-text">Rule4: High Cohesion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule5-Controller"><span class="nav-text">Rule5: Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule6-Polymorphism"><span class="nav-text">Rule6: Polymorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule7-Pure-Fabrication"><span class="nav-text">Rule7: Pure Fabrication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule8-Indirection"><span class="nav-text">Rule8: Indirection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule9-Protected-Variations"><span class="nav-text">Rule9: Protected Variations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Design-Examples-with-GRASP"><span class="nav-text">Object Design Examples with GRASP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refactor"><span class="nav-text">Refactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%EF%BC%88OCP%EF%BC%89"><span class="nav-text">开闭原则（OCP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%EF%BC%88DIP%EF%BC%89"><span class="nav-text">依赖倒置（DIP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99%EF%BC%88LoD%EF%BC%89"><span class="nav-text">迪米特法则（LoD）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%EF%BC%88LSP%EF%BC%89"><span class="nav-text">里氏替换原则（LSP）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoF-%E2%80%94%E2%80%94-%E5%85%B7%E4%BD%93%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BB%A3%E7%A0%81%EF%BC%89"><span class="nav-text">GoF —— 具体的设计模式（代码）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SingleTon-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">SingleTon 单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adapter-%E9%80%82%E9%85%8D%E5%99%A8"><span class="nav-text">Adapter 适配器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Facade-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F"><span class="nav-text">Facade 外观模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E4%B8%8E%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">适配器与外观模式的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E4%B8%8E%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-text">外观模式与适配器模式的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GoF-and-GRASP"><span class="nav-text">GoF and GRASP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observer-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-text">Observer 观察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%8E%A8%E9%80%81%E7%9A%842%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="nav-text">信息推送的2种形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strategy-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-text">Strategy 策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Factory-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-text">Factory 工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-text">简单工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82"><span class="nav-text">抽象工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E5%92%8C%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">工厂模式的优缺点和适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-text">Command 命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9-1"><span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composite-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="nav-text">Composite 组合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9-2"><span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DP-OO-Principle"><span class="nav-text">DP_OO_Principle</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

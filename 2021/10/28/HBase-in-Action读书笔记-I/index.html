@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            HBase in Action Reading Notes I |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">HBase in Action Reading Notes I</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-10-28 17:27:56</span>
+        <span class="mobile">2021-10-28 17:27</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Chapter-2-2-3-amp-2-2-5"><a href="#Chapter-2-2-3-amp-2-2-5" class="headerlink" title="Chapter 2.2.3 &amp; 2.2.5"></a>Chapter 2.2.3 &amp; 2.2.5</h1><blockquote>
+<p>HBase上RegionServer的内存分为两个部分，一部分作为Memstore，主要用来写；另外一部分作为BlockCache，主要用于读数据。以下是对HBase读写操作的详细描述。</p>
+</blockquote>
+<h2 id="2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径"><a href="#2-2-3-Under-the-hood-the-HBase-write-path-——-HBase写路径" class="headerlink" title="2.2.3  Under the hood: the HBase write path —— HBase写路径"></a>2.2.3  Under the hood: the HBase write path —— HBase写路径</h2><p>HBase写入操作包括两个部分：把写入操作分别记录到<strong>预写日志（WAL）</strong>和<strong>MemStore</strong>，以保证<strong>数据持久化</strong>。每只有当WAL和MemStore的变化信息都写入并确认后，才认为写操作完成。写路径如图所示：</p>
+<span id="more"></span>
+
+<p><img src="https://img-blog.csdnimg.cn/67978503ffd847af8a6484d1dbd599bd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0RBSExJQQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>MemStore是内存里的<strong>写入缓冲区</strong>，HBase中数据在永久写入磁盘前在MemStore中累积。当MemStore填满&#x2F;达到其阈值后，其中的数据会<strong>刷写</strong>(flush)到磁盘，生成一个HFile。HFile对应列族，一个列族可以有多个HFile，但一个HFile只能存储一个列族的数据。在集群的每个节点上，每个列族有一个Memstore。</p>
+<p>如果MemStore还没有将数据刷写到磁盘，服务器就崩溃了，内存中的数据就会丢失。因此，HBase采用WAL应对硬件故障：<strong>在写操作完成之前先写入WAL</strong>。HBase集群中每台服务器维护一个WAL来记录发生的变化。WAL新记录成功写入后，写操作才被认为成功完成。</p>
+<p>那么如果HBase服务器宕机，没有从MemStore里刷写到HFile的数据可以通过回放WAL来恢复（Handled under the hood by HBase as a part of the recovery process）。</p>
+<p>可见，写入WAL是写过程中非常重要的一部分。如果不写入WAL，服务器故障时HBase可能无法恢复数据，没有刷写到磁盘的所有写入数据都会丢失。MemStore和WAL确保每次写入HBase在尽可能快的同时保证持久性。</p>
+<h2 id="2-2-5-Under-the-hood-the-HBase-read-path-——-HBase读路径"><a href="#2-2-5-Under-the-hood-the-HBase-read-path-——-HBase读路径" class="headerlink" title="2.2.5 Under the hood: the HBase read path —— HBase读路径"></a>2.2.5 Under the hood: the HBase read path —— HBase读路径</h2><p>HBase能够保证通常情况下的快速读取（allowing it to serve millisecond reads in most cases）。</p>
+<p>HBase在读操作上使用LRU(Least Recent Used)缓存，也叫<u>BlockCache</u>。BlockCache目的是把经常访问的、来自HFile的数据缓存在内存中，避免读取磁盘。每个列族都有自己的BlockCache。</p>
+<p>BlockCache中的Block是HBase一次从磁盘读取的数据单元。HFile物理上是<u>一系列的block加上一个这些block的索引</u>。这意味着，读取一个block只需在索引中查找该block的位置，再从磁盘获取。</p>
+<p>Block 是建立索引的最小数据单位，也是从硬盘读取的最小数据单位。Block大小<strong>按照列族设定</strong>，默认值是64 KB。根据使用场景你可以调整block的大小。如果主要用于随机查询，你可能需要细粒度的Block 索引，小一点儿的Block 更好一些。但Block变小会导致索引变大，进而消耗更多内存。如果用于顺序扫描，一次读取多个Block，大一点儿的Block 更好一些。Block 变大意味着索引项变少，索引变小，因此节省内存。</p>
+<p>从HBase 中读出一行时，首先会检查MemStore 等待修改的队列，然后检查BlockCache看包含该行的Block 是否最近被访问过，最后访问硬盘上的对应HFile。读路径如图所示：<br><img src="https://img-blog.csdnimg.cn/c34e1dab553545d897b910176ff473ca.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0RBSExJQQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="Chapter-4-2-De-normalization-——-去规范化"><a href="#Chapter-4-2-De-normalization-——-去规范化" class="headerlink" title="Chapter 4.2 De-normalization —— 去规范化"></a>Chapter 4.2 De-normalization —— 去规范化</h1><pre><code>    Normalization对应的数据属于干净非冗余型。这有两个好处：当发生更新或删除时，**不必担心更新给定数据所有副本的复杂性**；通过保存单一副本而不是多个副本来，**减少了占用的存储空间**。在查询时需要使用SQL语句中的JOIN子句重新联结数据。
+
+    而De-normalization则允许数据冗余或者同样的数据存储于多处。这使得**查询数据更容易、更快。**（不需要昂贵、耗时的JOIN操作）
+
+    从性能的角度来看，**规范化对写操作进行优化，而去规范化对读操作进行优化**。
+</code></pre>
+<blockquote>
+<p>Normalization optimizes the table for writes; you pay the cost of combining data at read time. De-normalization optimizes for reads, but you pay the cost of writing multiple copies at write time.</p>
+</blockquote>
+<pre><code>    以TwitBase为例，当一个用户登录帐户并希望看到他们关注的人的推帖(twits)时，如果是采用规范化的关系数据库，app将获取被关注的用户和他们的推帖，并返回该信息。随着系统中用户数量的增加，这个过程可能非常耗时。此外，如果一个用户有很多followers，那么每次有follower登录时都会访问他们的推帖。管理这个用户推帖的region则会不断地回答请求（read hot pot）。解决这个问题的方法是**为每个用户维护一个推帖流**(twit stream)，当他们关注的用户发推帖时，将该推帖添加至推帖流里。由此优化读的性能。
+</code></pre>
+<h1 id="Chapter-4-5-I-x2F-O-consideration-——-I-x2F-O考虑"><a href="#Chapter-4-5-I-x2F-O-consideration-——-I-x2F-O考虑" class="headerlink" title="Chapter 4.5 I&#x2F;O consideration —— I&#x2F;O考虑"></a>Chapter 4.5 I&#x2F;O consideration —— I&#x2F;O考虑</h1><h2 id="Optimized-for-writes-——-hashing-amp-salting"><a href="#Optimized-for-writes-——-hashing-amp-salting" class="headerlink" title="Optimized for writes —— hashing &amp; salting"></a>Optimized for writes —— hashing &amp; salting</h2><pre><code>        当往HBase写入大量数据时，我们希望在RegionServer分散负载来对写操作优化。以时间序列数据为例：如果直接以时间戳作为行键，那么写入时在单个region上会遇到热点问题。如何把数据分布在多个region上？
+</code></pre>
+<ol>
+<li><p>Hashing</p>
+<p>如果写入需要扫描整个表或者每次都需要知道精确的键，使用原始数据的散列值作为行键。可以使用MD5、SHA-1等散列函数</p>
+</li>
+<li><p>Salting</p>
+<p>如果在读取时知道时间范围，不想做全表扫描，可以在时间戳前面加上一个随机数前缀。</p>
+<p>例：先计算时间戳的散列码，然后对RegionServer的数量取模生成随机salt数：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int salt = new Integer(new Long(timestamp).hashCode()).shortValue() % &lt;number </span><br><span class="line">of region servers&gt;</span><br></pre></td></tr></table></figure>
+
+<pre><code>            取得salt数后，加到时间戳前面生成行键：
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">byte[] rowkey = Bytes.add(Bytes.toBytes(salt) \</span><br><span class="line">+ Bytes.toBytes(&quot;|&quot;) + Bytes.toBytes(timestamp));</span><br><span class="line">Now rowkeys are something like:</span><br><span class="line">0|timestamp1</span><br><span class="line">0|timestamp5</span><br><span class="line">0|timestamp6</span><br><span class="line">1|timestamp2</span><br><span class="line">1|timestamp9</span><br><span class="line">2|timestamp4</span><br><span class="line">2|timestamp8</span><br></pre></td></tr></table></figure>
+
+<pre><code>            这些行将基于前缀，分布在不同的region里。
+</code></pre>
+<h2 id="Optimized-for-reads-——-put-the-last-few-data-together"><a href="#Optimized-for-reads-——-put-the-last-few-data-together" class="headerlink" title="Optimized for reads —— put the last few data together"></a>Optimized for reads —— put the last few data together</h2><pre><code>        以之前的TwitBase为例，为读优化行键时，将twit流中最新的twits存储在一起，以便于它们可以被快速读取。使用**倒序时间戳+用户ID**构成行键。那么基于用户ID扫描邻近的n行就可以找到用户需要的n条最新的twits。
+</code></pre>
+<h1 id="Chapter-4-6-From-relational-to-non-relational"><a href="#Chapter-4-6-From-relational-to-non-relational" class="headerlink" title="Chapter 4.6 From relational to non-relational"></a>Chapter 4.6 From relational to non-relational</h1><blockquote>
+<p>Relational databases and HBase are different systems and have different design properties that affect application design. A naïve migration from relational to HBase is tricky.</p>
+</blockquote>
+<h2 id="Some-basic-concepts"><a href="#Some-basic-concepts" class="headerlink" title="Some basic concepts"></a>Some basic concepts</h2><ol>
+<li><p>实体 Entity</p>
+<pre><code>  table ——&gt; table
+  关系数据库和HBase中，实体都是由表来表示的，表中 的每行代表实体的一个实例。
+</code></pre>
+</li>
+<li><p>属性 Attribute</p>
+<p>a. identifying attribute ——&gt; rowkey<br> b. non-identifying attribute ——&gt; column</p>
+</li>
+<li><p>联系 Relationship </p>
+<pre><code>关系数据库：foreign key(one to one) or junction table(one to many)
+    Hbase：没有对于联系的直接映射
+</code></pre>
+</li>
+</ol>
+<h2 id="Some-things-don’t-map"><a href="#Some-things-don’t-map" class="headerlink" title="Some things don’t map"></a>Some things don’t map</h2><ol>
+<li><p>列族</p>
+<blockquote>
+<p>One way of thinking about column families is that they model yet another kind of relationship that we didn’t talk about previously: the one-to-one relationship, where you have two tables with the same primary key, and each table has either 0 or 1 row with each primary key value. </p>
+<p>Using multiple column families in HBase is an advanced feature that you should only jump into if you’re sure you understand the trade-offs.</p>
+</blockquote>
+<p>Column是Hbase最基本的单位，若干列形成column family。关系数据库的每一列是属性，没有列族的概念。</p>
+</li>
+<li><p>索引</p>
+<blockquote>
+<p>In relational databases, the ability to easily declare indexes that are automatically maintained by the database engine is one of the most magical and helpful capabilities the software provides, and it’s nowhere to be found in HBase. For now, the answer to this question is: tough luck.</p>
+</blockquote>
+<p>HBase没有索引。（怎么理解这里的tough luck?）</p>
+</li>
+<li><p>时间版本</p>
+<blockquote>
+<p> If in your relational schema, there are places where you explicitly store timestamps, these can in many cases be subsumed into the timestamp that’s stored in HBase cells places where you explicitly store timestamps, these can in many cases be subsumed into the timestamp that’s stored in HBase cells</p>
+</blockquote>
+<p>HBase涉及到时间维度，而关系型数据库的设计并没有把时间看成一个特殊的维度，而是显式地存储时间戳。通常涉及到记录时间戳的采用HBase。</p>
+</li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">#Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">RocksDB Learning Notes</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-2-2-3-amp-2-2-5"><span class="nav-text">Chapter 2.2.3 &amp; 2.2.5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-3-Under-the-hood-the-HBase-write-path-%E2%80%94%E2%80%94-HBase%E5%86%99%E8%B7%AF%E5%BE%84"><span class="nav-text">2.2.3  Under the hood: the HBase write path —— HBase写路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-5-Under-the-hood-the-HBase-read-path-%E2%80%94%E2%80%94-HBase%E8%AF%BB%E8%B7%AF%E5%BE%84"><span class="nav-text">2.2.5 Under the hood: the HBase read path —— HBase读路径</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-4-2-De-normalization-%E2%80%94%E2%80%94-%E5%8E%BB%E8%A7%84%E8%8C%83%E5%8C%96"><span class="nav-text">Chapter 4.2 De-normalization —— 去规范化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-4-5-I-x2F-O-consideration-%E2%80%94%E2%80%94-I-x2F-O%E8%80%83%E8%99%91"><span class="nav-text">Chapter 4.5 I&#x2F;O consideration —— I&#x2F;O考虑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimized-for-writes-%E2%80%94%E2%80%94-hashing-amp-salting"><span class="nav-text">Optimized for writes —— hashing &amp; salting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimized-for-reads-%E2%80%94%E2%80%94-put-the-last-few-data-together"><span class="nav-text">Optimized for reads —— put the last few data together</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-4-6-From-relational-to-non-relational"><span class="nav-text">Chapter 4.6 From relational to non-relational</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-basic-concepts"><span class="nav-text">Some basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-things-don%E2%80%99t-map"><span class="nav-text">Some things don’t map</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            Watchman: Monitoring Dependency Conflicts for Python Library Ecosystem |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Watchman: Monitoring Dependency Conflicts for Python Library Ecosystem</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-07-06 22:43:56</span>
+        <span class="mobile">2022-07-06 22:43</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Study/Research/">Research</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Dependency/">Dependency</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%AE%BA%E6%96%87%E6%B1%87%E6%8A%A5/">论文汇报</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>17 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>我所报告的论文是：《<strong>Watchman: Monitoring Dependency Conflicts for Python Library Ecosystem</strong>》。我根据自己对这篇论文的理解，将它分成了五个部分，首先是一些背景知识与概念介绍，然后就是本文的主体部分，包括实证研究、Watchman的工作机制和对Watchman的评估，最后就是总结和未来展望。</p>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>本文主要研究Python库生态系统的依赖冲突问题，Python 中有着各种丰富的标准库、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93&spm=1001.2101.3001.7020">第三方库</a>和模块，受到开发者的欢迎。<strong>PyPI</strong>(<em>Python Package Index</em>)就是python<strong>官方的第三方库的仓库</strong>，所有人都可以从中下载<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93&spm=1001.2101.3001.7020">第三方库</a>或上传自己开发的库。PyPI推荐使用pip包安装程序来下载第三方库。通常开发者会在项目配置脚本显式地约束库的版本。pip就会根据库的名称和版本约束来下载它。如果有多个版本满足版本约束，则pip将下载并安装最新版本，也就是First Found Wins原则。</p>
+<hr>
+<img src="/.com//07/06/Watchman-Monitoring-Dependency-Conflicts-for-Python-Library-Ecosystem/image-20230704234406502.png" class title="image-20230704234406502">
+
+<p>这张图说明了Python项目依赖关系的概念。配置脚本显式声明并约束的是直接依赖项。如果这些<strong>直接依赖进一步依赖于其他库，那么这些库被称为P的传递依赖</strong>。在本文中，所有的<strong>直接依赖</strong>和<strong>传递依赖</strong>都被统称为P的<strong>上游项目</strong>。相应地，我们称P称为<strong>其依赖的下游项目</strong>。</p>
+<hr>
+<p>即使这样下载包很方便，但也使得项目中的<strong>版本约束很容易发生冲突</strong>，导致构建失败。我们将这类冲突称为依赖冲突问题。举个例子，项目P直接依赖的库c安装版本为2.6，违背传递依赖的库c的约束。</p>
+<p>现实中项目依赖关系更为复杂，这里展示了github上一个真实的案例Django Channels。如图所示，channels 2.1.7根据版本约束会下载asgiref 2.3.0和daphne 2.2.5，在2019.4.9之前是没有冲突问题的。但是在这之后，由于daphne更新到了2.3.0版本并且约束asgiref ≥ 3.0 ∧＜4.0。而channels安装的是asgiref 2.3.0，与daphne的对asgiref的版本约束相违背，导致了Build Error。</p>
+<img src="/.com//07/06/Watchman-Monitoring-Dependency-Conflicts-for-Python-Library-Ecosystem/image-20230704234428833.png" class title="image-20230704234428833">
+
+<p>为解决这个问题，开发者发布channels 2.2.0，更新对asgiref的版本约束，使得构建channels时下载3.1.1的版本。然而这又引入了另一个DC问题，channel-redis 2.3.3仍然安装的是asgiref 2.3.0，违反了channels 2.2.0的依赖约束，导致构建失败。</p>
+<p>从上面这个例子我们可以感受到，开发者经常对自己项目所直接依赖的库指定版本约束，而不去考虑其他项目指定的约束。跨项目的复杂的依赖关系使得Python项目的依赖解决相对困难。</p>
+<hr>
+<p>我们主要面临以下挑战：</p>
+<p>首先，库的<strong>版本可能会随时间而变化</strong>。由于pip将安装满足相关约束的最新版本。因此，PyPI上的库的任何更新都会影响为下游项目安装的库的版本（即，依赖于这些库的项目的版本），从而导致潜在的构建失败。</p>
+<p>其次，当一个库更新其对其他库的版本约束时，其<strong>下游项目（也就是依赖这个库的项目）</strong>可能会受到影响。这些影响可以进一步传播到广泛的项目中。</p>
+<p>第三，Python开发人员<strong>很难通过版本约束信息获得他们的项目依赖关系</strong>。像pipnev &amp; Poetry这样的工具只会给出期望安装的库，而非展现深层的依赖关系。</p>
+<p>开发者缺乏工具支持以获得诊断这些问题的根本原因。为了解决这些挑战并帮助Python开发人员解决DC问题，本文作者进行了以下三个工作：实证研究，设计实现Watchman，评估Watchman。</p>
+<hr>
+<h1 id="Empirical-Study"><a href="#Empirical-Study" class="headerlink" title="Empirical Study"></a><strong>Empirical Study</strong></h1><p>在进行实证研究之前，需要进行一些准备工作，比如对项目中依赖进行形式化的定义。这里的C指的是对库的版本约束，可以为空（即安装最新版本），可以为几个范围的并集，也可以指定特定版本。</p>
+<p>首先进行项目数据收集。</p>
+<h2 id="Data-Collection"><a href="#Data-Collection" class="headerlink" title="Data Collection"></a>Data Collection</h2><p>主要选取的是github上的一些真实项目，满足有50以上stars或fork，用作库并且维护良好。然后在这些项目的issue report中，通过搜索关键词“dependency conflict” or “dependency hell”识别DC ISSUES。经过这两步，最终从 124 个项目中获得了 235 个 DC 问题，235 个问题中的 201 个已经修复。</p>
+<p>我们由远程依赖或本地环境引起的DC问题将表现模式分为两类。</p>
+<hr>
+<h2 id="RQ1-Manifestion-Pattern"><a href="#RQ1-Manifestion-Pattern" class="headerlink" title="RQ1 Manifestion Pattern"></a>RQ1 Manifestion Pattern</h2><p>首先是</p>
+<h3 id="Pattern-A"><a href="#Pattern-A" class="headerlink" title="Pattern A"></a>Pattern A</h3><p>模式A：由远程依赖关系更新引起的冲突。</p>
+<p><strong>根据依赖冲突的来源</strong>进行进一步的分类。</p>
+<p>a.直接依赖和传递依赖之间的冲突（139&#x2F;211）。</p>
+<p>b.传递性依赖关系之间的冲突（72&#x2F;211）。</p>
+<p>这里没有直接依赖之间的冲突，因为开发人员通常不会在配置脚本中引入直接依赖关系之间的冲突且这样的错误很容易被捕获。</p>
+<p>然后是</p>
+<h3 id="Pattern-B"><a href="#Pattern-B" class="headerlink" title="Pattern B"></a>Pattern B</h3><p>模式B：受本地环境影响的冲突。当<strong>远程依赖项</strong>所需的工具与<strong>本地安装</strong>的工具不兼容时，就会发生这样的问题(例如，需要Python3.7，<em>但是安装了Python3.6</em>)。当已经安装在本地环境中的依赖项的版本不满足远程依赖项指定的约束时，也会发生这种情况。</p>
+<p>以gradieny #issue 25316为例。项目无法构建，因为在构建之前在本地环境中已经安装了numpy（1.13.3），这个版本与panda 0.24.1指定的约束≥1.15相冲突。</p>
+<h3 id="Dependency-Smells"><a href="#Dependency-Smells" class="headerlink" title="Dependency Smells"></a>Dependency Smells</h3><p>除此2个典型的引起DC问题的场景外，还发现了依赖性气味。它们不会立即引起DC问题，但随着项目的发展引发问题。</p>
+<ul>
+<li><p><strong>类型一：当指定公共库为特定版本时，很容易导致下游项目出现DC问题。</strong></p>
+<p>这里的公共库指的是与下游项目所依赖的库的交集</p>
+<p>例如，molecule依赖库ansible-lint，并约束其为特定版本(i.e. 3.4.23)，这使得同样依赖库ansible-lint的molecule的下游项目对ansible-lint的更新特别敏感。 每当PyPI 上发布新版本的 ansible-lint 时，molecule 的开发人员就会收到来自下游项目关于升级 ansible-lint 的版本约束的请求。最终他们选择将放宽对 ansible-lint 的版本约束，才能让更多下游项目能够很好地使用它。</p>
+</li>
+<li><p><strong>类型二：当一个库的安装版本接近该库另一个版本约束中指定的上限时，很容易发生DC问题。</strong></p>
+<p>例如，一个项目直接依赖urllib3且没有指定上界，即安装最新版本1.22.4；然而传递依赖的urllib3约束≥ 1.21.1 ∧ &lt; 1.23。由于1.22.4接近于另一个约束的上界1.23，<strong>一旦urllib3进行版本更新，DC问题很容易发生</strong>。</p>
+</li>
+</ul>
+<p>之后将展示，识别这两种类型的气味可以帮助进行预测性分析，以在DC问题导致真正的构建失败之前主动预防它们。</p>
+<hr>
+<h2 id="RQ2-Fixing-Strategy"><a href="#RQ2-Fixing-Strategy" class="headerlink" title="RQ2 Fixing Strategy"></a>RQ2 Fixing Strategy</h2><p>观察issue report发现得到7个修复DC问题的策略。</p>
+<p>其中策略1是采用最广泛的一种。这是因为开发人员可以控制他们项目的直接依赖关系的版本约束。策略 1 4适用于解决直接依赖和传递依赖间的冲突；策略2 3 5适用于解决传递依赖间的冲突；策略6 7适用于解决由本地环境引起的冲突。</p>
+<hr>
+<p>基于PyPI上下游项目之间复杂的依赖关系，设计并实现了Watchman。</p>
+<h1 id="Watchman-working-mechanism"><a href="#Watchman-working-mechanism" class="headerlink" title="Watchman working mechanism"></a>Watchman working mechanism</h1><p>Watchman现在已经是一个比较成熟的网站了，可以看到它主要有4个功能：监测PyPI上库的更新，识别受影响的下游项目，构建完全依赖图，诊断DC问题。</p>
+<img src="/.com//07/06/Watchman-Monitoring-Dependency-Conflicts-for-Python-Library-Ecosystem/image-20230704234612902.png" class title="image-20230704234612902">
+
+<p>那么Watchman是通过什么技术做到这些的呢？</p>
+<h2 id="构建元数据库"><a href="#构建元数据库" class="headerlink" title="构建元数据库"></a>构建元数据库</h2><p>Watchman首先收集了每个库版本的<strong>元数据</strong>，包括直接依赖的版本约束和他们的声明顺序。将PyPI上所有库的元数据整合到一个库中。以便分析上下游项目的版本约束。</p>
+<p>对于一个版本为v的库ζ，Watchman通过分析ζ的依赖配置脚本获得结构化元数据G(ζ^v), &#x3D;(D, R, P)，其中D是ζ直接依赖库的集合；R是库ζ所指定的依赖关系δ的版本约束；P则是将每个依赖δ按照其声明顺序进行映射。</p>
+<hr>
+<h2 id="分析库更新的影响"><a href="#分析库更新的影响" class="headerlink" title="分析库更新的影响"></a>分析库更新的影响</h2><p><strong>步骤1：监测PyPI库的更新</strong>。在PyPI上有两种类型的库更新：现有库的新版本和新库的分布。Watchman通过每天监控这两种类型的库更新来计算Lupdate。</p>
+<p><strong>步骤2：识别受影响的下游项目</strong>。</p>
+<p>它用深搜的方式在所有元数据G中搜索ζ^v的下游项目，并加入Laffected集合中。</p>
+<hr>
+<h2 id="Construct-FDG"><a href="#Construct-FDG" class="headerlink" title="Construct FDG"></a>Construct FDG</h2><p>为了诊断每个受影响的项目的DC问题，我们需要分析、构建库版本之间的关系。为了捕获这种关系，我们提出了一个<strong>正式的模型——</strong>完全依赖图(FDG)。</p>
+<p>算法2描述了为库ζ^v构建FDG的过程。Watchmant通过<strong>广度优先算法</strong>构建FDG(ζ^v)。</p>
+<p>【pip<strong>首先为项目安装直接依赖</strong>，然后根据项目的<strong>依赖树在下一级安装依赖，这个过程继续，直到安装所有依赖为止</strong>。】</p>
+<blockquote>
+<p>为什么使用广搜？因为要保持依赖<strong>声明的顺序</strong>。</p>
+</blockquote>
+<p>构建FDG之后，我们可以进行DC问题的预测分析。</p>
+<hr>
+<h2 id="Predictive-Analysis-for-DC-Issues"><a href="#Predictive-Analysis-for-DC-Issues" class="headerlink" title="Predictive Analysis for DC Issues"></a><strong>Predictive Analysis for DC Issues</strong></h2><p>主要通过检测前面讨论的两种依赖味道去主动预防DC问题，从而进行<strong>预测分析</strong>。</p>
+<p><strong>类型1</strong>：将<strong>公共依赖库</strong>限制为特定版本。如果满足以下条件：找到一个库ζ将直接依赖α限制为特定版本x，存在ζ下游项目也依赖于α，且αx是在分析时为βy安装的库版本。</p>
+<p>Watchman会发现这样的情况，并建议项目的开发者放宽对库版本的限制。</p>
+<img src="/.com//07/06/Watchman-Monitoring-Dependency-Conflicts-for-Python-Library-Ecosystem/image-20230704234709481.png" class title="image-20230704234709481">
+
+<blockquote>
+<p>eg. 如Type1所示，项目C将库A被限制为&#x3D;2.0。此外，C的下游项目B5.0同时依赖于C2.0和A2.0。目前安装的是2.0 当A在PyPI上更新，很有可能违背&#x3D;2.0版本约束。</p>
+</blockquote>
+<p><strong>类型2</strong>：<strong>库的安装版本接近版本约束中指定的上限</strong>。如果满足：在ζ的完全依赖图中有个节点α有多条入边，其中先遍历的边没有指定上界，后遍历的边指定了一个上限且上限大于等于α的最新版本。</p>
+<blockquote>
+<p>eg. 就比如图中Type2所示，项目T4.0有两条入口边，一条约束没有上界，即安装T的最新版本4.0，后一条边约束&gt;2.0∧≤4.0，一旦开发人员在PyPI上发布了T的新版本（例如，4.1），则可能会发生构建失败。</p>
+</blockquote>
+<hr>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a><strong>Evaluation</strong></h1><p>为了评估Watchman，主要关注两个方面：</p>
+<ul>
+<li>有效性</li>
+</ul>
+<p>我们回放了2017年1月1日至2019年6月30日期间PyPI上所有库的演变历史；</p>
+<p>为了评估的有效性，我们定义了两个<strong>指标</strong>，解决比例和持续时间。</p>
+<p>表三展示了研究结果。在所有五个子周期中，模式A的DC问题修复率为100%，。预测问题的平均解决率为91.7%。这些数据是非常可观的。这表明Watchman在检测、预测DC问题方面都很有效。</p>
+<ul>
+<li>有用性</li>
+</ul>
+<p>Watchman有用性的评估主要是看2个指标，确认率和修复率。</p>
+<p>自我们于2019年7月1日开始在线监测以来，Watchman共发现并预测了189个DC问题。过滤后报告了剩下的117个DC问题。 如4所示，确认率为53.8%，修复率为60.3%，但这只是2019年7月到8月的数据，由于库的更新以及Watchman的持续检测，可以看到在后期问题的确认率是在上升的。</p>
+<p>除了Watchman报告的DC问题的有用性外，一些开发人员还对Watchman表示了兴趣。比如arxiv的开发者说到“有一个更好的机制来维护PyPI项目之间的依赖约束，这是非常需要的！”“你是由Github社区编写的自动化来帮助解决Python项目的依赖冲突问题吗？如果是这样，那就做一件不错的作品吧！我想说，这是一个很好的方法，一个很好的工具来告知潜在的依赖问题。”</p>
+<p>此外，论文作者还调查了Watchman网站的访问量。可以看到40天内就有467用户进行了1648次操作，共为2590个Python项目生成了诊断报告。</p>
+<p>以上这些反馈表明，监测Py库更新、预测依赖冲突对Python开发人员确实很重要，并且诊断报告确实起了作用。</p>
+<hr>
+<h1 id="Conclusion-and-Future-work"><a href="#Conclusion-and-Future-work" class="headerlink" title="Conclusion and Future work"></a><strong>Conclusion and Future work</strong></h1><p>然而Watchman还存在一些局限和可以改进的地方。</p>
+<h3 id="有效性威胁"><a href="#有效性威胁" class="headerlink" title="有效性威胁"></a>有效性威胁</h3><p>数据收集采用关键字搜索，容易引入不相关的问题，对研究结果的有效性构成了威胁。我们<strong>手动筛选</strong>DC问题时的产生的错误也可能影响我们的研究结果。</p>
+<h3 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h3><p>我们的工作有三个局限性。</p>
+<ol>
+<li>首先，我们将重点关注导致构建失败的DC问题。然而，在某些情况下，依赖关系冲突可能会导致<strong>语义不一致、运行时错误或Python项目中的其他后果</strong>。</li>
+<li>其次，在预测分析中我们采取的是根据两种依赖气味找到可能引起的DC问题，这并不完整。</li>
+<li>第三，Watchman目前还不能检测到我们在实证研究中观察到的DC问题的所有表现模式。</li>
+</ol>
+<p>在今后的工作中解决这些局限性。</p>
+<hr>
+<p>总的来说，本文对Python项目中的235个真实的依赖冲突问题进行了实证研究，以总结出依赖冲突问题的表现模式和修复策略。随后设计并实现了Watchman，来持续监测PyPI生态系统的依赖冲突。 评估结果表明，Watchman能够有效地检测依赖冲突问题，并提供有用的诊断信息，帮助开发人员解决问题。 在未来，计划进一步提高Watchman的检测能力，比如说探究更完整的表现模式以包括所有DC问题，以及发现更多依赖气味能够有效预测预防DC问题。并将该技术推广到其他Python库生态系统，如Anaconda，使更多的开发人员能够访问它。</p>
+<hr>
+<h1 id="启发与学习到的地方"><a href="#启发与学习到的地方" class="headerlink" title="启发与学习到的地方"></a>启发与学习到的地方</h1><h3 id="对自己的科研有什么启发？"><a href="#对自己的科研有什么启发？" class="headerlink" title="对自己的科研有什么启发？"></a>对自己的科研有什么启发？</h3><ul>
+<li>数据的统计收集工作量较大，学习筛选数据的方式</li>
+<li>形式化方法与算法的建模</li>
+<li>强大的数据收集，总结归纳能力</li>
+</ul>
+<h3 id="这篇论文有什么创新点？"><a href="#这篇论文有什么创新点？" class="headerlink" title="这篇论文有什么创新点？"></a>这篇论文有什么创新点？</h3><ul>
+<li>能够发掘传统工具做不到的，既能持续监测又能预测预防，我觉得是很好的一个点</li>
+<li>能够关注到Python项目中的常见问题并对其进行归纳建模，探究可行的解决方案并提出相应的技术。</li>
+<li>xx点缺乏工具支持 ⇒ 发掘、拓展</li>
+</ul>
+<h3 id="有没有疑惑的地方？"><a href="#有没有疑惑的地方？" class="headerlink" title="有没有疑惑的地方？"></a>有没有疑惑的地方？</h3><ul>
+<li>If adopting Strategy 1 will cause side effects such as security loopholes, developers may solve the conflicts by upgrading or downgrading the direct dependencies of their projects (Strategy 2) or coordinating with upstream projects to adjust conflicting version constraints (Strategy 3).</li>
+<li>这里的安全漏洞指的是什么？采用策略1修复为什么会引起安全漏洞？<ul>
+<li>库本身的安全漏洞</li>
+</ul>
+</li>
+</ul>
+<h3 id="觉得还有什么地方可以进一步拓展-x2F-改进？"><a href="#觉得还有什么地方可以进一步拓展-x2F-改进？" class="headerlink" title="觉得还有什么地方可以进一步拓展&#x2F;改进？"></a>觉得还有什么地方可以进一步拓展&#x2F;改进？</h3><ul>
+<li>数据收集时采用<strong>手动筛选</strong>DC问题，很有可能产生偏差，有没有更好的方式对数据收集这一步骤进行形式化建模，使得能够自动化筛选数据？</li>
+<li>Watchman这个网站在诊断时，响应有些慢，是否能在数据库存储上做进一步的改进优化查询速度？</li>
+<li>探究更多的依赖气味以及依赖冲突的表现模式。</li>
+<li>目前watchman是通过网站的形式在线向开发者反馈诊断报告，开发者需要手动去对项目进行修复。之后可以基于此做成插件，用于<strong>自动化检测依赖冲突并且自动去修改配置脚本中的依赖约束，程序代替人力</strong>。</li>
+</ul>
+<h3 id="Python-依赖管理与Java依赖管理的对比"><a href="#Python-依赖管理与Java依赖管理的对比" class="headerlink" title="Python 依赖管理与Java依赖管理的对比"></a>Python 依赖管理与Java依赖管理的对比</h3><ul>
+<li>Java 有Maven来进行包管理和项目依赖配置，并体现在 pom.xml</li>
+<li>Maven Helper</li>
+<li>Maven Enforcer Plugin<ul>
+<li>Maven提供了Maven-Enforcer-Plugin插件，用来<strong>校验约开发环境</strong>。比如JDK的版本,Maven的版本,开发环境(Linux,Windows等),依赖jar包的版本等等</li>
+</ul>
+</li>
+<li>dependency-mediator-maven-plugin：解决依赖冲突问题；<ul>
+<li>试在编译期诊断组件依赖冲突问题，<em>轻量级兼容性依赖仲裁组件</em></li>
+</ul>
+</li>
+<li>Karaf(ClassLoader)<ul>
+<li>通过自定义类加载器的方法，达到同时加载<strong>不同版本的同名包</strong>的目的。典型的例子就是 OSGI(Open Service Gateway Initiative 开放服务网关协议)：受它自身的类加载器架构影响，Bundle 类加载器之间只有规则，没有固定的委派关系，即不受双亲委派模型影响。</li>
+</ul>
+</li>
+</ul>
+<p>这一方法在找不到类时会直接指出哪个 bundle 加载出现问题，错误提示更为友好；且比起在一长串的 classpath 中查找，它的效率更高；但<strong>涉及的工作过于底层，评估工作量后过大，实现难度较大</strong></p>
+<ul>
+<li>而我们采取的是直接升降依赖版本，比较好理解，虽然该方法<strong>人工操作时较为繁琐</strong>，但各个步骤的可程序化程度极高，若是使用程序代替人力，便能大幅降低使用该方法的成本，提升其可行性</li>
+<li>依赖关系都是多叉树，研究方法都对多种产生依赖冲突的场景进行建模和分析，并提出有效的解决算法。</li>
+<li>直接依赖和传递依赖</li>
+<li>冲突表现形式：<ul>
+<li>Java：显式冲突和隐式冲突<ul>
+<li>不会出现报错极少被察觉，只会在 Maven 依赖图中体现为一条红线，仍能正常运行</li>
+<li>显式冲突：由隐式冲突导致的运行过程中出现的报错问题。NoSuchMethodException、ClassNotFoundException、NoClassDefFoundErro</li>
+</ul>
+</li>
+<li>Python： Pattern A &amp; B 远程依赖引起或本地环境引起</li>
+</ul>
+</li>
+</ul>
+<h3 id="能不能进行方法的迁移？"><a href="#能不能进行方法的迁移？" class="headerlink" title="能不能进行方法的迁移？"></a>能不能进行方法的迁移？</h3><p>注意，这里Java pom.xml通常都会指定依赖的版本，而不是给定范围。</p>
+<p>能否进行依赖气味的预测？——思考</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Dependency/">#Dependency</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%BA%E6%96%87%E6%B1%87%E6%8A%A5/">#论文汇报</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/07/27/Computer-Organization/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Computer Organization</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/06/12/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">软件需求知识点总结</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background"><span class="nav-text">Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Empirical-Study"><span class="nav-text">Empirical Study</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Collection"><span class="nav-text">Data Collection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RQ1-Manifestion-Pattern"><span class="nav-text">RQ1 Manifestion Pattern</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-A"><span class="nav-text">Pattern A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-B"><span class="nav-text">Pattern B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dependency-Smells"><span class="nav-text">Dependency Smells</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RQ2-Fixing-Strategy"><span class="nav-text">RQ2 Fixing Strategy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Watchman-working-mechanism"><span class="nav-text">Watchman working mechanism</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text">构建元数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%BA%93%E6%9B%B4%E6%96%B0%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-text">分析库更新的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Construct-FDG"><span class="nav-text">Construct FDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Predictive-Analysis-for-DC-Issues"><span class="nav-text">Predictive Analysis for DC Issues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Evaluation"><span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion-and-Future-work"><span class="nav-text">Conclusion and Future work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E6%80%A7%E5%A8%81%E8%83%81"><span class="nav-text">有效性威胁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-text">局限性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8F%91%E4%B8%8E%E5%AD%A6%E4%B9%A0%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="nav-text">启发与学习到的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%91%E7%A0%94%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AF%E5%8F%91%EF%BC%9F"><span class="nav-text">对自己的科研有什么启发？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E7%AF%87%E8%AE%BA%E6%96%87%E6%9C%89%E4%BB%80%E4%B9%88%E5%88%9B%E6%96%B0%E7%82%B9%EF%BC%9F"><span class="nav-text">这篇论文有什么创新点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E6%B2%A1%E6%9C%89%E7%96%91%E6%83%91%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%9F"><span class="nav-text">有没有疑惑的地方？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%89%E5%BE%97%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E5%9C%B0%E6%96%B9%E5%8F%AF%E4%BB%A5%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8B%93%E5%B1%95-x2F-%E6%94%B9%E8%BF%9B%EF%BC%9F"><span class="nav-text">觉得还有什么地方可以进一步拓展&#x2F;改进？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E4%B8%8EJava%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-text">Python 依赖管理与Java依赖管理的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%BD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%81%E7%A7%BB%EF%BC%9F"><span class="nav-text">能不能进行方法的迁移？</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

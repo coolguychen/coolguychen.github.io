@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            依赖问题 |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">依赖问题</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-18 12:03:48</span>
+        <span class="mobile">2022-09-18 12:03</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Study/Research/">Research</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Dependency/">Dependency</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>Pattern A: 由Maven依赖仲裁机制引起——包粒度的依赖冲突问题</p>
+<ul>
+<li>直接依赖和传递依赖之间的冲突</li>
+<li>传递依赖之间的冲突</li>
+<li>本地代码与第三方库之间的冲突</li>
+</ul>
+<p>Pattern B: 由 Java 虚拟机的类加载原则引起</p>
+<ul>
+<li>类粒度的依赖冲突问题</li>
+</ul>
+<h2 id="Pattern-A-包粒度的依赖冲突问题"><a href="#Pattern-A-包粒度的依赖冲突问题" class="headerlink" title="Pattern A 包粒度的依赖冲突问题"></a>Pattern A 包粒度的依赖冲突问题</h2><p>由于 Maven 依赖加载的两条原则：<strong>最短路径优先</strong>和<strong>先声明优先</strong>。当项目中存在同一个第三方库的不同版本时只有一个版本的依赖可以被加载而剩下版本的依赖被屏蔽。</p>
+<h3 id="Rep-1：项目使用同一第三方库的不同版本"><a href="#Rep-1：项目使用同一第三方库的不同版本" class="headerlink" title="Rep 1：项目使用同一第三方库的不同版本"></a>Rep 1：项目使用同一第三方库的不同版本</h3><blockquote>
+<p>直接依赖与间接依赖之间的冲突。</p>
+</blockquote>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913152459197.png" class title="image-20220913152459197">
+
+<h3 id="Rep-5：动态绑定机制干扰下的依赖冲突问题"><a href="#Rep-5：动态绑定机制干扰下的依赖冲突问题" class="headerlink" title="Rep 5：动态绑定机制干扰下的依赖冲突问题"></a>Rep 5：动态绑定机制干扰下的依赖冲突问题</h3><img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913194026967.png" class title="image-20220913194026967">
+
+<p>对于库B有两个版本，根据最短声明原则，2.0版本被加载，1.0被屏蔽。被加载的 org.example:LibB 的 2.0 版本的类 libB.Base64 中没有包含 1.0 版本libB.Base64 的 encode(byte[])方法，因此传统的依赖置换问题检测算法判定该场景会产生程序异常。</p>
+<p>然而，可以看到虽然 org.example:LibB 的 2.0版本的类 libB.Base64 中没有包含 1.0 版本类 libB.Base64 的encode(byte[])方法，但是 2.0 版本的<strong>类 libB.Base64 继承于父类 libB.BaseNCodec</strong>，<strong>父类 libB.BaseNCodec中定义了方法 encode(byte[])被子类 libB.Base64 继承</strong>，因此该场景不会在项目运行时产生 NoSuchMethodError 的程序异常，应该被<strong>过滤以避免产生误报对开发者造成困扰</strong>。</p>
+<blockquote>
+<p>这种情况属于把无害的依赖置换问题”误诊“为有害的。</p>
+</blockquote>
+<h3 id="Rep-6：循环依赖问题"><a href="#Rep-6：循环依赖问题" class="headerlink" title="Rep 6：循环依赖问题*"></a>Rep 6：循环依赖问题*</h3><blockquote>
+<p>也是属于Rep1，但是是特殊情况需要特殊解决。</p>
+</blockquote>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913194958016.png" class title="image-20220913194958016">
+
+<h3 id="隐式冲突"><a href="#隐式冲突" class="headerlink" title="隐式冲突"></a>隐式冲突</h3><p>隐式冲突定义：在依赖A_m0→A_m1→· · ·  中，存在一组 A_ij , A_mn 满足 A_ij &#x3D;&#x3D;A_mn 且 V_ij ! &#x3D; V_mn项目使用了同一第三方库的不同版本，但是目前仍能正常编译运行。</p>
+<blockquote>
+<p>也属于Rep 1, 主要是解决间接依赖之间的冲突。</p>
+<p>要消除间接依赖的冲突，就要更改直接依赖的版本以消除间接依赖的冲突。</p>
+<p>如何修改？→ 协同更新法</p>
+</blockquote>
+<h4 id="Rep-1-1：出现冲突的包，与别的包存在公共依赖。"><a href="#Rep-1-1：出现冲突的包，与别的包存在公共依赖。" class="headerlink" title="Rep 1.1：出现冲突的包，与别的包存在公共依赖。"></a>Rep 1.1：出现冲突的包，与别的包存在公共依赖。</h4><img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913162752636.png" class title="image-20220913162752636">
+
+<p>因此，只需分别获取以下四种映射，<em>VA</em> <em>→</em> <em>VD</em>1,<em>VB</em> <em>→</em> <em>VD</em>1,<em>VA</em> <em>→</em> <em>VD</em>2,<em>VC</em> <em>→</em> <em>VD</em>2，据此选择相应版本, 使得 <em>fAD</em>1(<em>VA</em>) &#x3D; <em>fBD</em>1(<em>VB</em>) &amp;&amp; <em>fAD</em>2(<em>VA</em>) &#x3D; <em>fCD</em>2(<em>V**C</em>)，那么更新 A，B， C 的版本将会从定义上消除冲突。</p>
+<p>取A和B关于冲突包的版本的交集，再反向映射得到修改的A 和 B的版本。</p>
+<h4 id="Rep-1-2：出现冲突的包，只共用了出现冲突的依赖（-）"><a href="#Rep-1-2：出现冲突的包，只共用了出现冲突的依赖（-）" class="headerlink" title="Rep 1.2：出现冲突的包，只共用了出现冲突的依赖（*）"></a>Rep 1.2：出现冲突的包，只共用了出现冲突的依赖（*）</h4><p>改进哪一个？</p>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913162802511.png" class title="image-20220913162802511">
+
+<p>有时候，虽然项目的整体结构复杂，但出现冲突的依赖之间关系非常简单：例如图1-11中所示，A,B 包存在大量共同依赖 <em>D</em>1*, D<em>2</em>, . . . , Dx<em>，C 依赖了不同版本的包 <em>Dx</em>。这种情况*<em>往往出现在往无冲突的现有项目中引入新的包。时。</em></em></p>
+<p>对于这种情况，我们往往只需要<strong>对新引入的 C 包进行版本的改变</strong>，即可消除冲突。</p>
+<p>我们根据冲突信息可以知道当前版本过高还是过低，于是据此收缩左右边界，并将中间版本置为当前版本。重复执行直至 C 包依赖的包不再出现 conflict。</p>
+<blockquote>
+<p>有没有间接依赖的间接依赖之间出现冲突的情况？协同更新是否还适用？</p>
+</blockquote>
+<h2 id="Pattern-B-类粒度的依赖冲突问题（-）"><a href="#Pattern-B-类粒度的依赖冲突问题（-）" class="headerlink" title="Pattern B 类粒度的依赖冲突问题（*）"></a>Pattern B 类粒度的依赖冲突问题（*）</h2><h3 id="Rep-2：不同的-JAR-包含完全限定名相同的类文件"><a href="#Rep-2：不同的-JAR-包含完全限定名相同的类文件" class="headerlink" title="Rep 2：不同的 JAR 包含完全限定名相同的类文件"></a><u>Rep 2：不同的 JAR 包含<strong>完全限定名相同的类文件</strong></u></h3><blockquote>
+</blockquote>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913191833238.png" class title="image-20220913191833238">
+
+<p>按照 Java 虚拟机的类加载原则，只会加载先声明的 org.example:LibA:1.0 中的类 org.example.classCase.C1 和 org.example.classCase.C2，Client 从调用 org.example.LibB:1.0 的类 org.example.classCase.C1 和org.example.classCase.C2 转为调用 org.example.LibA:1.0 的类 org.example.classCase.C1 和 org.example.classCase.C2，发生了类粒度的依赖置换问题。</p>
+<h3 id="Rep-3：客户软件与第三方依赖中包含冲突的类文件"><a href="#Rep-3：客户软件与第三方依赖中包含冲突的类文件" class="headerlink" title="Rep 3：客户软件与第三方依赖中包含冲突的类文件"></a>Rep 3：客户软件与第三方依赖中包含冲突的类文件</h3><blockquote>
+<p>本地代码与第三方库之间的冲突</p>
+</blockquote>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913193849124.png" class title="image-20220913193849124">
+
+<p>Java 虚拟机中规定完全限定名相同的类文件只能加载一个，此时，会分为两种子情况：</p>
+<ol>
+<li>如果客户软件和第三方依赖分别打包发布，实际加载的是客户软件中的类文件</li>
+<li>如果客户软件和第三方依赖一同打包发布，实际加载的是第三方依赖中的类文件</li>
+</ol>
+<h3 id="Rep-4：混合粒度的依赖冲突问题"><a href="#Rep-4：混合粒度的依赖冲突问题" class="headerlink" title="Rep 4：混合粒度的依赖冲突问题"></a>Rep 4：混合粒度的依赖冲突问题</h3><blockquote>
+<p>REP 1 &amp; 2混合的情况</p>
+</blockquote>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913193823229-16630691056091.png" class title="image-20220913193823229">
+
+<hr>
+<p>扩展其他编程语言&#x2F;构建工具</p>
+<p>Rust，PHP， Android Gradle</p>
+<p><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/core_dependency_management.html">Gradle中的依赖管理</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000013002041?utm_source=sf-similar-article"><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000013002041">PHP依赖管理Composer</a></a></p>
+<img src="/.com//09/18/%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/image-20220913200300335.png" class title="image-20220913200300335">
+
+<hr>
+<p>Q：</p>
+<ol>
+<li><p>Maven 广度&#x2F;深度？</p>
+</li>
+<li><p>版本区间 </p>
+<ol>
+<li>下载机制？</li>
+<li>现成的数据集 有没有存在版本区间？</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<p>怎么发现这些依赖问题？感觉实际项目中很难发现这些抽象的依赖冲突问题。</p>
+<p>怎么收集那些大型项目（folk star多的）进行实验？</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Dependency/">#Dependency</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/10/08/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">深度学习入门</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/15/study-notion/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">study notion</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-A-%E5%8C%85%E7%B2%92%E5%BA%A6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="nav-text">Pattern A 包粒度的依赖冲突问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-1%EF%BC%9A%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E5%90%8C%E4%B8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC"><span class="nav-text">Rep 1：项目使用同一第三方库的不同版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-5%EF%BC%9A%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%E6%9C%BA%E5%88%B6%E5%B9%B2%E6%89%B0%E4%B8%8B%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="nav-text">Rep 5：动态绑定机制干扰下的依赖冲突问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-6%EF%BC%9A%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="nav-text">Rep 6：循环依赖问题*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E5%86%B2%E7%AA%81"><span class="nav-text">隐式冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Rep-1-1%EF%BC%9A%E5%87%BA%E7%8E%B0%E5%86%B2%E7%AA%81%E7%9A%84%E5%8C%85%EF%BC%8C%E4%B8%8E%E5%88%AB%E7%9A%84%E5%8C%85%E5%AD%98%E5%9C%A8%E5%85%AC%E5%85%B1%E4%BE%9D%E8%B5%96%E3%80%82"><span class="nav-text">Rep 1.1：出现冲突的包，与别的包存在公共依赖。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rep-1-2%EF%BC%9A%E5%87%BA%E7%8E%B0%E5%86%B2%E7%AA%81%E7%9A%84%E5%8C%85%EF%BC%8C%E5%8F%AA%E5%85%B1%E7%94%A8%E4%BA%86%E5%87%BA%E7%8E%B0%E5%86%B2%E7%AA%81%E7%9A%84%E4%BE%9D%E8%B5%96%EF%BC%88-%EF%BC%89"><span class="nav-text">Rep 1.2：出现冲突的包，只共用了出现冲突的依赖（*）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-B-%E7%B1%BB%E7%B2%92%E5%BA%A6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%EF%BC%88-%EF%BC%89"><span class="nav-text">Pattern B 类粒度的依赖冲突问题（*）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-2%EF%BC%9A%E4%B8%8D%E5%90%8C%E7%9A%84-JAR-%E5%8C%85%E5%90%AB%E5%AE%8C%E5%85%A8%E9%99%90%E5%AE%9A%E5%90%8D%E7%9B%B8%E5%90%8C%E7%9A%84%E7%B1%BB%E6%96%87%E4%BB%B6"><span class="nav-text">Rep 2：不同的 JAR 包含完全限定名相同的类文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-3%EF%BC%9A%E5%AE%A2%E6%88%B7%E8%BD%AF%E4%BB%B6%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BE%9D%E8%B5%96%E4%B8%AD%E5%8C%85%E5%90%AB%E5%86%B2%E7%AA%81%E7%9A%84%E7%B1%BB%E6%96%87%E4%BB%B6"><span class="nav-text">Rep 3：客户软件与第三方依赖中包含冲突的类文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rep-4%EF%BC%9A%E6%B7%B7%E5%90%88%E7%B2%92%E5%BA%A6%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="nav-text">Rep 4：混合粒度的依赖冲突问题</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

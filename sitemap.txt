@@ -1,4 +1,4 @@
-http://example.com/2023/08/04/hello-world/
+http://example.com/2022/06/06/Looking-for-America/
 http://example.com/2023/06/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/
 http://example.com/2021/12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/
 http://example.com/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/
@@ -48,6 +48,7 @@ http://example.com/tags/Deep-Learning/
 http://example.com/tags/Software-Test/
 http://example.com/tags/Formal-Verification/
 http://example.com/tags/Software-Requirements/
+http://example.com/tags/English/
 http://example.com/categories/Study/
 http://example.com/categories/Study/Research/
 http://example.com/categories/Study/Reading/

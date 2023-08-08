@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            Functional Programming Class Notes |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Functional Programming Class Notes</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-12-26 19:28:32</span>
+        <span class="mobile">2021-12-26 19:28</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Formal-Verification/">Formal Verification</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>25 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>参考资料：</p>
+<p>下载Coq：<a target="_blank" rel="noopener" href="https://coq.inria.fr/">Welcome! | The Coq Proof Assistant (inria.fr)</a></p>
+<p>教材 Logical Foundations：<a target="_blank" rel="noopener" href="https://softwarefoundations.cis.upenn.edu/lf-current/index.html">Logical Foundations (upenn.edu)</a></p>
+<p>中文版：<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html">Basics: Coq 函数式编程 (coq-zh.github.io)</a></p>
+<span id="more"></span>
+
+<hr>
+<h1 id="Lecture-1-不带类型的λ演算"><a href="#Lecture-1-不带类型的λ演算" class="headerlink" title="Lecture 1 - 不带类型的λ演算"></a>Lecture 1 - 不带类型的λ演算</h1><h1 id="Lecture-2-带类型的λ演算"><a href="#Lecture-2-带类型的λ演算" class="headerlink" title="Lecture 2 - 带类型的λ演算"></a>Lecture 2 - 带类型的λ演算</h1><p>（前两节课看书，会证明即可，最后考试不考，上机考，10道Coq题）</p>
+<p>————–Coq实践————–</p>
+<h1 id="Lecture-3-Coq实践（1）Basics"><a href="#Lecture-3-Coq实践（1）Basics" class="headerlink" title="Lecture 3 - Coq实践（1）Basics"></a>Lecture 3 - Coq实践（1）Basics</h1><p><strong>Inductive:</strong> 归纳类型。|monday 表示其构造函数(裸构造子)–constructor。</p>
+<p>枚举&amp;模式匹配</p>
+
+
+<p><strong>Definition：</strong>定义函数，显式声明函数的参数和返回类型。如Definition 函数名 (参数1)  (参数2) : 返回值 :&#x3D; […]</p>
+<p>定义了函数之后，我们要用一些例子来检验它。实际上，在 Coq 中，检验的方式一共有三种：第一，我们可以用 Compute 指令来计算包含 next_weekday 的复合表达式：</p>
+<p>Compute (<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#next_weekday">next_weekday</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#friday">friday</a>).<br>(* &#x3D;&#x3D;&gt; monday : day *)</p>
+<p>第二，我们可以将*’期望’*的结果写成 Coq 的示例：<br>Example test_next_weekday:<br> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#next_weekday">next_weekday</a> (<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#next_weekday">next_weekday</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#saturday">saturday</a>)<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">&#x3D;</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#tuesday">tuesday</a>.</p>
+<p>该声明做了两件事：首先它断言 saturday 之后的第二个工作日是 tuesday；然后它为该断言取了名字以便之后引用它。 定义好断言后，我们还可以让 Coq 来验证它，就像这样：<br>Proof. simpl. reflexivity. Qed.</p>
+<p><strong>Notation：</strong>  Notation 指令能为既有的定义赋予新的中缀记法。</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194111327.png" class title="image-20220226194111327">
+
+<p><strong>Type:</strong></p>
+<p>Coq 中的每个表达式都有<strong>类型</strong>，它描述了该表达式所计算的东西的类别。 Check 指令会让 Coq 显示一个表达式的类型。eg. Check <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#true">true</a>.</p>
+<p>像 negb 这样的函数本身也是数据值，就像 true 和 false 一样。 它们的类型被称为*’<code>函数类型</code>‘*，用<strong>带箭头的类型</strong>表示。</p>
+<p>Check <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#negb">negb</a> : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#bool">bool</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#bool">bool</a>.</p>
+<p>negb 的类型写作 <code>bool → bool</code>， 可以理解为“<u>给定一个 bool 类型的输入，该函数产生一个 bool 类型的输出。</u>” 同样，andb 的类型写作 bool → bool → bool，可以理解为 “<u>给定两个 bool 类型的输入，该函数产生一个 bool 类型的输出。</u>”</p>
+<p>下面是一个更加有趣的类型定义，其中<strong>有个构造子接受一个参数</strong>：</p>
+<p>Inductive rgb : Type :&#x3D;<br> | red<br> | green<br> | blue.</p>
+<hr>
+<p>Inductive color : Type :&#x3D;<br> | black<br> | white<br> | primary (p : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#rgb">rgb</a>).</p>
+<p>像 red、green、blue、black、white 以及 primary（还有 true、false、monday 等）这样的原子标识符叫做’<code>构造子（Constructor）</code>‘。</p>
+<p>构造子可以应用于一个或多个参数。如primary p。</p>
+<p><strong>模块：</strong>通过此特性在内部模块中引入了 nat 类型的定义， 这样就不会覆盖标准库中的同名定义了。 Module NatPlayground.  … End Module.</p>
+<p><strong>Nat：</strong></p>
+<p>Inductive nat : Type :&#x3D;<br> | O<br> | S (n : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#nat">nat</a>) </p>
+<p>构造子表达式 O 属于集合 nat；</p>
+<p>如果 n 是属于集合 nat 的构造子表达式， 那么 S n 也是属于集合 nat 的构造子表达式；并且只有以这两种产生的方式构造字表达式才属于集合 nat。</p>
+<h1 id="Lecture-4-Coq实践（2）Recursive递推式"><a href="#Lecture-4-Coq实践（2）Recursive递推式" class="headerlink" title="Lecture 4 - Coq实践（2）Recursive递推式"></a>Lecture 4 - Coq实践（2）Recursive递推式</h1><p><strong>Fixpoint：</strong>递归定义函数</p>
+<p>为了书写方便，如果两个或更多参数具有相同的类型，那么它们可以写在一起。 在下面的定义中，(n m : nat) 的意思与 (n : nat) (m : nat) 相同。</p>
+
+
+<p><strong>Simpl Proof</strong>：</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194142531.png" class title="image-20220226194142531">
+
+<p>Coq中，reflexivity即可证明：0+n &#x3D; n; 0×n &#x3D; n; 1+n &#x3D; S n等。但交换后 n+0 &#x3D; 0; n×0 &#x3D; 0等需要另外证明。（见induction.v）</p>
+<p>我们使用了关键字 Theorem 而非 Example。这种差别纯粹是风格问题； 在 Coq 中，关键字 Example 和 Theorem（以及其它一些，包括 Lemma、Fact 和 Remark）都表示完全一样的东西。</p>
+<p><strong>Rewrite Proof:</strong></p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194157523.png" class title="image-20220226194157523">
+
+<p>我们需要在能够假定存在自然数 n 和 m 的基础上进行推理。 另外需要假定有前提 n &#x3D; m。我们需要在能够假定存在自然数 n 和 m 的基础上进行推理。 另外。</p>
+<p>如果我们假设了 n &#x3D; m，那么就可以将证明目标中的 n 替换成 m 从而获得两边表达式相同的等式。用来告诉 Coq 执行这种替换的策略叫做*’改写’* rewrite。</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194215236.png" class title="image-20220226194215236">
+
+<p>rewrite &#x3D;&#x3D; rewrite -&gt; 从左向右改写 </p>
+<p>rewrite &lt;- 从右往左改写</p>
+<p><strong>Destruct Proof:</strong>  分情况讨论证明</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194229742.png" class title="image-20220226194229742">
+
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194242529.png" class title="image-20220226194242529">
+
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194251005.png" class title="image-20220226194251005">
+
+<h1 id="Lecture-5-Coq实践（3）Induction"><a href="#Lecture-5-Coq实践（3）Induction" class="headerlink" title="Lecture 5 - Coq实践（3）Induction"></a>Lecture 5 - Coq实践（3）Induction</h1><p>我们以证明 P(n) 对于所有 n 都成立的目标开始， 然后（通过应用 induction 策略）把它分为两个子目标：一个是我们必须证明 P(O) 成立，另一个是我们必须证明 P(n’) → P(S n’)。下面就是对该定理的用法：</p>
+<p>add_0_r:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194307362.png" class title="image-20220226194307362">
+
+<p>plus_n_Sm:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194329927.png" class title="image-20220226194329927">
+
+<p>add_comm(交换律):</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194339313.png" class title="image-20220226194339313">
+
+<p>add_assoc(结合律):</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194347765.png" class title="image-20220226194347765">
+
+<p>plus_rearrange:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194358566.png" class title="image-20220226194358566">
+
+<p>mult_plus_distr_r:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194410702.png" class title="image-20220226194410702">
+
+<p>Proof in Proof:</p>
+<p>引入局部引理。 我们可以用 assert 策略来做到。</p>
+<p>assert: <code>assert</code> 可以往假设里面添加一个命题，当然你要证明它。<code>assert P.</code> 会产生两个小目标：一个是给定当前已知的假设，证明 <code>P</code>；另一个是给定当前已知的假设和 <code>P</code>，证明原来的目标。</p>
+<h1 id="Lecture-6-Coq实践（4）-Lists"><a href="#Lecture-6-Coq实践（4）-Lists" class="headerlink" title="Lecture 6 -Coq实践（4） Lists"></a>Lecture 6 -Coq实践（4） Lists</h1><p>natlist:</p>
+
+
+<h2 id="有关列表的论证"><a href="#有关列表的论证" class="headerlink" title="有关列表的论证"></a><strong>有关列表的论证</strong></h2><p>nil_app:</p>
+<p>[]++l &#x3D; l &lt;&#x3D;&gt; reflexivity</p>
+<p>app_assoc:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194446851.png" class title="image-20220226194446851">
+
+<p>app_nil_r:</p>
+<p>l++[] &#x3D; l &lt;&#x3D;&gt; induction</p>
+<p><strong>反转列表：</strong></p>
+<p>rev:</p>
+<p>Fixpoint rev (l:natlist) : natlist :&#x3D;<br>  match l with<br>  | nil    &#x3D;&gt; nil<br>  | h :: t &#x3D;&gt; rev t ++ [h]<br>  end.</p>
+<p>rev_length:</p>
+<p>length l &#x3D; length (rev l)</p>
+<p>rev_app_distr:</p>
+
+
+<p>rev_revolutive:</p>
+
+
+<p>fun:匿名函数</p>
+
+
+<p>在Coq中，通过Require Import List.可以直接引入List Nat.</p>
+<p>Notation “[ ]” :&#x3D; nil.<br>Notation “[ x ; .. ; y ]” :&#x3D; (cons x .. (cons y nil) ..).</p>
+<h1 id="Lecture-7-Coq实践（5）Poly"><a href="#Lecture-7-Coq实践（5）Poly" class="headerlink" title="Lecture 7 - Coq实践（5）Poly"></a>Lecture 7 - Coq实践（5）Poly</h1><p>多态与高级函数</p>
+
+
+<p>@doit3times :</p>
+<p>Filter函数 – 过滤</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(** ** <span class="title class_">Filter</span> *)</span><br><span class="line"></span><br><span class="line">(** <span class="title class_">Here</span> is a more useful higher-order <span class="keyword">function</span>, taking a list</span><br><span class="line">    <span class="keyword">of</span> [X]s and a _predicate_ on [X] (a <span class="keyword">function</span> <span class="keyword">from</span> [X] to [bool])</span><br><span class="line">    and <span class="string">&quot;filtering&quot;</span> the list, returning a <span class="keyword">new</span> list containing just</span><br><span class="line">    those elements <span class="keyword">for</span> which the predicate returns [<span class="literal">true</span>]. *)</span><br><span class="line"><span class="title class_">Fixpoint</span> filter &#123;<span class="attr">X</span>:<span class="title class_">Type</span>&#125; (<span class="attr">test</span>: X-&gt;bool) (<span class="attr">l</span>:list X) : (list X) :=</span><br><span class="line">  match l <span class="keyword">with</span></span><br><span class="line">  | [] =&gt; []</span><br><span class="line">  | h :: <span class="function"><span class="params">t</span> =&gt;</span></span><br><span class="line">    <span class="keyword">if</span> test h then h :: (filter test t)</span><br><span class="line">    <span class="keyword">else</span> filter test t</span><br><span class="line">  end.</span><br><span class="line">  </span><br><span class="line">  (** <span class="title class_">For</span> example, <span class="keyword">if</span> we apply [filter] to the predicate [evenb]</span><br><span class="line">    and a list <span class="keyword">of</span> numbers [l], it returns a list containing just the</span><br><span class="line">    even members <span class="keyword">of</span> [l]. *)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Example</span> <span class="attr">test_filter1</span>: filter evenb [<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>;<span class="number">4</span>] = [<span class="number">2</span>;<span class="number">4</span>].</span><br><span class="line"><span class="title class_">Proof</span>. reflexivity. <span class="title class_">Qed</span>.</span><br></pre></td></tr></table></figure>
+
+<h1 id="Lecture-8-Coq实践（6）-Tactics"><a href="#Lecture-8-Coq实践（6）-Tactics" class="headerlink" title="Lecture 8 - Coq实践（6） Tactics"></a>Lecture 8 - Coq实践（6） Tactics</h1><p><strong>apply策略：</strong></p>
+<p>我们经常会遇到<strong>待证目标</strong>(Goal)与上下文中的前提(IH)或已证引理(Theorem&#x2F;Lemma)*<code>&#39;刚好相同&#39;</code>*的情况。可以像之前一样rewrite IH. reflexivity. 来完成，不过使用apply策略可以一步完成。</p>
+<p>apply 策略也可以配合*’条件（Conditional）’*假设和引理来使用： 如果被应用的语句是一个蕴含式，那么该蕴含式的前提就会被添加到待证子目标列表中。</p>
+
+
+<p><strong>symmetry：</strong>交换等式两边的顺序</p>
+<p><strong>apply with 策略:</strong> with ( m :&#x3D; xxx) 显式地来提供一个实例</p>
+
+
+<p>（实际上，我们通常不必在 with 从句中包含名字 m，Coq 一般足够聪明来确定我们实例化的变量。我们也可以写成： apply trans_eq with [c;d]</p>
+<p>或直接使用<strong>transitivity策略</strong>：</p>
+
+
+<p><strong>injection</strong> 单射</p>
+<p>自然数中构造子S是*’**单射（Injective）’<em><strong>或</strong></em>‘一一对应’***的。 即，如果 S n &#x3D; S m，那么 n &#x3D; m 必定成立。类似的原理同样适用于所有归纳定义的类型：所有构造子都是单射的， 而不同构造子构造出的值绝不可能相等。</p>
+
+
+<p>通过**[injection H]<strong>语句，Coq会生成它可以</strong>依据构造函数的单射性推导出的所有方程**。每一个这样的方程都是作为目标的前提加入的，而在这个例子中，添加了前提n&#x3D;m。而这些前提也会成为后续证明的子目标。</p>
+
+
+<p><strong>discriminate策略：</strong></p>
+<p>如果我们对假设使用 discriminate ， Coq 便会确认我们当前正在证明的目标不可行，并同时移除它，不再考虑。</p>
+
+
+<p>可以将[discriminate]策略理解为：如果证明过程中某个荒谬的假设成立，那么推出的任何结论也是成立的。</p>
+<p>f_equal：S n &#x3D; S m → n &#x3D; m – injection的逆形式</p>
+<p>构造子的单射性能让我们论证 ∀ (n m : nat), S n &#x3D; S m → n &#x3D; m。 此蕴含式的逆形式是一个构造子和函数的更一般的实例， 在后面我们会发现它用起来很方便：</p>
+<p>There is also a tactic named <code>f_equal</code> that can prove such theorems.  Given a goal of the form [f a1 … an &#x3D; g b1 … bn], the tactic [f_equal] will produce subgoals of the form [f &#x3D; g], [a1 &#x3D; b1], …, [an &#x3D; bn]. </p>
+<p>unfold 展开定义</p>
+<p>对复合表达式用destruct</p>
+<p>Definition sillyfun (n : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a>) : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#bool">bool</a> :&#x3D;<br>    if <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Tactics.html#n">n</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">&#x3D;?</a> 3 then <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#false">false</a><br>    else if <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Tactics.html#n">n</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">&#x3D;?</a> 5 then <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#false">false</a><br>    else <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#false">false</a>.</p>
+<hr>
+<p>Theorem sillyfun_false : ∀ (n : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a>),<br> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Tactics.html#sillyfun">sillyfun</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Tactics.html#n">n</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">&#x3D;</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#false">false</a>.<br>Proof.<br> intros n. unfold <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Tactics.html#sillyfun">sillyfun</a>.<br> destruct (n <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">&#x3D;?</a> 3) eqn:E1.<br>  - (* n &#x3D;? 3 &#x3D; true <em>) reflexivity.<br>  - (</em> n &#x3D;? 3 &#x3D; false *) destruct (n <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Basics.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">&#x3D;?</a> 5) eqn:E2.<br>   + ( n &#x3D;? 5 &#x3D; true ) reflexivity.<br>   + ( n &#x3D;? 5 &#x3D; false ) reflexivity. Qed.</p>
+<p>在前面的证明中展开 sillyfun 后，我们发现卡在 if (n &#x3D;? 3) then … else … 上了。但由于 n 要么等于 3 要么不等于，因此我们可以用 destruct (eqb n 3) 来对这两种情况进行推理。</p>
+<p> Here are the ones we’ve seen:</p>
+<pre><code>  - [intros]: move hypotheses/variables from goal to context
+
+  - [reflexivity]: finish the proof (when the goal looks like [e =
+    e])
+
+  - [apply]: prove goal using a hypothesis, lemma, or constructor
+
+  - [apply... in H]: apply a hypothesis, lemma, or constructor to
+    a hypothesis in the context (forward reasoning)
+
+  - [apply... with...]: explicitly specify values for variables
+    that cannot be determined by pattern matching
+
+  - [simpl]: simplify computations in the goal
+
+  - [simpl in H]: ... or a hypothesis
+
+  - [rewrite]: use an equality hypothesis (or lemma) to rewrite
+    the goal
+
+  - [rewrite ... in H]: ... or a hypothesis
+
+  - [symmetry]: changes a goal of the form [t=u] into [u=t]
+
+  - [symmetry in H]: changes a hypothesis of the form [t=u] into
+    [u=t]
+
+  - [transitivity y]: prove a goal [x=z] by proving two new subgoals,
+    [x=y] and [y=z]
+
+  - [unfold]: replace a defined constant by its right-hand side in
+    the goal
+
+  - [unfold... in H]: ... or a hypothesis
+
+  - [destruct... as...]: case analysis on values of inductively
+    defined types
+
+  - [destruct... eqn:...]: specify the name of an equation to be
+    added to the context, recording the result of the case
+    analysis
+
+  - [induction... as...]: induction on values of inductively
+    defined types
+
+  - [injection... as...]: reason by injectivity on equalities
+    between values of inductively defined types
+
+  - [discriminate]: reason by disjointness of constructors on
+    equalities between values of inductively defined types
+
+  - [assert (H: e)] (or [assert (e) as H]): introduce a &quot;local
+    lemma&quot; [e] and call it [H]
+
+  - [generalize dependent x]: move the variable [x] (and anything
+    else that depends on it) from the context back to an explicit
+    hypothesis in the goal formula
+
+  - [f_equal]: change a goal of the form [f x = f y] into [x = y] *)
+</code></pre>
+<h1 id="Lecture-9-Coq实践（7）Logic-1"><a href="#Lecture-9-Coq实践（7）Logic-1" class="headerlink" title="Lecture 9 - Coq实践（7）Logic-1"></a>Lecture 9 - Coq实践（7）Logic-1</h1><h2 id="Prop-命题"><a href="#Prop-命题" class="headerlink" title="Prop(命题)"></a>Prop(命题)</h2><p>所有语法形式良好的命题，无论是否为真，其类型均为 Prop。</p>
+<p>区分“是一个命题” &amp; “该命题可被证明”</p>
+<p>到目前为止，我们已经知道命题可以出现在 Theorem（还有 Lemma 以及 Example）的<strong>声明</strong>中了。</p>
+<p>不过命题还可以用在其它地方。例如，我们可以用 Definition 为命题取名，就像为其它表达式取名一样。<br>        Definition plus_claim : Prop :&#x3D; 2 <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">+</a> 2 <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">&#x3D;</a> 4.<br>        Check <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#plus_claim">plus_claim</a> : Prop.</p>
+<p>之后我们可以在任何需要此命题的地方使用它们名字——例如，作为一个 Theorem 声明中的断言：<br>            Theorem plus_claim_is_true :<br>                 <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#plus_claim">plus_claim</a>.<br>            Proof. reflexivity. Qed.</p>
+<p>参数化命题： 也就是一个接受某些类型的参数， 然后返回一个命题的函数。</p>
+<p>例如，以下函数接受某个数字，返回一个命题断言该数字等于 3：<br>        Definition is_three (n : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a>) : Prop :&#x3D;<br>                 <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#n">n</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#1c39bf18749e5cc609e83c0a0ba5a372">&#x3D;</a> 3.<br>        Check <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#is_three">is_three</a> : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> Prop.</p>
+<h2 id="逻辑联结词"><a href="#逻辑联结词" class="headerlink" title="逻辑联结词"></a>逻辑联结词</h2><p><strong>合取</strong></p>
+<p>证明合取(&#x2F;\ 式)的命题通常使用 split 策略。它会分别为语句的两部分生成两个子目标：</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226194855205.png" class title="image-20220226194855205">
+
+<p>对于任意命题 A 和 B，如果我们假设 A 为真且 B 为真， 那么就能得出 A ∧ B 也为真的结论。</p>
+<p>and_exercise:</p>
+
+
+<p>以上就是证明合取语句(目标)的方法。要反过来使用，即使用<strong>合取前提</strong>来帮助证明时， 我们会采用 destruct 策略。形如 A ∧ B 的前提 H，那么 destruct H as [HA HB] 将会从上下文中移除 H 并增加 HA 和 HB 两个新的前提。</p>
+<p>and_assoc:</p>
+
+
+<p>另一种经常遇到合取语句的场景是，我们已经知道了 A ∧ B， 但在某些上下文中只需要 A 或者 B。此时我们可以用 destruct 进行解构（或许是作为 intros 的一部分）并用下划线模式 _ 来丢弃不需要的合取分式。</p>
+<p>Lemma proj1 : ∀ P Q : Prop,<br>             <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#P">P</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d82a7d96d3659d805ffe732283716822">∧</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#Q">Q</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Logic.html#P">P</a>.<br>Proof.<br>             intros P Q HPQ.<br>             destruct HPQ as [HP _].<br>             apply HP. Qed.</p>
+<p><strong>析取</strong></p>
+<p>为了在证明中使用析取前提，我们需要分类讨论(它与 nat 之类的数据类型一样，都可以显式地通过 destruct 或隐式地通过 intros 模式来拆分)  [ | ]</p>
+<p>要证的结论为/式（析取 Disjuction），所以只需要证明其中一个结论即可，因此用left&#x2F;right证明其中一个子目标。</p>
+
+
+<p><strong>假命题和否定</strong></p>
+<p><strong>not:</strong></p>
+<p>将 ¬ P 定义为 P → False，而 False 是在标准库中特别定义的矛盾性命题。</p>
+
+
+<p>由于 False 是个矛盾性命题，因此discriminate对它也适用。如果我们让 False 进入到了证明的上下文中，可以对它使用 destruct 来完成任何待证目标</p>
+<p>ex_falso_quodlibet: 字面意思是“从谬误出发， 你能够证明任何你想要的”</p>
+
+
+<p>在前面的<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Hahahang/p/11963233.html">策略</a>中有讲述过Coq中的[discriminate]策略时，提到过如果两个假设两个不同构造器构造的变量相等，那么就可以根据这个假设推导出任何结论，因为这个假设前提就是不成立的。<br>根据这个前提，可以将逻辑非~P定义成P-&gt;False，其中False是一个在Coq标准库中定义的一个矛盾命题。</p>
+<h1 id="Lecture-10-Coq实践（8）Logic-2-amp-IndProp"><a href="#Lecture-10-Coq实践（8）Logic-2-amp-IndProp" class="headerlink" title="Lecture 10 - Coq实践（8）Logic-2 &amp; IndProp"></a>Lecture 10 - Coq实践（8）Logic-2 &amp; IndProp</h1><p>Logical Equivalence 逻辑等价</p>
+
+
+<p>Existential Quantification 存在量词</p>
+
+
+<hr>
+<h2 id="IndProp"><a href="#IndProp" class="headerlink" title="IndProp"></a>IndProp</h2><p>Inductively Defined Propositions 归纳定义的命题</p>
+<p>先定义出规则——&gt;Constructor 每一个构造子对应一条推断规则Rule</p>
+<ol>
+<li>基本规则 Base case 【Rule 1】 </li>
+<li>递归情况 Inductive steps 【Rule 2】</li>
+</ol>
+<p>Inductive Relations</p>
+
+
+<p>使用 Inductive 声明的定义， 声明中<strong>每一个构造子对应一个推断规则</strong>：</p>
+<p>Inductive ev : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> Prop :&#x3D;<br>| ev_0 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev">ev</a> 0<br>| ev_SS (n : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a>) (H : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev">ev</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#n">n</a>) : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev">ev</a> (<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#S">S</a> (<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#S">S</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#n">n</a>)).</p>
+<p>这个定义与之前 Inductive 定义的用法有一个有趣的区别：一方面， 我们定义的并不是一个 Type（如 nat），而是<strong>一个将 nat 映射到 Prop 的函数</strong>——即关于数的性质。然而真正要关注的是，由于 ev 中的 nat 参数出现在冒号*’右侧’*，这允许在不同的构造子类型中使用不同的值：例如 ev_0 类型中的 0 以及 ev_SS 类型中的 S (S n)。与此相应， 每个构造子的类型必须在冒号后显式指定，并且对于某个自然数 n 来说，每个构造子的类型都必须有 ev n 的形式。</p>
+<p>这些 “证据构造子” 等同于已经证明过的定理。 具体来说，我们可以使用 Coq 中的 apply 策略和规则名称来证明某个数的 ev 性质……<br>Theorem ev_4 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev">ev</a> 4.<br>Proof. apply <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev_SS">ev_SS</a>. apply <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev_SS">ev_SS</a>. apply <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#ev_0">ev_0</a>. Qed.</p>
+<h1 id="Lecture-11-Coq实践（9）-IndProp"><a href="#Lecture-11-Coq实践（9）-IndProp" class="headerlink" title="Lecture 11 - Coq实践（9） IndProp"></a>Lecture 11 - Coq实践（9） IndProp</h1><p>在证明中使用 Using <strong>Evidence</strong> in Proofs</p>
+<p>对 ev 而言，使用 Inductive 声明来引入 ev 会告诉 Coq， ev_0 和 ev_SS 构造子不仅是构造偶数证明证据的有效方式， 还是构造一个数满足 ev 的证据的唯一方式。换句话说，如果某人展示了对于 ev n 的证据 E，那么我们知道 E 必是二者其一：</p>
+<ul>
+<li>E 是 ev_0（且 n 为 O）</li>
+<li>E 是 ev_SS n’ E’（且 n 为 S (S n’)，E’ 为 ev n’ 的证据）.</li>
+</ul>
+<p>这样的形式暗示着，我们可以像分析归纳定义的数据结构一样分析形如 ev n 的假设。use induction&#x2F;inversion</p>
+<p><strong>inversion on evidence:</strong></p>
+<p>Suppose we are proving some fact involving a number n, and **we are given ev n as a hypothesis.**We already know how to perform case analysis on n using <code>destruct or induction</code>, <u>generating separate subgoals for the case where n &#x3D; O and the case where n &#x3D; S n’ for some n’.</u> </p>
+<p>But for some proofs we may <code>not want to analyze the evidence that ev n *directly*</code>. As a tool, we can prove our characterization of evidence for ev n, using destruct.</p>
+<p>使用destruct解构，E: ev n —&gt; destruct E as  [|n’ E’] eqn: EE.</p>
+<ul>
+<li>E &#x3D; ev_0</li>
+<li>E &#x3D; ev_SS n’ E’</li>
+</ul>
+
+
+<p>当destruct不够的情况（前提不是直观的ev n而是其他，如ev (S S n)）：</p>
+
+
+<p>remember策略:</p>
+<p>If we <code>remember</code> that term S (S n), the proof goes through. (We’ll discuss remember in more detail below.) 将S(S n)替换为k，加入假设k &#x3D; S(S n)</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195122813.png" class title="remember">
+
+<p>Induction on Evidence</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195137278.png" class title="QQ截图20211226193609">
+
+<p>注意到分解出的两个子目标，一个discriminate，另一个需要injection和rewrite，可以直接用inversion分解，会去掉discriminate的情况。</p>
+<p>inversion &#x3D; destruct + discrimate + injection</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195148651.png" class title="evSS_ev">
+
+<p>inversion E具体怎么理解？inversion 的工作原理大致如下：假设 H 指代上下文中的假设 P， 且 P 由 Inductive 归纳定义，则对于 P 每一种可能的构造，inversion H 各为其生成子目标。子目标中自相矛盾者被忽略，证明其余子命题即可得证原命题。 在证明子目标时，上下文中的 H 会替换为 P 的构造条件， 即其构造子所需参数以及必要的等式关系。例如：倘若 ev n 由 evSS 构造， 上下文中会引入参数 n’、ev n’，以及等式 S (S n’) &#x3D; n。</p>
+<p><strong>Induction on evidence:</strong></p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195158836.png" class title="ev_even">
+
+<p>对 E’ 产生了 IH，而 E’ 是唯一递归出现的 ev 命题。 由于 E’ 中涉及到 n’，这个归纳假设是关于 n’ 的， 而非关于 n 或其他数字的。</p>
+<p>Case Study: Regular Expressions</p>
+<h1 id="Lecture-12-Coq实践（10）-Maps-amp-ProofObjects"><a href="#Lecture-12-Coq实践（10）-Maps-amp-ProofObjects" class="headerlink" title="Lecture 12 - Coq实践（10） Maps &amp; ProofObjects"></a>Lecture 12 - Coq实践（10） Maps &amp; ProofObjects</h1><h2 id="Maps-映射"><a href="#Maps-映射" class="headerlink" title="Maps 映射"></a>Maps 映射</h2><p>Total Maps</p>
+<p>首先，我们定义一个*’全映射’*类型， 它在某个映射中查找不存在的键时会返回默认值。</p>
+<p>Definition total_map (A : Type) :&#x3D; <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Strings.String.html#string">string</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Maps.html#A">A</a>.</p>
+<p>直观上来说，一个元素类型为 A 的全映射不过就是个根据 string 来查找 A 的函数。</p>
+<p>给定函数 t_empty 一个默认元素，它会产生一个空的全映射。 此映射在应用到任何字符串时都会返回默认元素。</p>
+<p>Definition t_empty {A : Type} (v : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Maps.html#A">A</a>) : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Maps.html#total_map">total_map</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Maps.html#A">A</a> :&#x3D;<br> (fun _ ⇒ <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Maps.html#v">v</a>).</p>
+<p>Definition <a href="#total_map">total_map</a> (<a href="#A:10">A</a> : Type) :&#x3D; <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Strings.String.html#string">string</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#::type_scope:x_'-%3E'_x">→</a> <a href="Maps.html#A:10">A</a>.</p>
+<p>更有趣的是 update 函数，它和之前一样，接受一个映射 m、一个键 x 以及一个值 v，并返回一个将 x 映射到 v 的新映射；其它键则与 m 中原来的保持一致。</p>
+
+
+<p>Lemma t_update_eq</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195249388.png" class title="lemma t_update_eq">
+
+<p>Theorem t_update_neq:</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195256912.png" class title="t_update_neq">
+
+<p>Theorem t_update_permute :</p>
+<p>Partial Map:</p>
+<h2 id="ProofObjects"><a href="#ProofObjects" class="headerlink" title="ProofObjects"></a>ProofObjects</h2><p>“<em>‘算法是证明的计算性内容。’</em>“ –Robert Harper</p>
+<p>在Coq里面，可证明性表现为拥有具体的*’证据’*。 为基本命题构造证明，实则以树状结构表示其证据。</p>
+<p>对于形如 A → B 的蕴含式，其证明为证据*’转化装置（transformer）’*，可将任何 证明 A 的依据转化为 B 的证据。所以从根本上来讲，证明仅仅就是操纵证据的程 序。</p>
+<p>试问：如果是证据是数据，那么命题本身是什么？</p>
+<p>答曰：类型也！</p>
+<p>回顾一下 ev 这个性质的形式化定义。</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195311039.png" class title="ev_4Proof">
+
+<p>我们可以换种方式来解读“:”：用“是……的证明”而非“具有……类型”。例如将 ev 定义中第二行的 ev_0 : ev 0 读作“ev_0 是 ev 0 的证明”而非“ev_0 的类型为 ev 0”。</p>
+<p>此处 : 既在类型层面表达“具有……类型”，又在命题层面表示“是……的证明”。 这种双关称为*’柯里-霍华德同构（Curry-Howard correspondence）’*。 它指出了逻辑与计算之间的深层联系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命题           ~  类型</span><br><span class="line">证明           ~  数据值</span><br></pre></td></tr></table></figure>
+
+<h1 id="Lecture-13-Coq实践（11）IndPrinciples-amp-Relation"><a href="#Lecture-13-Coq实践（11）IndPrinciples-amp-Relation" class="headerlink" title="Lecture 13 - Coq实践（11）IndPrinciples &amp; Relation"></a>Lecture 13 - Coq实践（11）IndPrinciples &amp; Relation</h1><h2 id="IndPrinciples"><a href="#IndPrinciples" class="headerlink" title="IndPrinciples"></a>IndPrinciples</h2><p>对数学归纳法的拓展。</p>
+<h2 id="Relation"><a href="#Relation" class="headerlink" title="Relation"></a>Relation</h2><p>集合 X 上的二元*’关系（Relation）’*指所有<strong>由两个 X 中的元素参数化的命题</strong>， 即，有关一对 X 中的元素的命题。</p>
+<p>Definition relation (X: Type) :&#x3D; <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> Prop.</p>
+<p>偏函数</p>
+<p>对于集合 X 上的关系 R ，如果对于任何 x 最多只有一个 y 使得 R x y 成立 – 即，R x y1 和 R x y2 同时成立蕴含 y1 &#x3D; y2， 则称 R 为*’偏函数’*。(一个x只对应一个y)</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195322524.png" class title="partialFunc">
+
+<p>然而，数值上的 ≤ 关系并不是个偏函数。（利用反证法，假设 ≤ 是一个偏函数。然而根据其定义我们有 0 ≤ 0 和 0 ≤ 1，这样会推出 0 &#x3D; 1。这是不可能的，所以原假设不成立。）</p>
+<h3 id="自反关系"><a href="#自反关系" class="headerlink" title="自反关系"></a>自反关系</h3><p>集合 X 上的*’自反关系’*是指 X 的每个元素都与其自身相关。</p>
+<p>Definition reflexive {X: Type} (R: <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#relation">relation</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a>) :&#x3D;<br> ∀ a : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a>, <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#R">R</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#a">a</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#a">a</a>.</p>
+<hr>
+<p>Theorem le_reflexive :<br> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#reflexive">reflexive</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#le">le</a>.</p>
+<p>Proof.<br> unfold <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#reflexive">reflexive</a>. intros n. apply <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#le_n">le_n</a>. Qed.</p>
+<h3 id="传递关系"><a href="#传递关系" class="headerlink" title="传递关系"></a><strong>传递关系</strong></h3><p>如果 R a b 和 R b c 成立时 R a c 也成立，则称 R 为*’传递关系’*。</p>
+<p>Definition transitive {X: Type} (R: <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#relation">relation</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a>) :&#x3D;<br> ∀ a b c : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#X">X</a>, <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#R">R</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#a">a</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#b">b</a><a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#R">R</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#b">b</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#c">c</a><a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">→</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#R">R</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#a">a</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#c">c</a><a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Logic.html#d43e996736952df71ebeeae74d10a287">)</a>.</p>
+<hr>
+<p>Theorem le_trans :<br> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#transitive">transitive</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#le">le</a>.</p>
+<p>Proof.<br> intros n m o Hnm Hmo.<br> induction Hmo.<br> - (* le_n <em>) apply Hnm.<br> - (</em> le_S *) apply <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#le_S">le_S</a>. apply IHHmo. Qed.</p>
+<p>Theorem lt_trans:<br> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#transitive">transitive</a> <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#lt">lt</a>.</p>
+<p>Proof.<br> unfold <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/IndProp.html#lt">lt</a>. unfold <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#transitive">transitive</a>.<br> intros n m o Hnm Hmo.<br> apply <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#le_S">le_S</a> in Hnm.<br> apply <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Rel.html#le_trans">le_trans</a> with (a :&#x3D; (<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#S">S</a> n)) (b :&#x3D; (<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#S">S</a> m)) (c :&#x3D; o).<br> apply Hnm.<br> apply Hmo. Qed.</p>
+<h3 id="对称关系"><a href="#对称关系" class="headerlink" title="对称关系"></a>对称关系</h3><p>如果 R a b 蕴含 R b a，那么 R 就是*’对称关系’*。</p>
+<h1 id="Lecture-14-Coq实践（12）Imp"><a href="#Lecture-14-Coq实践（12）Imp" class="headerlink" title="Lecture 14 - Coq实践（12）Imp"></a>Lecture 14 - Coq实践（12）Imp</h1><p>simple imperative programs</p>
+<p><img src="/.com//Users\dell\AppData\Roaming\Typora\typora-user-images\image-20220226195341567.png" alt="image-20220226195341567"></p>
+<p><strong>aexp 算术表达式</strong></p>
+<p>Inductive aexp : Type :&#x3D;<br> | ANum (n : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a>)<br> | APlus (a1 a2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aexp">aexp</a>)<br> | AMinus (a1 a2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aexp">aexp</a>)<br> | AMult (a1 a2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aexp">aexp</a>).</p>
+<p><strong>bexp 布尔表达式</strong></p>
+<p>Inductive bexp : Type :&#x3D;<br> | BTrue<br> | BFalse<br> | BEq (a1 a2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aexp">aexp</a>)<br> | BLe (a1 a2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aexp">aexp</a>)<br> | BNot (b : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#bexp">bexp</a>)<br> | BAnd (b1 b2 : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#bexp">bexp</a>).</p>
+<pre><code>a := nat
+        | a + a
+        | a - a
+        | a * a
+
+b := true
+    | false
+    | a = a
+    | a &lt;= a
+    | ~ b
+    | b &amp;&amp; b
+</code></pre>
+<h2 id="求值函数"><a href="#求值函数" class="headerlink" title="求值函数"></a>求值函数</h2><p>对算术表达式进行*’求值（Evaluation）’*会得到数值。给定一个表达式，获得数值。</p>
+<p>Fixpoint aeval (a : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aexp">aexp</a>) : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#nat">nat</a> :&#x3D;<br> match <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#a">a</a> with<br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.ANum">ANum</a> n ⇒ n<br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.APlus">APlus</a> a1 a2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a1<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">+</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a2<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#b3eea360671e1b32b18a26e15b3aace3">)</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.AMinus">AMinus</a> a1 a2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#9482aae3d3b06e249765c1225dbb8cbb">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a1<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#9482aae3d3b06e249765c1225dbb8cbb">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#9482aae3d3b06e249765c1225dbb8cbb">-</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#9482aae3d3b06e249765c1225dbb8cbb">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a2<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#9482aae3d3b06e249765c1225dbb8cbb">)</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.AMult">AMult</a> a1 a2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#697e4695610f677ae98a52af81f779d2">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a1<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#697e4695610f677ae98a52af81f779d2">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#697e4695610f677ae98a52af81f779d2">×</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#697e4695610f677ae98a52af81f779d2">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#aeval">aeval</a> a2<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Peano.html#697e4695610f677ae98a52af81f779d2">)</a><br> end.</p>
+<p>Fixpoint beval (b : <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.bexp">bexp</a>) : <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#bool">bool</a> :&#x3D;<br> match <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#b">b</a> with<br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BTrue">BTrue</a> ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#true">true</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BFalse">BFalse</a> ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#false">false</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BEq">BEq</a> a1 a2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aeval">aeval</a> a1<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">&#x3D;?</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aeval">aeval</a> a2<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#97a8d8c92e88d1d68fb55a13a4fcfc6d">)</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BLe">BLe</a> a1 a2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#01f84f7b4db7ca25b5fbdf8f04a7bebc">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aeval">aeval</a> a1<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#01f84f7b4db7ca25b5fbdf8f04a7bebc">)</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#01f84f7b4db7ca25b5fbdf8f04a7bebc">&lt;&#x3D;?</a> <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#01f84f7b4db7ca25b5fbdf8f04a7bebc">(</a><a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.aeval">aeval</a> a2<a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Nat.html#01f84f7b4db7ca25b5fbdf8f04a7bebc">)</a><br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BNot">BNot</a> b1 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#negb">negb</a> (<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#beval">beval</a> b1)<br> | <a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#AExp.BAnd">BAnd</a> b1 b2 ⇒ <a target="_blank" rel="noopener" href="http://coq.inria.fr/library//Coq.Init.Datatypes.html#andb">andb</a> (<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#beval">beval</a> b1) (<a target="_blank" rel="noopener" href="https://coq-zh.github.io/SF-zh/lf-current/Imp.html#beval">beval</a> b2)<br> end.</p>
+<h2 id="优化及其证明"><a href="#优化及其证明" class="headerlink" title="优化及其证明"></a>优化及其证明</h2><p>———-通常是期末考试最后一题，需要给出优化及其证明。我都是分情况递归地去做，try repeat ;策略等用的不熟，而且可读性不强。—————</p>
+<p>假设我们定义了一个接收算术表达式并对它稍微进行化简的函数，即将所有的 0 + e（如 (APlus (ANum 0) e）化简为 e。</p>
+<p><strong>optimize_0plus for aexp</strong>；</p>
+
+
+<p><strong>证明可靠性：</strong></p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195406105.png" class title="optimize0proof">
+
+<p>证明很冗余，<strong>Coq 的自动化</strong>是个强大的工具 – 不过它能让我们从无聊、重复、 底层的细节中解放出来，专注于更加复杂的定义和更加有趣的性质。</p>
+<p>Coq automation Coq自动化</p>
+<p>Tacticals 泛策略 高阶策略</p>
+<p>try：如果 T 是一个策略，那么 <strong>try T 是一个和 T 一样的策略</strong>，只是如果 <strong>T 失败</strong>的话，try T 就会*’成功地’*<strong>什么也不做</strong>（而非失败）。</p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195416578.png" class title="QQ截图20211213133511">
+
+<p><strong>复合策略</strong> <code>T;T&#39;</code> 会先执行 T，然后在 T 生成的*’每个子目标’*中执行 T’。可以用 <code>; 泛策略</code>来化简它：</p>
+<p>分号: T;T’ &#x3D;&#x3D;&gt;在T生成的<code>每个子目标</code>中执行T’。</p>
+
+
+<p>简化后的optimize_0plus_proof_sound:</p>
+
+
+<p>repeat tacticals</p>
+
+
+
+
+<p>Exercise：</p>
+<p><strong>optimize_0 for bexp:</strong></p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20220226195518842.png" class title="image-20220226195518842">
+
+<p><strong>command命令</strong></p>
+<img src="/.com//12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/image-20211227093259373.png" class title="image-20211227093259373">
+
+<h1 id="Some-tips-Coq入门技巧"><a href="#Some-tips-Coq入门技巧" class="headerlink" title="Some tips - Coq入门技巧"></a>Some tips - Coq入门技巧</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54164515">Coq 入门级技巧 - 知乎 (zhihu.com)</a></p>
+<p>intros. 引入假设，适用于forall &amp; -&gt;的情况。每次消耗forall里的一个自由变量，或者是一个-&gt;里面的命题。</p>
+<p>simpl. 化简目标。总能试试simpl in *。看有无变化。</p>
+<p>reflexivity. 正如这个名字本身的含义，当目标类似 <code>x = x</code> 的形式，使用 <code>reflexivity.</code> 就能结束证明。</p>
+<p>destruct. 对于归纳类型(Inductive) x , 当destruct x 时，Coq会为每个构造函数生成一个小目标，让我们分类讨论所有情况。</p>
+<p>induction.  你可以 <code>induction</code> 一个归纳类型（<em>inductive type</em>），会产生和这个归纳类型的构造函数数量一样多的小目标。如果构造函数里面用到了这个归纳类型本身，那么在归纳的过程中会产生相应的归纳假设。【类似于数学归纳法】我们以证明 P(n) 对于所有 n 都成立的目标开始， 然后（通过应用 induction 策略）把它分为两个子目标：一个是我们必须证明 P(O) 成立，另一个是我们必须证明 P(n’) → P(S n’)。</p>
+<p>apply I： True</p>
+<p>assert：<code>assert</code> 可以往假设里面添加一个命题，当然你要证明它。<code>assert P.</code> 会产生两个小目标：一个是给定当前已知的假设，证明 <code>P</code>；另一个是给定当前已知的假设和 <code>P</code>，证明原来的目标。</p>
+<p>这么做的动机可能是因为你想要复制一份现有的假设，因为你后面打算对它进行修改。还有一个常见的情况就是你看出来一些假设是成立的，但是 Coq 没有。</p>
+<p>apply Lia. （可以直接证明一些简单的命题，不用intros，直接apply Lia即可，前提是导入Lia库，Lia yyds）</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Formal-Verification/">#Formal Verification</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/06/OOAD%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">OOAD Summary</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">GFS Reading Notes</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1-%E4%B8%8D%E5%B8%A6%E7%B1%BB%E5%9E%8B%E7%9A%84%CE%BB%E6%BC%94%E7%AE%97"><span class="nav-text">Lecture 1 - 不带类型的λ演算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2-%E5%B8%A6%E7%B1%BB%E5%9E%8B%E7%9A%84%CE%BB%E6%BC%94%E7%AE%97"><span class="nav-text">Lecture 2 - 带类型的λ演算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3-Coq%E5%AE%9E%E8%B7%B5%EF%BC%881%EF%BC%89Basics"><span class="nav-text">Lecture 3 - Coq实践（1）Basics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-4-Coq%E5%AE%9E%E8%B7%B5%EF%BC%882%EF%BC%89Recursive%E9%80%92%E6%8E%A8%E5%BC%8F"><span class="nav-text">Lecture 4 - Coq实践（2）Recursive递推式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-5-Coq%E5%AE%9E%E8%B7%B5%EF%BC%883%EF%BC%89Induction"><span class="nav-text">Lecture 5 - Coq实践（3）Induction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-6-Coq%E5%AE%9E%E8%B7%B5%EF%BC%884%EF%BC%89-Lists"><span class="nav-text">Lecture 6 -Coq实践（4） Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E5%88%97%E8%A1%A8%E7%9A%84%E8%AE%BA%E8%AF%81"><span class="nav-text">有关列表的论证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-7-Coq%E5%AE%9E%E8%B7%B5%EF%BC%885%EF%BC%89Poly"><span class="nav-text">Lecture 7 - Coq实践（5）Poly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-8-Coq%E5%AE%9E%E8%B7%B5%EF%BC%886%EF%BC%89-Tactics"><span class="nav-text">Lecture 8 - Coq实践（6） Tactics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9-Coq%E5%AE%9E%E8%B7%B5%EF%BC%887%EF%BC%89Logic-1"><span class="nav-text">Lecture 9 - Coq实践（7）Logic-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prop-%E5%91%BD%E9%A2%98"><span class="nav-text">Prop(命题)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%81%94%E7%BB%93%E8%AF%8D"><span class="nav-text">逻辑联结词</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-10-Coq%E5%AE%9E%E8%B7%B5%EF%BC%888%EF%BC%89Logic-2-amp-IndProp"><span class="nav-text">Lecture 10 - Coq实践（8）Logic-2 &amp; IndProp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IndProp"><span class="nav-text">IndProp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-11-Coq%E5%AE%9E%E8%B7%B5%EF%BC%889%EF%BC%89-IndProp"><span class="nav-text">Lecture 11 - Coq实践（9） IndProp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-12-Coq%E5%AE%9E%E8%B7%B5%EF%BC%8810%EF%BC%89-Maps-amp-ProofObjects"><span class="nav-text">Lecture 12 - Coq实践（10） Maps &amp; ProofObjects</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maps-%E6%98%A0%E5%B0%84"><span class="nav-text">Maps 映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProofObjects"><span class="nav-text">ProofObjects</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-13-Coq%E5%AE%9E%E8%B7%B5%EF%BC%8811%EF%BC%89IndPrinciples-amp-Relation"><span class="nav-text">Lecture 13 - Coq实践（11）IndPrinciples &amp; Relation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IndPrinciples"><span class="nav-text">IndPrinciples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Relation"><span class="nav-text">Relation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8F%8D%E5%85%B3%E7%B3%BB"><span class="nav-text">自反关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E5%85%B3%E7%B3%BB"><span class="nav-text">传递关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%85%B3%E7%B3%BB"><span class="nav-text">对称关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-14-Coq%E5%AE%9E%E8%B7%B5%EF%BC%8812%EF%BC%89Imp"><span class="nav-text">Lecture 14 - Coq实践（12）Imp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-text">求值函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E5%8F%8A%E5%85%B6%E8%AF%81%E6%98%8E"><span class="nav-text">优化及其证明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-tips-Coq%E5%85%A5%E9%97%A8%E6%8A%80%E5%B7%A7"><span class="nav-text">Some tips - Coq入门技巧</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

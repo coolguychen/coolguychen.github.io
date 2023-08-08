@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            GFS Reading Notes |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">GFS Reading Notes</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-25 19:05:18</span>
+        <span class="mobile">2021-11-25 19:05</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>14 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="针对Google应用的问题与需求设计"><a href="#针对Google应用的问题与需求设计" class="headerlink" title="针对Google应用的问题与需求设计"></a>针对Google应用的问题与需求设计</h1><p>1、在廉价、不可靠计算机上存储大量的数据，这使得节点失效是常态而不是异常。GFS 必须能够较高容错、持续监控自身的状态，同时还要能从节点失效中快速恢复；</p>
+<p>2、纵观Google的内部应用，数据访问有以下特点：</p>
+<ol>
+<li><strong>存储内容以大文件为主</strong>。系统需要存储的内容在通常情况下由数量不多的大文件构成，每个文件通常有几百 MB 甚至是几 GB 的大小；</li>
+<li>数据访问特点多为顺序访问，比较常见的场景是数据分析，应用程序会顺序遍历数据文件，产生<strong>顺序读</strong>行为；</li>
+<li>多客户端<strong>并发追加</strong>场景很常见，极少有随机写行为；</li>
+<li><strong>一次写入，多次读取</strong>，例如互联网上的网页存储。</li>
+</ol>
+<p>需要对存储的文件类型和访问模式进行优化</p>
+<p>3、持久的高吞吐量、低延迟</p>
+<p>……</p>
+<span id="more"></span>
+
+<h1 id="GFS体系架构"><a href="#GFS体系架构" class="headerlink" title="GFS体系架构"></a>GFS体系架构</h1><p>GFS集群由一个Master节点和若干个Chunkserver组成。<br><img src="https://img-blog.csdnimg.cn/7693c118fab24b8fa7a2ea199442906b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<p>文件以Chunk为单位存储（大数据块）</p>
+<ul>
+<li>大小为固定的64MB</li>
+<li>通过复制提高数据可靠性</li>
+<li>每个Chunk有3个以上的副本存储在不同的Chunkservers</li>
+</ul>
+<p>Master负责维护整个集群的元数据</p>
+<ul>
+<li>文件与 Chunk 的 Namespace</li>
+<li>文件与 Chunk 之间的映射关系</li>
+<li>每个 Chunk Replica 所在的位置</li>
+</ul>
+<p>提供系统API接口，但不是传统的POSIX API</p>
+<ul>
+<li>简化问题，针对Google应用</li>
+<li>添加了snapshot和record append操作</li>
+</ul>
+<p>客户端和ChunkServer都不缓存文件数据</p>
+<ul>
+<li>大数据集合、流数据读操作获益</li>
+</ul>
+<h1 id="Master"><a href="#Master" class="headerlink" title="Master"></a>Master</h1><blockquote>
+<p>The master executes all namespace operations. In addition, it manages chunk replicas throughout the system: it makes placement decisions, creates new chunks and hence replicas, and coordinates various system-wide activities to keep chunks fully replicated, to balance load across all the chunkservers, and to reclaim unused storage.</p>
+</blockquote>
+<h2 id="Namespace-Management-and-Locking"><a href="#Namespace-Management-and-Locking" class="headerlink" title="Namespace Management and Locking"></a>Namespace Management and Locking</h2><blockquote>
+<p>we allow multiple operations to be active and use locks over regions of the namespace to ensure proper serialization.</p>
+<p>GFS logically represents its namespace as a lookup table mapping full pathnames to metadata. With prefix compression, this table can be efficiently represented in memory. Each node in the namespace tree (either an absolute file name or an absolute directory name) has an associated read-write lock.</p>
+</blockquote>
+<p>通过使用 <code>命名空间锁</code> 来保证 <strong>master</strong> 并发操作的正确顺序 。</p>
+<p>为了管理来自不同客户端的并发请求对 Namespace 的修改，Master 会为 Namespace 中的每个文件和目录都分配一个读写锁（Read-Write Lock）。所有 Master 操作在执行前都会需要先获取一系列的锁。由此，对不同 Namespace 区域的并发请求便可以同时进行。</p>
+<p>由于大量的读写锁可能会造成较高的内存占用，这些锁会在实际需要时才进行创建，并在不再需要时被销毁。此外，所有的锁获取操作也会按照一个相同的顺序进行，以避免发生死锁：锁首先按 Namespace 树的层级排列，同一层级内则以路径名字典序排列。</p>
+<h2 id="Chunk-and-Chunk-Replica"><a href="#Chunk-and-Chunk-Replica" class="headerlink" title="Chunk and Chunk Replica"></a>Chunk and Chunk Replica</h2><h3 id="Replica-Placement"><a href="#Replica-Placement" class="headerlink" title="Replica Placement"></a>Replica Placement</h3><blockquote>
+<p>The chunk replica placement policy serves two purposes: maximize data reliability and availability, and maximize network bandwidth utilization.</p>
+</blockquote>
+<p>为了保证足够的可靠性以及写入的高效性，GFS在创建chunk时副本位置的选择算法：</p>
+<ol>
+<li><p>选择存储空间利用率最低的节点和磁盘；</p>
+</li>
+<li><p>选择最近一段时间内新建chunk数量较少的节点和磁盘；</p>
+<p>保证一个节点&#x2F;磁盘不会被频繁新建chunk（新建完接下来就是数据写入了），否则很容易沦为热点，导致磁盘IO和网络带宽被占满，影响效率。</p>
+</li>
+<li><p>将多个副本分散在不同的节点上（负载均衡）。</p>
+</li>
+</ol>
+<h3 id="Creation"><a href="#Creation" class="headerlink" title="Creation"></a>Creation</h3><blockquote>
+<p> (1) We want to place new replicas on chunkservers with below-average diskspace utilization. Over time this will equalize disk utilization across chunkservers. </p>
+<p> (2) We want to limit the number of “recent” creations on each chunkserver. Although creation itself is cheap, it reliably predicts imminent heavy write traffic because chunks are created when demanded by writes, and in our append-once-read-many work load they typically become practically read-only once they have been completely written. </p>
+<p> (3) As discussed above, we want to spread replicas of a chunk across racks.</p>
+</blockquote>
+<p><strong>master</strong> 创建一个 <strong>chunk</strong> 时，会选择在哪里放置初始的空的副本，主要考虑几个因素：</p>
+<ul>
+<li>在低于平均硬盘使用率的 <strong>chunkserver</strong> 上存储新的副本</li>
+<li>希望限制在每个 <strong>chunkserver</strong> 上 <code>最近</code> 的 <strong>chunk</strong> 创建操作的次数</li>
+<li>希望把 <strong>chunk</strong> 分布在多个节点上</li>
+</ul>
+<h3 id="Re-Replication"><a href="#Re-Replication" class="headerlink" title="Re-Replication"></a>Re-Replication</h3><blockquote>
+<p>The master <em>re-replicates</em> a chunkas soon as the number of available replicas falls below a user-specified goal. </p>
+</blockquote>
+<p>当 <strong>chunk</strong> 的有效副本数量少于用户指定的复制因素的时候（ 默认为 <strong>3</strong> ），<strong>master</strong> 会重新复制它 。</p>
+<p>可能的原因有：<strong>chunkserver</strong> 不可用了、<strong>chunkserver</strong> 上副本损坏、<strong>chunkserver</strong> 磁盘不可用或 <strong>chunk</strong> 副本的复制因素被提高了 。</p>
+<p>优先级因素：优先复制 <code>副本数量和复制因素相差多的</code> 、<code>活跃的而非刚被删除的文件</code> 、<code>正在阻塞 client 程序的chunk</code>。</p>
+<h3 id="Rebalancing"><a href="#Rebalancing" class="headerlink" title="Rebalancing"></a>Rebalancing</h3><blockquote>
+<p>Finally, the master <em>rebalances</em> replicas periodically: it examines the current replica distribution and moves replicas for better diskspace and load balancing. Also through this process, the master gradually fills up a new chunkserver rather than instantly swamps it with new chunks and the heavy write traffic that comes with them.</p>
+</blockquote>
+<p><strong>master</strong> 服务器周期性地对副本进行 <code>重新负载均衡</code> ：它检查当前的副本分布情况，然后移动副本以便更好地利用硬盘空间、更有效地进行负载均衡 。</p>
+<p>若加入了新的 <strong>chunkserver</strong> ，<strong>master</strong> 会通过重新负载均衡的方式逐渐填满这个新的 <strong>chunkserver</strong> ，而不是短时间内填满它（可能导致过载）。</p>
+<h3 id="Chunk-Lease"><a href="#Chunk-Lease" class="headerlink" title="Chunk Lease"></a>Chunk Lease</h3><p>租约：GFS在chunk多副本之间选择出一个主副本，称为 <code>primary</code>，由主副本来协调客户端的写入，保证多副本之间维持一个全局统一的更新顺序。</p>
+<p>租约是由Master分配给chunk的某个副本的锁。持有租约的副本方可处理客户端的更新请求，客户端更新数据前会从Master获取该chunk持有租约的副本并向该副本发送更新请求。</p>
+<p>租约本质上是一种有时间限制的锁：租约的持有者（chunk的某个副本）需要定期向Master申请续约。如果超过租约的期限，那么该租约会被强制收回并重新分配给其他副本。</p>
+<p>设置 primary 的 <code>目的</code> ：为了最小化 master 的管理负担。</p>
+<h2 id="Garbage-Collection"><a href="#Garbage-Collection" class="headerlink" title="Garbage Collection"></a>Garbage Collection</h2><blockquote>
+<p>After a file is deleted, GFS does not immediately reclaim the available physical storage. It does so only lazily during regular garbage collection at both the file and chunk levels. We find that this approach makes the system much simpler and more reliable.</p>
+</blockquote>
+<p><strong>GFS</strong> 在文件删除后不会立刻进行回收可用的物理空间，<strong>GFS</strong> 空间回收采用惰性的策略，只在文件和 <strong>chunk</strong> 级的常规垃圾收集时进行 。</p>
+<p>当一个文件被应用程序删除时，<strong>master</strong> 立即把删除操作记录到日志 。<strong>master</strong> 并不立马回收资源，而是把文件名改为一个包含 <code>删除时间戳</code> 的隐藏名字 。当 <strong>master</strong> 对命名空间做 <code>常规扫描</code> 的时候，会（彻底）删除三天前的隐藏文件 。在此之前，该文件仍然可以用新的特殊名字读取，并且可以通过将其重命名为正常文件名来撤销删除。若发现 <code>orphaned chunk</code> （ 即不被任何文件包含的 <strong>chunk</strong> ），会提示 <strong>chunkserver</strong> 删除这些 <strong>chunk</strong> 的副本 。</p>
+<p>相比于立即删除资源，垃圾回收有以下几个优点：</p>
+<ul>
+<li>对于组件失效是常态的大规模分布式系统上，这种垃圾回收方式简单可靠（可以清理没有任何文件引用的副本）</li>
+<li>垃圾回收把存储空间的回收操作合并到 <strong>master</strong> 节点规律性的后台活动中（ 如 <strong>master</strong> 与 <strong>chunkserver</strong> 的握手 ），操作分批执行，开销被分散</li>
+<li>防止意外的、不可逆的删除</li>
+</ul>
+<h1 id="数据一致性策略"><a href="#数据一致性策略" class="headerlink" title="数据一致性策略"></a>数据一致性策略</h1><p><strong>GFS</strong> 支持一个宽松的一致性模型 。</p>
+<blockquote>
+<p>GFS has a relaxed consistency model that supports our highly distributed applications well but remains relatively simple and efficient to implement.</p>
+</blockquote>
+<p>首先，文件命名空间的修改（ 如：文件创建 ）是原子性的，它仅由 <strong>master</strong> 控制：命名空间锁提供了原子性和正确性、<strong>master</strong> 操作日志定义了这些操作在全局的顺序 。</p>
+<p>对于文件的数据修改，文件状态会进入以下三种状态之一：</p>
+<blockquote>
+<p>The state of a file region after a data mutation depends on the type of mutation, whether it succeeds or fails, and whether there are concurrent mutations.</p>
+</blockquote>
+<ul>
+<li>**一致的 (consistent)**：对于一个 <strong>chunk</strong> ，所有 <strong>client</strong> 看到的所有副本内容都是一样的</li>
+<li><strong>不一致的(Inconsistent)<strong>：客户端读取不同的 Replica 时可能会读取到不同的内容，那这部分文件是</strong>不一致</strong>的</li>
+<li>**定义的 (defined)**：数据修改后是一致的，且 <strong>client</strong> 可以看到写入操作的全部内容（ 换句话说，可以看到每步操作修改后的内容 ）</li>
+</ul>
+<p>一个文件的当前状态将取决于此次修改的类型以及修改是否成功：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210519173342724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDMxMjIx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>当一个数据写操作成功执行，且没有并发写入，那么影响的 <strong>region</strong> 就是 <strong>defined</strong>：所有 <strong>client</strong> 都能看到写入的内容。（ 隐含了 <strong>consistent</strong> ）</li>
+<li>当并行修改写完成之后，<strong>region</strong> 处于 <strong>consistent but undefined</strong> 状态：所有 <strong>client</strong> 看到同样的数据，但是无法读到任何一次写入操作写入的数据 （ 因为可能有并行写操作覆盖了同一区域 ）。</li>
+<li>失败的写操作导致 <strong>region</strong> 处于 <strong>inconsistent</strong> 状态（ 同时也是 <strong>undifined</strong> 的 ）：不同 <strong>client</strong> 在不同时间会看到不同的数据　。</li>
+<li>当对文件进行追加操作，若追加操作成功，那么 <strong>region</strong> 处于 <strong>defined and consistent</strong> 状态；若某次追加操作失败，<strong>client</strong> 重新请求后会导致数据填充和重复数据的情况，此时 <strong>region</strong> 处于 <strong>defined but inconsistent</strong> 状态。</li>
+</ul>
+<h1 id="常见操作流程"><a href="#常见操作流程" class="headerlink" title="常见操作流程"></a>常见操作流程</h1><h2 id="读取文件流程"><a href="#读取文件流程" class="headerlink" title="读取文件流程"></a>读取文件流程</h2><p>客户端从 GFS 集群中读取文件内容的过程大致如下：<br><img src="https://img-blog.csdnimg.cn/60fecd3b32c94778909d2cb5a43858f0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<ol>
+<li>对于指定的文件名filename和根据字节偏移量offset，客户端可以根据固定的 Chunk 大小来计算出该位置在该文件的哪一个 Chunk 中（即chunk index）；</li>
+<li>Client向 Master 发出请求，其中包含要读取的文件名filename以及 Chunk index；</li>
+<li>Master 向Client响应该 Chunk  Handle 以及其所有 副本（Replica） 当前所在的位置。Client会以filename和 Chunk index为键缓存该数据；</li>
+<li>Client选取其中一个 Replica 所在的 Chunk Server 并向其发起请求，请求中会指定Chunk  Handle 以及要读取的字节范围；</li>
+<li>ChunkServer读取文件，返回数据（Chunk Data）。</li>
+</ol>
+<h2 id="写入文件流程"><a href="#写入文件流程" class="headerlink" title="写入文件流程"></a>写入文件流程</h2><p><img src="https://img-blog.csdnimg.cn/2a3a0f525f8c46a4ae0ac77c7c13e099.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_13,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br>客户端尝试将数据写入到某个 Chunk 的指定位置的过程大致如下：</p>
+<ol>
+<li>client向master询问chunk的哪个副本是primary，以及该chunk的位置 。若没有primary：<ul>
+<li>若所有的 <strong>chunkserver</strong> 都没有最近的版本号，返回错误</li>
+<li><strong>master</strong> 在拥有最近版本的副本中选择 <strong>primary</strong></li>
+<li>版本号递增，并写入硬盘中的 <strong>log</strong></li>
+<li>告诉 <strong>primary</strong> 和 <strong>secondary</strong> 它们的身份和新版本号，并将新版本号写入 <strong>chunkserver</strong> 的硬盘</li>
+</ul>
+</li>
+<li><strong>master</strong> 将 <strong>primary</strong> 的标识符和 <strong>secondary</strong> 的位置返回给 <strong>client</strong> ，<strong>client</strong> 缓存这些数据后续使用 。只有 <strong>primary</strong> 不可用或 <strong>lease</strong> 已到期，<strong>client</strong> 才会再跟 <strong>master</strong> 进行联系 ；</li>
+<li><strong>client</strong> 将数据推送到所有的副本上，<strong>chunkserver</strong> 接收到数据并保存在 LRU 缓存中；</li>
+<li>所有副本确认接收到数据后，<strong>client</strong> 发送写请求到 <strong>primary</strong> 。这个请求标识了早前推送到所有副本的数据，<strong>primary</strong> 为接收到的所有操作分配连续的序列号（ 这些操作可能来自不同的 <strong>client</strong> ）。<strong>primary</strong>按照序列号顺序在本地执行相应操作；</li>
+<li><strong>primary</strong> 将写请求传递到所有的 <strong>secondary</strong> ，<strong>secondary</strong> 按照序列号在本地执行操作 ；</li>
+<li>操作完成后，所有 <strong>secondary</strong> 回复 <strong>primary</strong> 已完成操作 ；</li>
+<li><strong>primary</strong> 回复 <strong>client</strong> 。期间在任何一个副本操作出现任何错误都将报告给客户端。若返回错误，<strong>client</strong> 将重复发起操作请求 。</li>
+</ol>
+<h2 id="Snapshot-文件快照"><a href="#Snapshot-文件快照" class="headerlink" title="Snapshot 文件快照"></a>Snapshot 文件快照</h2><p>GFS 还提供了文件快照操作，可为指定的文件或目录创建一个副本。Snapshot是对系统当前状态进行的一次拍照。用户可以在<strong>任意时刻回滚到快照的状态</strong>。快照操作的实现采用了<strong>写时复制（Copy on Write）</strong>的思想：</p>
+<ol>
+<li>在 Master 接收到快照请求后，它首先会撤回这些 Chunk 的 Lease，以让接下来其他客户端对这些 Chunk 进行写入时都会需要请求 Master 获知 Primary 的位置，而这个时候Master 可以对chunk直接进行复制；</li>
+<li>Master在日志中记录本次Snapshot操作，然后在内存中执行Snapshot动作，具体是将被Snapshot的文件或目录的元数据复制一份，被复制出的文件与原始文件指向相同的chunk；</li>
+<li>当有客户端尝试对这些 Chunk 进行写入时，Master 会注意到这个 Chunk 的引用计数大于 1。此时，Master 会为即将产生的新 Chunk 生成一个 Handle，然后通知所有持有这些 Chunk 的 Chunk Server 在<strong>本地</strong>复制出一个新的 Chunk（之所以本地创建是因为可以避免跨节点之间的数据拷贝，节省网络带宽），应用上新的 Handle，然后再返回给客户端；</li>
+<li>客户端收到Master的响应后，表示该Chunk已经COW结束，接下来客户端的更新流程与正常的没有区别</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/800a403d3eda1d1a6eda815fa0bc79cb.png" alt="preview"></p>
+<h1 id="高可用性"><a href="#高可用性" class="headerlink" title="高可用性"></a>高可用性</h1><blockquote>
+<p> We keep the overall system highly available with two simple yet effective strategies: fast recovery and replication.</p>
+</blockquote>
+<h2 id="Fast-Recovery"><a href="#Fast-Recovery" class="headerlink" title="Fast Recovery"></a>Fast Recovery</h2><p>不管 <strong>master</strong> 和 <strong>chunkserver</strong> 是如何关闭的，都在数秒内恢复状态并重新启动 。不区分正常关闭和异常关闭 。</p>
+<p><strong>master</strong> 在灾难恢复时，从磁盘上读取最近的快照，以及重演此快照后的有限个日志文件就能够恢复系统 。</p>
+<p><strong>chunkserver</strong> 重启后会发送 <strong>chunk</strong> 状态以及版本号给 <strong>master</strong> 。</p>
+<h2 id="Chunk-Replication"><a href="#Chunk-Replication" class="headerlink" title="Chunk Replication"></a>Chunk Replication</h2><p>这个在之前的<a href="#Chunk and Chunk Replica">Chunk and Chunk Replica</a>详细叙述过，因此不再赘述。</p>
+<h2 id="Master-Replication"><a href="#Master-Replication" class="headerlink" title="Master Replication"></a>Master Replication</h2><blockquote>
+<p>Its operation log and checkpoints are replicated on multiple machines. A mutation to the state is considered committed only after its log record has been flushed to disk locally and on all master replicas. </p>
+<p>When it fails, it can restart almost instantly. If its machine or disk fails, monitoring infrastructure outside GFS starts a new master process elsewhere with the replicated operation log.</p>
+</blockquote>
+<p><strong>master</strong> 所有操作日志和快照文件都被复制到多台机器的硬盘中 。若<strong>master</strong>失效。它可以快速重启以恢复。若 <strong>master</strong> 进程所在的机器或硬盘失效了，处于 <strong>GFS</strong> 系统外部的监控进程会在其他的存有完整操作日志的机器上启动一个新的 <strong>master</strong> 进程 。<br>starts a new master process elsewhere with the replicated operation log.</p>
+<p><strong>master</strong> 所有操作日志和快照文件都被复制到多台机器的硬盘中 。若<strong>master</strong>失效。它可以快速重启以恢复。若 <strong>master</strong> 进程所在的机器或硬盘失效了，处于 <strong>GFS</strong> 系统外部的监控进程会在其他的存有完整操作日志的机器上启动一个新的 <strong>master</strong> 进程 。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">#Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/26/%E5%87%BD%E6%95%B0%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Functional Programming Class Notes</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/10/RocksDB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">RocksDB Learning Notes</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%92%88%E5%AF%B9Google%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1"><span class="nav-text">针对Google应用的问题与需求设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GFS%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84"><span class="nav-text">GFS体系架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Master"><span class="nav-text">Master</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Namespace-Management-and-Locking"><span class="nav-text">Namespace Management and Locking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chunk-and-Chunk-Replica"><span class="nav-text">Chunk and Chunk Replica</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Replica-Placement"><span class="nav-text">Replica Placement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creation"><span class="nav-text">Creation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Re-Replication"><span class="nav-text">Re-Replication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rebalancing"><span class="nav-text">Rebalancing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chunk-Lease"><span class="nav-text">Chunk Lease</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Garbage-Collection"><span class="nav-text">Garbage Collection</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%AD%96%E7%95%A5"><span class="nav-text">数据一致性策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">常见操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B"><span class="nav-text">读取文件流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B"><span class="nav-text">写入文件流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snapshot-%E6%96%87%E4%BB%B6%E5%BF%AB%E7%85%A7"><span class="nav-text">Snapshot 文件快照</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="nav-text">高可用性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fast-Recovery"><span class="nav-text">Fast Recovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chunk-Replication"><span class="nav-text">Chunk Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Master-Replication"><span class="nav-text">Master Replication</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            React |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">React</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2023-03-03 15:02:47</span>
+        <span class="mobile">2023-03-03 15:02</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/FrontEnd/">FrontEnd</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/React/">React</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>23 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>React：用于构建用户界面的JavaScript库。</p>
+<p>是一个将数据渲染为HTML视图的开源JavaScript库。</p>
+<h1 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FV4y157Zx?p=4&vd_source=377f414c018b3730dbce13ba666c5776">【2022最新】React项目实战(React后台管理系统、TypeScript+React18)</a></p>
+<p><a target="_blank" rel="noopener" href="https://xuzhixiong.gitlab.io/blog/2019/06/10/react-typescript-one/">https://xuzhixiong.gitlab.io/blog/2019/06/10/react-typescript-one/</a></p>
+<p><a target="_blank" rel="noopener" href="https://tsejx.github.io/react-guidebook">https://tsejx.github.io/react-guidebook</a></p>
+<h1 id="React安装"><a href="#React安装" class="headerlink" title="React安装"></a>React安装</h1><p>首先，确保已经安装了node，如果没有安装node可先去node.js中文网下载安装。</p>
+<p>使用命令 <code>npm i -g create-react-app</code> 全局安装create-react-app。</p>
+<p>检测create-react-app是否安装成功 ：<code>create-react-app -V</code>。</p>
+<p>注意，V是大写。如果出现版本号，则表示安装成功，不过如果你当前安装的node版本不支持你安装的create-react-app版本，这一步会出现红色的报错信息。</p>
+<p>在命令提示窗口 cd 切换到你需要初始化脚手架的地址，使用命令 <code>create-react-app demo</code> 命令初始化react项目脚手架。</p>
+<p>npm下载React-app 安装脚手架</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+
+<p>使用npm安装yarn安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i yarn -g</span><br></pre></td></tr></table></figure>
+
+<p><code>$ create-react-app react-app</code></p>
+<p>然后我们进入项目并启动。</p>
+<p><code>$ cd react-app</code></p>
+<p><code>$ yarn start</code></p>
+<p>yarn start时遇到：</p>
+<blockquote>
+<p>‘react-scripts’ 不是内部或外部命令，也不是可运行的程序 或批处理文件。</p>
+</blockquote>
+<ul>
+<li>原因：create-react-app创建项目时有时会丢包</li>
+<li>解决方案：重新   npm install    或    npm install react-scripts</li>
+<li>然后再启动项目</li>
+</ul>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/778f92b75f3e">https://www.jianshu.com/p/778f92b75f3e</a></p>
+<img src="/.com//03/03/React/image-20230303155335388.png" class title="image-20230303155335388">
+
+<p>开启本地端口3030.</p>
+<p>运行<code>yarn add react-bootstrap bootstrap@4.6.0</code>        </p>
+<p><code>yarn add typescript</code></p>
+<p>UI组件库：<a target="_blank" rel="noopener" href="https://ant.design/">https://ant.design/</a></p>
+<p>引入antd组件库 <code>yarn add antd</code></p>
+<p>React 应用程序是由 <strong>组件</strong> 组成的。一个组件是 UI（用户界面）的一部分，它拥有自己的逻辑和外观。组件可以小到一个按钮，也可以大到整个页面。</p>
+<p>React 组件是返回标记的 JavaScript 函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function MyButton() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;button&gt;I&#x27;m a button&lt;/button&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>至此，你已经声明了 <code>MyButton</code>，你可以把它嵌套到另一个组件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export default function MyApp() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Welcome to my app&lt;/h1&gt;</span><br><span class="line">      &lt;MyButton /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你可能已经注意到 <code>&lt;MyButton /&gt;</code> 是以大写字母开头的。你可以根据此来区分 React 组件。<strong>React 组件必须以大写字母开头</strong>，而 HTML 标签则必须是小写字母。</p>
+<p><code>export default</code> 关键字指定了<strong>文件中的主要组件</strong>。</p>
+<h1 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h1><p>JavaScript + XML</p>
+<h2 id="JSX样式处理"><a href="#JSX样式处理" class="headerlink" title="JSX样式处理"></a>JSX样式处理</h2><ul>
+<li>行内style</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> &#x27;<span class="attr">red</span>&#x27; &#125;&#125;&gt;</span>this is a div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>更优写法</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> styleObj = &#123;</span><br><span class="line">    <span class="attr">color</span>:red</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;</span> <span class="attr">styleObj</span> &#125;&gt;</span>this is a div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="函数式组件和类组件"><a href="#函数式组件和类组件" class="headerlink" title="函数式组件和类组件"></a>函数式组件和类组件</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45014444/article/details/99695723">React之组件介绍及用法详解</a></p>
+<p><strong>（1）函数式组件（ 无状态组件 PureComponent）</strong><br>由于元素没有办法传递参数，所以我们就需要把之前定义的变量改为一个方法，让这个方法去return一个元素:</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 特别注意这里的写法，如果要在JSX里写js表达式(只能是表达式，不能流程控制)，就需要加 &#123;&#125;，包括注释也是一样，并且可以多层嵌套</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">app</span> = (<span class="params">props</span>) =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>欢迎进入&#123;props.name&#125;的世界<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="title function_">app</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;react&#x27;</span></span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="React的React-FC与React-Component的初步认识"><a href="#React的React-FC与React-Component的初步认识" class="headerlink" title="React的React.FC与React.Component的初步认识"></a>React的React.FC与React.Component的初步认识</h2><ol>
+<li>React.FC是函数式组件，是在TypeScript使用的一个泛型，FC就是FunctionComponent的缩写，事实上React.FC可以写成React.FunctionComponent：</li>
+</ol>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">App</span>: <span class="title class_">React</span>.<span class="property">FunctionComponent</span>&lt;&#123; <span class="attr">message</span>: <span class="built_in">string</span> &#125;&gt; = <span class="function">(<span class="params">&#123; message &#125;</span>) =&gt;</span> (</span><br><span class="line"></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><p>React.FC 包含了 PropsWithChildren 的泛型，不用显式的声明 props.children 的类型。React.FC&lt;&gt; 对于返回类型是显式的，而普通函数版本是隐式的（否则需要附加注释）。</p>
+</li>
+<li><p>React.FC提供了类型检查和自动完成的静态属性：displayName，propTypes和defaultProps（注意：defaultProps与React.FC结合使用会存在一些问题）。</p>
+</li>
+<li><p>我们使用React.FC来写 React 组件的时候，是不能用setState的，取而代之的是useState()、useEffect等 Hook API。</p>
+</li>
+</ol>
+<p>例子（这里使用阿里的Ant Desgin Pro框架来演示）：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">SampleModel</span>: <span class="title class_">React</span>.<span class="property">FC</span>&lt;&#123;&#125;&gt; = <span class="function">() =&gt;</span>&#123;   <span class="comment">//React.FC&lt;&gt;为typescript使用的泛型</span></span><br><span class="line">  	<span class="keyword">const</span> [createModalVisible, handleModalVisible] = useState&lt;<span class="built_in">boolean</span>&gt;(<span class="literal">false</span>); </span><br><span class="line">  	<span class="keyword">return</span>&#123;</span><br><span class="line">  	&#123;<span class="comment">/** 触发模态框**/</span>&#125;</span><br><span class="line">  	&lt;<span class="title class_">Button</span> style=&#123;&#123;<span class="attr">fontSize</span>:<span class="string">&#x27;25px&#x27;</span>&#125;&#125;  onClick=&#123;<span class="function">()=&gt;</span><span class="title function_">handleModalVisible</span>(<span class="literal">true</span>)&#125; &gt;样例&lt;/<span class="title class_">Button</span>&gt;</span><br><span class="line">  	&#123;<span class="comment">/** 模态框组件**/</span>&#125;</span><br><span class="line">  	&lt;<span class="title class_">Model</span> onCancel=&#123;<span class="function">() =&gt;</span> <span class="title function_">handleModalVisible</span>(<span class="literal">false</span>)&#125; <span class="title class_">ModalVisible</span>=&#123;createModalVisible&#125; /&gt; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>二、class xx extends React.Component<br>如需定义 class 组件，需要继承 React.Component。React.Component是类组件，在TypeScript中，React.Component是通用类型（aka React.Component&lt;PropType, StateType&gt;），因此要为其提供（可选）prop和state类型参数：</p>
+<p>例子（这里使用阿里的Ant Desgin Pro框架来演示）：：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SampleModel</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="attr">createModalVisible</span>:<span class="literal">false</span>,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  handleModalVisible =<span class="function">(<span class="params">cVisible:<span class="built_in">boolean</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">createModalVisible</span>:cVisible&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">  &#123;<span class="comment">/** 触发模态框**/</span>&#125;</span><br><span class="line">  	&lt;<span class="title class_">Button</span> onClick=&#123;<span class="function">()=&gt;</span><span class="variable language_">this</span>.<span class="title function_">handleModalVisible</span>(<span class="literal">true</span>)&#125; &gt;样例&lt;/<span class="title class_">Button</span>&gt;</span><br><span class="line">  	&#123;<span class="comment">/** 模态框组件**/</span>&#125;</span><br><span class="line">  	&lt;<span class="title class_">Model</span> onCancel=&#123;<span class="function">() =&gt;</span> <span class="title function_">handleModalVisible</span>(<span class="literal">false</span>)&#125; <span class="title class_">ModalVisible</span>=&#123;<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">createModalVisible</span>&#125; /&gt; </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>ps：简单来说，不知道用什么组件类型时，就用 React.FC。</p>
+<h2 id="使用-Hook"><a href="#使用-Hook" class="headerlink" title="使用 Hook"></a>使用 Hook</h2><p>React Hooks 要解决的问题是<strong>状态共享</strong>。</p>
+<p>以 <code>use</code> 开头的函数被称为 <strong>Hook</strong>。<code>useState</code> 是 React 提供的一个内置 Hook。</p>
+<p>这个状态指的是状态逻辑，所以称为<strong>状态逻辑复用</strong>会更恰当，因为只共享数据处理逻辑，不会共享数据本身。</p>
+<img src="/.com//03/03/React/image-20230325000052354.png" class title="image-20230325000052354">
+
+<p><strong>数据状态 + 修改状态的方法</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d575271ad4b2">https://www.jianshu.com/p/d575271ad4b2</a></p>
+<p><code>useState</code>是一个Hook函数，让你在函数组件中拥有state变量。它接收一个初始化的state，返回是一个数组，数组里有两个元素，第一个元素是当前状态值和另一个更新该值的方法。<br> 本教程主要是针对于React中的<code>useState</code>做一个详细的描述，它等同于函数组件中的<code>this.state</code>&#x2F;<code>this.setState</code>，我们将会围绕下面的问题逐一解析</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="Uncaught-Invariant-Violation-Too-many-re-renders-React-limits-the-number-of-renders-to-prevent-an-infinite-loop"><a href="#Uncaught-Invariant-Violation-Too-many-re-renders-React-limits-the-number-of-renders-to-prevent-an-infinite-loop" class="headerlink" title="Uncaught Invariant Violation: Too many re-renders. React limits the number of renders to prevent an infinite loop"></a>Uncaught Invariant Violation: Too many re-renders. React limits the number of renders to prevent an infinite loop</h2><p>出现无限循环的原因是事件回调中触发了重新呈现，最常见setState触发的，这将再次调用事件回调，并导致React停止并抛出“太多的重新呈现”的错误</p>
+<img src="/.com//03/03/React/image-20230327221736292.png" class title="image-20230327221736292">
+
+<img src="/.com//03/03/React/image-20230327221806824.png" class title="image-20230327221806824">
+
+
+
+<h3 id="Props-和-State-本质"><a href="#Props-和-State-本质" class="headerlink" title="Props 和 State 本质"></a>Props 和 State 本质</h3><p><strong>props 是组件对外的接口，state 是组件对内的接口。</strong>组件内可以引用其他组件，组件之间的引用形成了一个树状结构（组件树），如果下层组件需要使用上层组件的数据或方法，上层组件就可以通过下层组件的props属性进行传递，因此props是组件对外的接口。组件除了使用上层组件传递的数据外，自身也可能需要维护管理数据，这就是组件对内的接口state。根据对外接口props 和对内接口state，组件计算出对应界面的UI。</p>
+<p>组件的props 和 state都和组件最终渲染出的UI直接相关。两者的主要区别是：state是可变的，是组件内部维护的一组用于反映组件UI变化的状态集合；<strong>而props是组件的只读属性，组件内部不能直接修改props，要想修改props，只能在该组件的上层组件中修改。</strong>在组件状态上移的场景中，父组件正是通过子组件的props，传递给子组件其所需要的状态。 </p>
+<h2 id="如何通过state在组件跳转页面时传值？"><a href="#如何通过state在组件跳转页面时传值？" class="headerlink" title="如何通过state在组件跳转页面时传值？"></a>如何通过state在组件跳转页面时传值？</h2><p>使用useLocation()</p>
+<p> const { state } &#x3D; useLocation();</p>
+<p>Link to 里面填写pathName &amp; state</p>
+
+
+<p>另一个页面使用state &#x3D; useLocation()接收传过来的数据。</p>
+
+
+<h1 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h1><p>import react-router-dom</p>
+<p>App.tsx中：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;../App&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&quot;../views/Home&quot;</span> <span class="comment">//引入组件</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">About</span> <span class="keyword">from</span> <span class="string">&quot;../views/About&quot;</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">BrowserRouter</span>, <span class="title class_">Routes</span>, <span class="title class_">Route</span>&#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">baseRouter</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    	<span class="tag">&lt;<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    		<span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span> =  <span class="string">&quot;/&quot;</span> <span class="attr">element</span> = <span class="string">&#123;</span>&lt;<span class="attr">App</span> /&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">    			<span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span> = <span class="string">&quot;/home&quot;</span> <span class="attr">element</span> = <span class="string">&#123;</span>&lt;<span class="attr">Home</span> /&gt;</span>&#125;&gt;<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			    <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span> = <span class="string">&quot;/about&quot;</span> <span class="attr">element</span> = <span class="string">&#123;</span>&lt;<span class="attr">About</span> /&gt;</span>&#125;&gt;<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Antd组件库使用"><a href="#Antd组件库使用" class="headerlink" title="Antd组件库使用"></a>Antd组件库使用</h1><h2 id="Table表格"><a href="#Table表格" class="headerlink" title="Table表格"></a>Table表格</h2><p>Ant design的Table组件报错TypeError: rawData.some is not a function。</p>
+<p>dataSource存储的数据是数组，当dataSource赋值的数据不是数组时就会报出这样的错误。所以我们要继续向内部取到数组层。我的问题是后台没有给数组的类型，而是对象类型。为了统一数据，就让后台改成了数组。【链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4736ab0c300f%E3%80%91">https://www.jianshu.com/p/4736ab0c300f】</a></p>
+<p>一定要指定rowkey，它是区分每一条记录的唯一标识。否则控制台会报各种错误，xxx should have a unique “key” props 大意就是说每一行要有唯一key。<br>它的取值可以是列名，也可以是record的某一个属性。<br>例如：<br>rowkey&#x3D;{id}（id是列名，或数据源里面每一条数据都有的属性）；<br>rowkey&#x3D;{(record)&#x3D;&gt;record.primaryKey}(primaryKey是后台返回的能代表唯一key的字段名)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/aaqingying/article/details/118971186">https://blog.csdn.net/aaqingying/article/details/118971186</a></p>
+<h2 id="Layout-布局"><a href="#Layout-布局" class="headerlink" title="Layout 布局"></a>Layout 布局</h2><img src="/.com//03/03/React/image-20230322195034128.png" class title="image-20230322195034128">
+
+
+
+<h2 id="侧边布局"><a href="#侧边布局" class="headerlink" title="侧边布局"></a>侧边布局</h2><p>侧边两列式布局。页面横向空间有限时，侧边导航可收起。</p>
+<p>侧边导航在页面布局上采用的是左右的结构，一般主导航放置于页面的左侧固定位置，辅助菜单放置于工作区顶部。内容根据浏览器终端进行自适应，能提高横向空间的使用率，但是整个页面排版不稳定。侧边导航的模式层级扩展性强，一、二、三级导航项目可以更为顺畅且具关联性的被展示，同时侧边导航可以固定，使得用户在操作和浏览中可以快速的定位和切换当前位置，有很高的操作效率。但这类导航横向页面内容的空间会被牺牲一部份。</p>
+<h2 id="Menu-导航菜单"><a href="#Menu-导航菜单" class="headerlink" title="Menu 导航菜单"></a>Menu 导航菜单</h2><h2 id="点击侧边栏跳转"><a href="#点击侧边栏跳转" class="headerlink" title="点击侧边栏跳转"></a>点击侧边栏跳转</h2><p>MenuItem: [label, key, icon, children]</p>
+<p>添加onClick事件，菜单栏目的key写成路径。</p>
+<h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><p>以systemMenu.tsx为例：</p>
+<p>Layout + Content + Routes + Outlet</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Col</span>, <span class="title class_">Layout</span>, <span class="title class_">MenuProps</span>, <span class="title class_">Row</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Menu</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Container</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-bootstrap&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Link</span>, <span class="title class_">Navigate</span>, <span class="title class_">Outlet</span>, <span class="title class_">Route</span>, <span class="title class_">Routes</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">UserInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./userManage/userInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CaseInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./caseManage/caseInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">DiseaseInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./diseaseManage/diseaseInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ExamQuestion</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/questionManage/examQuestionInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">QuestionInsert</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/questionManage/questionInsert.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">TestInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/testManage/testInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">TestInsert</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/testManage/testInsert.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">TestDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/testManage/testDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">TestUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/testManage/testUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CaseInsert</span> <span class="keyword">from</span> <span class="string">&#x27;./caseManage/caseInsert/caseInsert.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CaseUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./caseManage/caseUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CaseDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./caseManage/caseDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">PaperInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/paperManage/paperInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">PaperDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/paperManage/paperDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">PaperUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/paperManage/paperUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">PaperGenerate</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/questionManage/generatePaper.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ProcessInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/processManage/processInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ProcessDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/processManage/processDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ProcessInsert</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/processManage/processInsert.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ProcessUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/processManage/processUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">RoleInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/roleManage/roleInfo.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">RoleDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/roleManage/roleDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">RoleUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/roleManage/roleUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">RoleInsert</span> <span class="keyword">from</span> <span class="string">&#x27;./learnManage/roleManage/roleInsert.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MedicineInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./hospitalManage/medicineManage/medicineManage.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MedicineDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./hospitalManage/medicineManage/medicineDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">DepartmentInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./hospitalManage/departmentManage/departmentManage.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">VaccineInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./hospitalManage/vaccineManage/vaccineManage.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">QuestionDetail</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/questionManage/questionDetail.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">QuestionUpdate</span> <span class="keyword">from</span> <span class="string">&#x27;./examManage/questionManage/questionUpdate.tsx&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">InspectionInfo</span> <span class="keyword">from</span> <span class="string">&#x27;./hospitalManage/inspectionItemManage/inspectionItemInfo.tsx&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  <span class="title class_">ContainerOutlined</span>,</span><br><span class="line">  <span class="title class_">PieChartOutlined</span>,</span><br><span class="line">  <span class="title class_">UserOutlined</span>,</span><br><span class="line">  <span class="title class_">AppstoreAddOutlined</span>,</span><br><span class="line">  <span class="title class_">HddOutlined</span>,</span><br><span class="line">  <span class="title class_">ContactsOutlined</span>,</span><br><span class="line">  <span class="title class_">MedicineBoxOutlined</span>,</span><br><span class="line">  <span class="title class_">FileTextOutlined</span>,</span><br><span class="line">  <span class="title class_">ReconciliationOutlined</span>,</span><br><span class="line">  <span class="title class_">FolderOpenOutlined</span>,</span><br><span class="line">  <span class="title class_">IdcardOutlined</span>,</span><br><span class="line">  <span class="title class_">TeamOutlined</span>,</span><br><span class="line">  <span class="title class_">PartitionOutlined</span>,</span><br><span class="line">  <span class="title class_">CalendarOutlined</span>,</span><br><span class="line">  <span class="title class_">ProfileOutlined</span></span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;@ant-design/icons&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MenuItem</span> = <span class="title class_">Required</span>&lt;<span class="title class_">MenuProps</span>&gt;[<span class="string">&#x27;items&#x27;</span>][<span class="built_in">number</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getItem</span>(<span class="params"></span></span><br><span class="line"><span class="params">  label: React.ReactNode,</span></span><br><span class="line"><span class="params">  key: React.Key,</span></span><br><span class="line"><span class="params">  icon?: React.ReactNode,</span></span><br><span class="line"><span class="params">  children?: MenuItem[],</span></span><br><span class="line"><span class="params">  <span class="keyword">type</span>?: <span class="string">&#x27;group&#x27;</span>,</span></span><br><span class="line"><span class="params"></span>): <span class="title class_">MenuItem</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    key,</span><br><span class="line">    icon,</span><br><span class="line">    children,</span><br><span class="line">    label,</span><br><span class="line">    <span class="keyword">type</span>,</span><br><span class="line">  &#125; <span class="keyword">as</span> <span class="title class_">MenuItem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">items</span>: <span class="title class_">MenuItem</span>[] = [</span><br><span class="line">  <span class="comment">// item: label key（写路径） icon children type</span></span><br><span class="line">  <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/case&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27;, <span class="attr">fontWeight:</span> &#x27;<span class="attr">bolder</span>&#x27;, <span class="attr">fontSize:</span> &#x27;<span class="attr">18px</span>&#x27; &#125;&#125;&gt;</span>病例管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/case&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">AppstoreAddOutlined</span> /&gt;</span></span>),</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/disease&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27;, <span class="attr">fontWeight:</span> &#x27;<span class="attr">bolder</span>&#x27;, <span class="attr">fontSize:</span> &#x27;<span class="attr">18px</span>&#x27; &#125;&#125;&gt;</span>病种管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/disease&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">ContainerOutlined</span> /&gt;</span></span>),</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/user&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27;, <span class="attr">fontWeight:</span> &#x27;<span class="attr">bolder</span>&#x27;, <span class="attr">fontSize:</span> &#x27;<span class="attr">18px</span>&#x27; &#125;&#125;&gt;</span>用户管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/user&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">UserOutlined</span> /&gt;</span></span>),</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="string">&#x27;考试管理&#x27;</span>, <span class="string">&#x27;exam&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">ReconciliationOutlined</span> /&gt;</span></span>, [</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/exercise&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>考题管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/exercise&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">FolderOpenOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/paper&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>试卷管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/paper&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">FileTextOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/test&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>场次管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/test&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">CalendarOutlined</span> /&gt;</span></span>)</span><br><span class="line">  ]),</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="string">&#x27;医院管理&#x27;</span>, <span class="string">&#x27;hospital&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">PieChartOutlined</span> /&gt;</span></span>, [</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/department&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>科室管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/department&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">ContactsOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/medicine&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>药品管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/medicine&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">HddOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/vaccine&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>疫苗管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/vaccine&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">MedicineBoxOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/inspection&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>检查管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/inspection&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">ProfileOutlined</span> /&gt;</span></span>),</span><br><span class="line"></span><br><span class="line">  ]),</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="string">&#x27;职能学习管理&#x27;</span>, <span class="string">&#x27;study&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">IdcardOutlined</span> /&gt;</span></span>, [</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/role&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>岗位角色管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/role&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">TeamOutlined</span> /&gt;</span></span>),</span><br><span class="line">    <span class="title function_">getItem</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/process&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27; &#125;&#125;&gt;</span>流程管理<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>, <span class="string">&#x27;/process&#x27;</span>, <span class="language-xml"><span class="tag">&lt;<span class="name">PartitionOutlined</span> /&gt;</span></span>),</span><br><span class="line">  ])</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// submenu keys of first level</span></span><br><span class="line"><span class="keyword">const</span> rootSubmenuKeys = [<span class="string">&#x27;/case&#x27;</span>, <span class="string">&#x27;/disease&#x27;</span>, <span class="string">&#x27;/user&#x27;</span>, <span class="string">&#x27;exam&#x27;</span>, <span class="string">&#x27;hospital&#x27;</span>, <span class="string">&#x27;study&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">SystemManage</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 布局相关</span></span><br><span class="line">  <span class="keyword">const</span> &#123; <span class="title class_">Content</span>, <span class="title class_">Sider</span> &#125; = <span class="title class_">Layout</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> [openKeys, setOpenKeys] = <span class="title function_">useState</span>([<span class="string">&#x27;/case&#x27;</span>]);</span><br><span class="line">  <span class="keyword">const</span> <span class="attr">onOpenChange</span>: <span class="title class_">MenuProps</span>[<span class="string">&#x27;onOpenChange&#x27;</span>] = <span class="function">(<span class="params">keys</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> latestOpenKey = keys.<span class="title function_">find</span>(<span class="function">(<span class="params">key</span>) =&gt;</span> openKeys.<span class="title function_">indexOf</span>(key) === -<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (rootSubmenuKeys.<span class="title function_">indexOf</span>(latestOpenKey!) === -<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="title function_">setOpenKeys</span>(keys);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="title function_">setOpenKeys</span>(latestOpenKey ? [latestOpenKey] : []);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Layout</span> <span class="attr">className</span>=<span class="string">&#x27;system-manage&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Sider</span> <span class="attr">className</span>=<span class="string">&#x27;system-manage-sider &#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Menu</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">defaultSelectedKeys</span>=<span class="string">&#123;[</span>&#x27;/<span class="attr">case</span>&#x27;]&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">mode</span>=<span class="string">&quot;inline&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">items</span>=<span class="string">&#123;items&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">openKeys</span>=<span class="string">&#123;openKeys&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">onOpenChange</span>=<span class="string">&#123;onOpenChange&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> &#x27;<span class="attr">200px</span>&#x27;, <span class="attr">borderRadius:</span> <span class="attr">10</span>, <span class="attr">opacity:</span> <span class="attr">1</span>, <span class="attr">height:</span> &#x27;<span class="attr">660px</span>&#x27; &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Menu</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Sider</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Layout</span> <span class="attr">className</span>=<span class="string">&quot;system-manage-right&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Content</span> &gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;case&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">CaseInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;disease&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">DiseaseInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;user&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">UserInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;exercise&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ExamQuestion</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;exercise/detail/:questionId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">QuestionDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;exercise/update/:questionId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">QuestionUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;exercise/generate&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">PaperGenerate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;paper&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">PaperInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;paper/detail/:paper_id&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">PaperDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;paper/update/:paper_id&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">PaperUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;test&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">TestInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;test/detail/:testId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">TestDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;test/update/:testId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">TestUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;test/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">TestInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;role&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">RoleInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;role/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">RoleInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;role/detail/:actorId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">RoleDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;role/update/:actorId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">RoleUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;department&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">DepartmentInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;medicine&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">MedicineInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;medicine/detail/:id&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">MedicineDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;vaccine&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">VaccineInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;inspection&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">InspectionInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;process&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProcessInfo</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;process/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProcessInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;process/detail/:processId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProcessDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;process/update/:processId&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">ProcessUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Navigate</span> <span class="attr">to</span>=<span class="string">&quot;/systemManage/case&quot;</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;case/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">CaseInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;case/detail/:case_id&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">CaseDetail</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;case/update/:case_id&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">CaseUpdate</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;exercise/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">QuestionInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;paper/insert&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">TestInsert</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Outlet</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Layout</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &lt;/Layout &gt;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  );</span></span><br><span class="line"><span class="language-xml">&#125;;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">export default SystemManage;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Message全局提示"><a href="#Message全局提示" class="headerlink" title="Message全局提示"></a>Message全局提示</h2><p>全局展示操作反馈信息。</p>
+<ul>
+<li>可提供成功、警告和错误等反馈信息。</li>
+<li>顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。</li>
+</ul>
+<p>可以直接： message.success(‘添加成功！’) </p>
+<p>message.error(‘添加失败’)</p>
+<p>message.warning(‘警告！’)</p>
+
+
+<p>原因竟然是忘记放{contextHolder}进return里面了，虽然也不知道原理是啥（。</p>
+<img src="/.com//03/03/React/image-20230328114544726.png" class title="image-20230328114544726">
+
+
+
+<h2 id="Form表单"><a href="#Form表单" class="headerlink" title="Form表单"></a>Form表单</h2><h3 id="react-antd动态表单以及数组对象示例"><a href="#react-antd动态表单以及数组对象示例" class="headerlink" title="react+antd动态表单以及数组对象示例"></a>react+antd动态表单以及数组对象示例</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/feinifi/article/details/107706303">https://blog.csdn.net/feinifi/article/details/107706303</a></p>
+<p>[‘name’, index,]</p>
+<h1 id="React-中使用-REST-API"><a href="#React-中使用-REST-API" class="headerlink" title="React 中使用 REST API"></a>React 中使用 REST API</h1><p>REST是 REpresentational State Transfer（表现层状态转化）</p>
+<p>当通过 REST API 发出请求时，它会将资源的当前状态的表现发送给请求者或者终点。状态表现通常采用 JSON 格式（JSON 即 JavaScript Object Notation），或者 XML 和 HTML 格式。</p>
+<p><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/chinese/news/how-to-consume-rest-apis-in-react/">如何在 React 中使用 REST API——初学者指南</a></p>
+<h2 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">   <span class="keyword">const</span> [posts, setPosts] = <span class="title function_">useState</span>([]);</span><br><span class="line">   <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/posts?_limit=10&#x27;</span>)</span><br><span class="line">         .<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">         .<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">            <span class="title function_">setPosts</span>(data);</span><br><span class="line">         &#125;)</span><br><span class="line">         .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span>);</span><br><span class="line">         &#125;);</span><br><span class="line">   &#125;, []);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">   <span class="comment">// ... 在这里使用数据</span></span><br><span class="line">);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DELETE请求"><a href="#DELETE请求" class="headerlink" title="DELETE请求"></a>DELETE请求</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">deletePost</span> = <span class="keyword">async</span> (<span class="params">id</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">`https://jsonplaceholder.typicode.com/posts/<span class="subst">$&#123;id&#125;</span>`</span>, &#123;</span><br><span class="line">       <span class="attr">method</span>: <span class="string">&#x27;DELETE&#x27;</span>,</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (response.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">          <span class="title function_">setPosts</span>(</span><br><span class="line">             posts.<span class="title function_">filter</span>(<span class="function">(<span class="params">post</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> post.<span class="property">id</span> !== id;</span><br><span class="line">             &#125;)</span><br><span class="line">          );</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h2><p>可以使用HTTP<code>POST</code>方法从终点发送数据。该方法和<code>GET</code>请求类似，主要的区别在于需要<strong>添加方法名称以及两个额外的参数</strong>到选填对象中：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">addPosts</span> = <span class="keyword">async</span> (<span class="params">title, body</span>) =&gt; &#123;</span><br><span class="line"><span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/posts&#x27;</span>, &#123;</span><br><span class="line"><span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line"><span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">   <span class="attr">title</span>: title,</span><br><span class="line">   <span class="attr">body</span>: body,</span><br><span class="line">   <span class="attr">userId</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>().<span class="title function_">toString</span>(<span class="number">36</span>).<span class="title function_">slice</span>(<span class="number">2</span>),</span><br><span class="line">&#125;),</span><br><span class="line"><span class="attr">headers</span>: &#123;</span><br><span class="line">   <span class="string">&#x27;Content-type&#x27;</span>: <span class="string">&#x27;application/json; charset=UTF-8&#x27;</span>,</span><br><span class="line">&#125;,</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="title function_">setPosts</span>(<span class="function">(<span class="params">posts</span>) =&gt;</span> [data, ...posts]);</span><br><span class="line">   <span class="title function_">setTitle</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">   <span class="title function_">setBody</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span>);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>body</code>部分的数据是我们想要传给 API 的数据，在传输给服务器之前必须先字符串化。</p>
+<p><code>header</code>告知数据类型，通常和我们使用的 REST API 一致的类型。同时我们也使用状态保存新的数据，并将剩下的数据分配到上文所述的循环数组中。</p>
+<h2 id="async-x2F-await"><a href="#async-x2F-await" class="headerlink" title="async&#x2F;await"></a><strong>async&#x2F;await</strong></h2><p>可以以一种方式帮助你像编写同步代码那样的编写异步代码。</p>
+<blockquote>
+<p>这个需要深入学习一下原理。</p>
+</blockquote>
+<h2 id="发送网络请求"><a href="#发送网络请求" class="headerlink" title="发送网络请求"></a>发送网络请求</h2><p>CORS跨域问题</p>
+<p>在 React.js 中使用 Fetch API 发起跨域请求，需要使用 <strong>no-cors 模式</strong>。使用 no-cors 模式时，浏览器会发送一个简单的跨域请求，并允许服务器返回一个简单的响应。如果服务器在响应中包含了一些不允许的内容（例如自定义的头信息），则浏览器会抛出一个错误。因此，在使用 no-cors 模式时，需要注意返回的响应内容必须是简单的，不能包含自定义头信息等复杂内容。</p>
+<p>需要注意的是，<em>在使用 <code>no-cors</code> 模式时，无法访问响应的内容，只能访问响应的基本信息（例如状态码、响应头等）</em>。如果您需要访问响应的内容，可以考虑使用代理或者 JSONP 等其他技术。</p>
+<p>然后<code>重新运行</code>，否则会报如下错误：修改了 package.json 需要重启</p>
+<h1 id="React父子传递参数的三种方式"><a href="#React父子传递参数的三种方式" class="headerlink" title="React父子传递参数的三种方式"></a>React父子传递参数的三种方式</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44999830/article/details/106096835">https://blog.csdn.net/weixin_44999830/article/details/106096835</a></p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/FrontEnd/">#FrontEnd</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/React/">#React</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/03/21/latex%E5%AD%A6%E4%B9%A0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">latex学习</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/02/Vue%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Vue前端开发</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B"><span class="nav-text">参考教程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React%E5%AE%89%E8%A3%85"><span class="nav-text">React安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSX%E8%AF%AD%E6%B3%95"><span class="nav-text">JSX语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX%E6%A0%B7%E5%BC%8F%E5%A4%84%E7%90%86"><span class="nav-text">JSX样式处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6%E5%92%8C%E7%B1%BB%E7%BB%84%E4%BB%B6"><span class="nav-text">函数式组件和类组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React%E7%9A%84React-FC%E4%B8%8EReact-Component%E7%9A%84%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86"><span class="nav-text">React的React.FC与React.Component的初步认识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Hook"><span class="nav-text">使用 Hook</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Uncaught-Invariant-Violation-Too-many-re-renders-React-limits-the-number-of-renders-to-prevent-an-infinite-loop"><span class="nav-text">Uncaught Invariant Violation: Too many re-renders. React limits the number of renders to prevent an infinite loop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Props-%E5%92%8C-State-%E6%9C%AC%E8%B4%A8"><span class="nav-text">Props 和 State 本质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87state%E5%9C%A8%E7%BB%84%E4%BB%B6%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%97%B6%E4%BC%A0%E5%80%BC%EF%BC%9F"><span class="nav-text">如何通过state在组件跳转页面时传值？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="nav-text">路由配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Antd%E7%BB%84%E4%BB%B6%E5%BA%93%E4%BD%BF%E7%94%A8"><span class="nav-text">Antd组件库使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Table%E8%A1%A8%E6%A0%BC"><span class="nav-text">Table表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout-%E5%B8%83%E5%B1%80"><span class="nav-text">Layout 布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E5%B8%83%E5%B1%80"><span class="nav-text">侧边布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Menu-%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95"><span class="nav-text">Menu 导航菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%B7%B3%E8%BD%AC"><span class="nav-text">点击侧边栏跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1"><span class="nav-text">嵌套路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message%E5%85%A8%E5%B1%80%E6%8F%90%E7%A4%BA"><span class="nav-text">Message全局提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form%E8%A1%A8%E5%8D%95"><span class="nav-text">Form表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#react-antd%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95%E4%BB%A5%E5%8F%8A%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E7%A4%BA%E4%BE%8B"><span class="nav-text">react+antd动态表单以及数组对象示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-%E4%B8%AD%E4%BD%BF%E7%94%A8-REST-API"><span class="nav-text">React 中使用 REST API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET%E8%AF%B7%E6%B1%82"><span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE%E8%AF%B7%E6%B1%82"><span class="nav-text">DELETE请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82"><span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-x2F-await"><span class="nav-text">async&#x2F;await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E9%80%81%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82"><span class="nav-text">发送网络请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React%E7%88%B6%E5%AD%90%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">React父子传递参数的三种方式</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

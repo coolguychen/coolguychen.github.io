@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            RocksDB Learning Notes |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">RocksDB Learning Notes</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-10 19:03:11</span>
+        <span class="mobile">2021-11-10 19:03</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>RocksDB是一个<strong>可嵌入的持久性key-value存储</strong>。它是一个日志结构的数据库，并针对快速存储进行了优化。RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用，其主要的数据结构是LSM tree，保证了读写效率。业界采用RocksDB作为存储引擎的有：<a href="https://link.zhihu.com/?target=http://myrocks.io/">MyRocks</a> 、<a target="_blank" rel="noopener" href="https://www.huaweicloud.com/theme/1034299-2-H">华为云云数据库mongodb</a>、<a target="_blank" rel="noopener" href="https://github.com/hugegraph">百度开源图数据库HugeGraph</a>、<a target="_blank" rel="noopener" href="https://github.com/pingcap/tidb">国产开源分布式数据库TiDB</a>等等。</p>
+<span id="more"></span>
+
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p>RocksDB的数据模型是带版本号的K-V存储。每个对DB的修改都会有一个全局排序并且单调递增的序列号。对于每个key，RocksDB保留操作的历史。</p>
+<p>混合（Hybrid）Key-Value存储：数据首先保存在内存中，当满足一定条件后数据持久存储。<br><img src="https://img-blog.csdnimg.cn/c6e474e9ee3049ba926f2e6869b1e1f6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBATHVjaWR-RHJlYW0=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<hr>
+<p>RocksDB提供：</p>
+<pre><code>        Get()——读取数据的接口
+
+        Put()——写入数据的接口
+
+        Delete()——删除数据的接口
+
+        Merge()——读后写，通过日志的方式记录，然后通过Compaction来清理日志
+
+        ……
+</code></pre>
+<h1 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h1><h2 id="基础架构"><a href="#基础架构" class="headerlink" title="基础架构"></a>基础架构</h2><img src="https://img-blog.csdnimg.cn/20190817230604430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1bzIyMg==,size_16,color_FFFFFF,t_70" alt="img" style="zoom: 80%;">
+
+<hr>
+<p>上图是Rocksdb的基础架构。Rocksdb中引入了ColumnFamily(列族, CF)的概念，所有的读写操作都需要先指定列族。</p>
+<p>Write-Ahead-Log File，预写日志，用于记录那些未被成功提交的数据操作，然后在重启时进行数据的恢复。</p>
+<p>Memtable，内存数据结构，用以存储最近更新的DB更新操作。</p>
+<p>ImmuTable，当一个 Memtable 写满了之后，就会变成ImmuTable，只读不可写。Memtable空间写满后，会触发一次写出更新操作到SST文件的操作。当一个 Memtable 写满了之后，就会变成只读的ImmuTable ，RocksDB 在后台会通过一个 flush 线程将这个 Memtable刷写到磁盘，生成一个 Sorted String Table(SST) 文件，放在 Level 0 层。</p>
+<p>SST File，SST文件是一段排序好的表文件，它是实际持久化的数据文件。里面的数据按照Key进行排序能方便对其进行二分查找。在SST文件内，还额外包含以下特殊信息：</p>
+<ul>
+<li>Bloom Filter，用于快速判断目标查询key是否存在于当前SST文件内。</li>
+<li>Index &#x2F; Partition Index，SST内部数据块索引文件快速找到数据块的位置。</li>
+</ul>
+<p>Block Cache，纯内存存储结构，存储SST文件被经常访问的热点数据。</p>
+<p>ManiFest，负责记录系统某个时刻SST文件的视图。</p>
+<p>Current，负责记录当前最新的Manifest文件名。</p>
+<p><strong>注：</strong> 每个ColumnFamily有自己的Memtable， SST文件，所有ColumnFamily共享WAL、Current、Manifest文件。</p>
+<h2 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h2><p>RocksDB 是基于 LSM-Tree 的，存储机制大概如下：</p>
+<img src="https://img-blog.csdnimg.cn/322fa45ab171477cad6ef74ac76c12e9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAX0phbmljaw==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="RocksDB主要组成 & 读、写和压缩操作流程图解" style="zoom:80%;">
+
+<p>首先，任何的写入都会先写到 WAL，然后再写入MemTable。</p>
+<p>当一个 MemTable 写满了之后，就会变成 ImmuTable，RocksDB 在后台会通过一个 flush 线程将这个 Memtable刷写到磁盘，生成一个 Sorted String Table(SST) 文件，放在 Level 0 层。当 Level 0 层的 SST 文件个数超过阈值之后，就会通过 <strong>Compaction 策略</strong>（去除相同key的多条记录）将其放到 Level 1 层，以此类推。</p>
+<p>这里关键就是 Compaction，如果没有 Compaction，那么写入是非常快的，但会造成<strong>读性能降低</strong>，同样也会造成很严重的<strong>空间放大</strong>，即过期旧数据没有及时地被清理的问题。</p>
+<p>传统LSM-Tree 能将离散的<strong>随机写请求</strong>都转换成<strong>批量的顺序写请求</strong>（WAL + Compaction），以此提高写性能。但也带来了一些问题：</p>
+<ul>
+<li>读放大（Read Amplification）。LSM-Tree 的读操作需要从新到旧（从上到下）一层一层查找，直到找到想要的数据。这个过程可能需要不止一次 I&#x2F;O。特别是 range query 的情况，影响很明显。</li>
+<li>空间放大（Space Amplification）。因为所有的写入都是顺序写（append-only）的，不是 in-place update ，所以过期数据不会马上被清理掉。</li>
+</ul>
+<p>因此，RocksDB 通过后台的 compaction 来减少读放大（减少 SST 文件数量）和空间放大（清理过期数据），但也因此带来了写放大的问题。</p>
+<ul>
+<li>写放大（Write Amplification）。实际写入 SSD的数据大小和程序要求写入数据大小之比。正常情况下，SSD观察到的写入数据多于上层程序写入的数据。写放大太严重会大大缩短 SSD 的使用寿命。</li>
+</ul>
+<p>为了平衡<strong>写入、读取、空间</strong>这些问题，RocksDB提供对应的参数，我们可以针对不同的使用场景调整参数，体现了RocksDB灵活与应用范围广泛的优势。对 RocksDB 的调优本质上是在这三个因子之间取得平衡。</p>
+<h1 id="应用实例-——-Mongo-on-RocksDB"><a href="#应用实例-——-Mongo-on-RocksDB" class="headerlink" title="应用实例 —— Mongo on RocksDB"></a>应用实例 —— Mongo on RocksDB</h1><blockquote>
+<p>RocksDB可以作为内嵌式数据库来使用，也可以作为自研数据库的底层存储引擎来使用。</p>
+</blockquote>
+<blockquote>
+<p>从MongoDB 3.2版本开始，官方便将<strong>WiredTiger</strong>（采用B Tree的存储方式，适合顺序读）作为默认存储引擎并一直应用至今，基于RocksDB引擎则陷入沉寂。如今，基于RocksDB的新的MongoDB在华为云上已 “复活”。</p>
+</blockquote>
+<p>RocksDB引擎凭借特性丰富，社区活跃，应用范围广泛，且支持更为良好的硬件存储性能等特点，<strong>更适用于云场景</strong>（读写操作频繁、普遍使用SSD、对数据持久化要求较高）。而MongoDB作为一款优秀的NoSQL数据库，支持海量存储，查询能力丰富以及优秀的性能和可靠性，深受国内外用户和企业的认可。</p>
+<p>云数据库<strong>Mongo on RocksDB</strong>在华为云上应运而生，完全兼容MongoDB接口。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>基于RocksDB的MongoDB继承了RocksDB的下列特点：</p>
+<ol>
+<li><p>由于RocksDB采用了优化的LSM算法，<strong>平均写性能</strong>良好。</p>
+</li>
+<li><p>RocksDB支持<u>多点快照</u>的特性， 利用该特性，能实现独特的<strong>快照&#x2F;时间漫游</strong>功能，即客户能够读取数据库历史上的某个时间点的数据，具体可参考下方的内容。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/f8c003493610cf6261eee5ea67d275c4.png" alt="img"></p>
+<p>（1）创建名称为Stable的快照，终端用户默认访问T1时间点“稳定的历史数据”。</p>
+<p>（2） 客户维护工程师开始更新数据，直到时间点T2，数据维护完成，未验证，不对外发布。</p>
+<p>（3）到达T3时间点，数据更新完成，新版本数据发布，释放快照，终端用户访问最新版本数据。</p>
+<p>通过新开发的Snapshot创建快照命令，该命令调用了RocksDB的API，RocksDB会自动捕获在创建的时间点的DB一致性视图，并保持在内存中。客户在T1和T2分别创建快照，<u>无论数据如何变化，当用户切换到某快照视图时，应用查到的都只有<strong>对应时间点版本的数据</strong>，</u>从而即简单又快捷的满足了需求。</p>
+</li>
+<li><p>更灵活的Compact操作。</p>
+<p>Compact命令是MongoDB下发给存储引擎的关键命令，其主要作用是让存储引擎对集合数据和索引进行碎片整理。MongoDB对集合数据做删除操作时，会对删除数据打一个标记，而并非真正对集合数据做删除，等异步线程在后台慢慢删除，这么做好处是<u>大规模的数据删除操作并不会对IO有巨大影响</u>。Compact操作就是通过重写集合和索引数据，真正的释放磁盘空间给操作系统。</p>
+</li>
+</ol>
+<blockquote>
+<p>在云场景下，由于SSD硬盘的普遍使用，让RocksDB引擎的特点更充分的发挥，适合应用在低成本，大量数据频繁操作的应用场景，例如：网络游戏，物联网，车联网，大数据计算等众多领域。</p>
+</blockquote>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ol>
+<li>当存储数据量大，Level层数较多时，扫描不同层会带来一定程度的读放大；（不适合读取大规模的数据）</li>
+<li>为解决读放大、优化读而导致写放大；（需要权衡、调参）</li>
+<li>数据顺序写入，非in-place update，为保证视图一致性，被remove的数据不会立刻清理，其次Level SST基本每层都会有冗余数据，这些都会导致空间放大。</li>
+</ol>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ol>
+<li>对写性能要求很高（通常写多读少），同时有较大内存来缓存SST块以提供快速读的场景；</li>
+<li>SSD等对写放大比较敏感以及磁盘等对随机写比较敏感的场景；</li>
+<li>适用于云场景，SSD普遍使用的情况。</li>
+</ol>
+<hr>
+<p><em>参考资料</em></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebook/rocksdb/wiki/RocksDB-Overview">RocksDB Overview · facebook&#x2F;rocksdb Wiki · GitHub</a></p>
+<p><a target="_blank" rel="noopener" href="https://rocksdb.org.cn/doc/Home.html">欢迎使用RocksDB RocksDB中文网 | 一个持久型的key-value存储</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1352666#:~:text=RocksDB%20%E5%92%8C%20LevelDB%20%E9%80%9A%E8%BF%87%E5%90%8E%E5%8F%B0%E7%9A%84%20compaction%20%E6%9D%A5%E5%87%8F%E5%B0%91%E8%AF%BB%E6%94%BE%E5%A4%A7%EF%BC%88%E5%87%8F%E5%B0%91%20SST%20%E6%96%87%E4%BB%B6%E6%95%B0%E9%87%8F%EF%BC%89%E5%92%8C%E7%A9%BA%E9%97%B4%E6%94%BE%E5%A4%A7%EF%BC%88%E6%B8%85%E7%90%86%E8%BF%87%E6%9C%9F%E6%95%B0%E6%8D%AE%EF%BC%89%EF%BC%8C%E4%BD%86%E4%B9%9F%E5%9B%A0%E6%AD%A4%E5%B8%A6%E6%9D%A5%E4%BA%86%E5%86%99%E6%94%BE%E5%A4%A7%EF%BC%88Write,%E6%AD%A3%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8CHDD/SSD%20%E8%A7%82%E5%AF%9F%E5%88%B0%E7%9A%84%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E5%A4%9A%E4%BA%8E%E4%B8%8A%E5%B1%82%E7%A8%8B%E5%BA%8F%E5%86%99%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82%20%E5%9C%A8%20HDD%20%E4%BD%9C%E4%B8%BA%E4%B8%BB%E6%B5%81%E5%AD%98%E5%82%A8%E7%9A%84%E6%97%B6%E4%BB%A3%EF%BC%8CRocksDB%20%E7%9A%84%20compaction%20%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%86%99%E6%94%BE%E5%A4%A7%E9%97%AE%E9%A2%98%E5%B9%B6%E6%B2%A1%E6%9C%89%E9%9D%9E%E5%B8%B8%E6%98%8E%E6%98%BE%E3%80%82">LSM-Tree 的写放大写放大、读放大、空间放大RockDB 写放大简单分析参考文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/73fa1d4e4273">Rocksdb的优劣及应用场景分析 - 简书 (jianshu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://mongoing.com/archives/78714">一文带你了解Mongo on RocksDB | MongoDB中文社区 (mongoing.com)</a></p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Non-relational-Data-Storage-Technology/">#Non-relational Data Storage Technology</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/25/Google-File-System-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">GFS Reading Notes</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/28/HBase-in-Action%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-I/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">HBase in Action Reading Notes I</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">存储引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84"><span class="nav-text">基础架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="nav-text">存储机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B-%E2%80%94%E2%80%94-Mongo-on-RocksDB"><span class="nav-text">应用实例 —— Mongo on RocksDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A3%E5%8A%BF"><span class="nav-text">劣势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">适用场景</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

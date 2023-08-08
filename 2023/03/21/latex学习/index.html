@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hazel Chen">
+    
+    <title>
+        
+            latex学习 |
+        
+        Cool Chen&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/nayeon.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Welcome to my channel!"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Cool Chen's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Cool Chen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">latex学习</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/nayeon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Hazel Chen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2023-03-21 15:18:12</span>
+        <span class="mobile">2023-03-21 15:18</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Study/">Study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/">论文写作</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Latex/">Latex</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>写在前面：LaTeX（LATEX，音译“拉泰赫”）是一种基于ΤΕΧ的排版系统。LaTeX遵循呈现与内容分离的设计理念，以便作者可以专注于他们正在编写的内容，而不必同时注视其外观。因此它非常适用于生成高印刷质量的科技和数学、物理文档。</p>
+<p>因为本科论文是用latex写的，就把在写论文时遇到的一些问题&#x2F;一些常用代码放在这里。</p>
+<p>使用的是overleaf在线编译器。优点是不需要自己在本地进行一些环境配置；缺点是有点卡，服务器是时不时会down。</p>
+<p><a target="_blank" rel="noopener" href="https://flowus.cn/latex/share/66110e84-b24a-4cd5-b8a7-2ba2afb35a30">常用LaTeX代码</a></p>
+<h1 id="字体与符号"><a href="#字体与符号" class="headerlink" title="字体与符号"></a>字体与符号</h1><h2 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h2><p>\CJKfamily{song}：设置为宋体。</p>
+<p>\CJKfamily{hei}：设置为黑体。</p>
+<p>\CJKfamily{kai}：设置为楷体。</p>
+<h2 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h2><p>\usepackage{color}</p>
+<p>\textcolor[rgb]{r,g,b}{text}</p>
+<p>其中{r,g,b}代表red、green和blue三种颜色的组合，取值范围为[0-1]</p>
+<p>\textcolor[RGB]{R,G,B}{text}</p>
+<p>其中{R,G,B}代表red、green和blue三种颜色的组合，取值范围为[0-255]</p>
+<h1 id="换行、分页"><a href="#换行、分页" class="headerlink" title="换行、分页"></a>换行、分页</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
+<li>文本中空格起到分隔单词的作用，连续多个空格并不会增大间距，也只会被解释为一个空格。</li>
+<li>只有字符后面的空格才是有效的，每行最前面的空格会被LaTeX忽略（段前缩紧的工作由LaTeX自动完成）。</li>
+<li>在正文中，单个回车也会被解释为空格</li>
+<li>对于以字母命名的命令，后面需要加空格以和其他文本分开。<code>Happy \TeX ing</code>——正确，<code>Happy \TeX ing</code>——编译器报错。</li>
+</ul>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><ul>
+<li>连续两个回车</li>
+<li>\\</li>
+<li>\newline</li>
+</ul>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>\newpage</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>\setcounter{tocdepth}{2} 设置目录显示深度为2（只显示1、2级标题）</p>
+<h2 id="LaTex-解决目录红框"><a href="#LaTex-解决目录红框" class="headerlink" title="LaTex 解决目录红框"></a>LaTex 解决目录红框</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/z_feng12489/article/details/90522718">https://blog.csdn.net/z_feng12489/article/details/90522718</a></p>
+<p>使用到宏包：</p>
+<p><code>\usepackage&#123;hyperref&#125;</code></p>
+<p>在文档的前面（通常是package_and_settings.tex里面）加上如下代码就解决了，意思是设置链接的颜色：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\hypersetup</span>&#123;</span><br><span class="line">	colorlinks=true,</span><br><span class="line">	linkcolor=black</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="伪代码——基于Algorithm2e"><a href="#伪代码——基于Algorithm2e" class="headerlink" title="伪代码——基于Algorithm2e"></a>伪代码——基于Algorithm2e</h2><p>latex 书写伪代码主要有三种排版格式：algorithm+algorithmic、algorithm+algorithmicx 以及 algorithm2e<a target="_blank" rel="noopener" href="https://shuzang.github.io/2021/pseudocode-specification/#fn:3">3</a>。我们使用 <a target="_blank" rel="noopener" href="https://www.ctan.org/pkg/algorithm2e">algorithm2e</a>，它提供了垂直连接线，可以去掉 end 关键字，而且写起来更像编程语言，用着非常舒服。</p>
+<ol>
+<li>导入 algorithm2e 宏包：</li>
+</ol>
+<p>在 LaTeX 文档的导言区中，添加以下代码来导入 algorithm2e 宏包：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[ruled,vlined,commentsnumbered,algosection]&#123;algorithm2e&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数 “ruled”(让标题显示在最上面) 和 “vlined”(垂直连接线) 用于指定算法的外观样式</li>
+<li>参数linesnumbered表示为代码行号</li>
+<li>参数 “commentsnumbered” 则表示要为注释编号</li>
+<li>参数algosection表示伪代码按照章节编号。</li>
+</ul>
+<ol start="2">
+<li>定义注释样式：</li>
+</ol>
+<p>在导言区中，添加以下代码来定义注释样式：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\SetCommentSty</span>&#123;myCommentStyle&#125;</span><br><span class="line"><span class="keyword">\newcommand</span><span class="keyword">\myCommentStyle</span>[1]&#123;<span class="keyword">\footnotesize</span><span class="keyword">\ttfamily</span><span class="keyword">\textcolor</span>&#123;blue&#125;&#123;<span class="params">#1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，\SetCommentSty 用于设置注释样式，\myCommentStyle 定义了注释样式的具体格式。在这个例子中，我们将注释的字体大小设置为 \footnotesize，字体设置为等宽字体 \ttfamily，颜色设置为蓝色 \textcolor{blue}，并将注释内容包裹在大括号内作为参数</p>
+<p>注意：</p>
+<blockquote>
+<p>vlined 和 lined</p>
+<img src="/.com//03/21/latex%E5%AD%A6%E4%B9%A0/image-20230321164711726.png" class title="image-20230321164711726">
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166418214">用LaTeX优雅地书写伪代码——Algorithm2e简明指南</a></p>
+<p><a target="_blank" rel="noopener" href="https://shuzang.github.io/2021/pseudocode-specification/">伪代码规范</a></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[ruled,lined,linesnumbered,algosection]&#123;algorithm2e&#125; </span><br><span class="line"><span class="comment">% 让标题显示在上面；垂直连接线；行号；按章节编号</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改标题编号"><a href="#修改标题编号" class="headerlink" title="修改标题编号"></a>修改标题编号</h3><p>将x.x &#x3D;&gt; x-x</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>*&#123;<span class="keyword">\thealgocf</span>&#125;&#123;<span class="keyword">\arabic</span>&#123;section&#125;-<span class="keyword">\arabic</span>&#123;algocf&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="插入代码——基于minted"><a href="#插入代码——基于minted" class="headerlink" title="插入代码——基于minted"></a>插入代码——基于minted</h2><p>minted宏包</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/370b8c34cb41">在LaTeX中插入程序代码</a></p>
+<p>fontfamily &#x3D; new times roman 修改字体格式</p>
+<h2 id="插入算法索引"><a href="#插入算法索引" class="headerlink" title="插入算法索引"></a>插入算法索引</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\listofalgorithms</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\listalgorithmcfname</span>&#125;&#123;算<span class="keyword">\ </span>法<span class="keyword">\ </span>目<span class="keyword">\ </span>录&#125; <span class="comment">% 重命名已存在的命令行</span></span><br></pre></td></tr></table></figure>
+
+<p>想要标题居中的话：</p>
+<img src="/.com//03/21/latex%E5%AD%A6%E4%B9%A0/image-20230401230402038.png" class title="image-20230401230402038">
+
+<h1 id="插入图表"><a href="#插入图表" class="headerlink" title="插入图表"></a>插入图表</h1><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[ht] <span class="comment">% 对图片进行浮动显示，h-here，t-top；图片会自动生成编号</span></span><br><span class="line">	<span class="keyword">\centering</span> <span class="comment">% 图片居中显示</span></span><br><span class="line"> 	<span class="keyword">\includegraphics</span>[scale=0.6]&#123;xiantu.pdf&#125; <span class="comment">% 导入图片（当前目录的相对路径）</span></span><br><span class="line"> 	<span class="keyword">\caption</span>&#123;&#125; <span class="comment">% 为图片生成标题以及编号</span></span><br><span class="line"> 	<span class="keyword">\label</span>&#123;fig:xiantu&#125; <span class="comment">% 为图片赋予标号，方便后期引用</span></span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入图索引"><a href="#插入图索引" class="headerlink" title="插入图索引"></a>插入图索引</h3><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\listoffigures</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\listfigurename</span>&#123;插<span class="keyword">\ </span>图<span class="keyword">\ </span>目<span class="keyword">\ </span>录&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><p><code>\begin&#123;table&#125;</code>环境+<code>\begin&#123;tabular&#125;</code>导入表格</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[ht] <span class="comment">% 设置浮动环境</span></span><br><span class="line">  <span class="keyword">\begin</span>&#123;tabular&#125;&#123;|rrr|&#125; <span class="comment">% 产生表格，r：右对齐，三个r：总共三列，|：在两边生成竖线</span></span><br><span class="line">    <span class="keyword">\hline</span> <span class="comment">% 生成直线</span></span><br><span class="line">    直角边<span class="built_in">$</span>a<span class="built_in">$</span> <span class="built_in">&amp;</span> 直角边<span class="built_in">$</span>b<span class="built_in">$</span> <span class="built_in">&amp;</span> 斜边<span class="built_in">$</span>c<span class="built_in">$</span> <span class="keyword">\\</span> <span class="comment">% \\表示换行</span></span><br><span class="line">    <span class="keyword">\hline</span> </span><br><span class="line">    3 <span class="built_in">&amp;</span> 4 <span class="built_in">&amp;</span> 5 <span class="keyword">\\</span></span><br><span class="line">    5 <span class="built_in">&amp;</span> 12 <span class="built_in">&amp;</span> 13 <span class="keyword">\\</span></span><br><span class="line">    <span class="keyword">\hline</span></span><br><span class="line">  <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line">  <span class="keyword">\qquad</span> <span class="comment">% \qquad：产生2em宽的空格</span></span><br><span class="line">  (<span class="built_in">$</span>a<span class="built_in">^</span>2 + b<span class="built_in">^</span>2 = c<span class="built_in">^</span>2<span class="built_in">$</span>)  </span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22576629">如何快速在线生成latex表格</a></p>
+<h2 id="按章节编号"><a href="#按章节编号" class="headerlink" title="按章节编号"></a>按章节编号</h2><p>通过引入<code>\usepackage&#123;amsmath&#125;</code>包中的<code>\numberwithin&#123;figure&#125;&#123;section&#125;</code>命令，我们可以将Latex中Figure的编号和所在的章节关联起来。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Canhui_WANG/article/details/87364800">关于Latex的Figure图像编号关联所在章节编号之问题的解决方案</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>BibTex格式写在ref.bib。</p>
+<p>正文中通过\cite{}进行引用。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Ryan_lee9410/article/details/106055787?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161416641916780262556059%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161416641916780262556059&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-106055787.pc_search_result_before_js&utm_term=LaTeX%E5%BC%95%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E2%80%94%E2%80%94BibTex%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E6%A0%BC%E5%BC%8F%E5%A4%A7%E5%85%A8">LaTeX引用参考文献——BibTex参考文献格式大全</a></p>
+<h2 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h2><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\bibfont</span>&#125;&#123;<span class="keyword">\songti</span> <span class="keyword">\zihao</span>&#123;5&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>网址想要显示为：Title[E], url, Date的格式</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><ul>
+<li>超链接用于页面的跳转，常用的宏包为<code>hyperref</code>，只需导入其就会在文献引用、目录跳转、交叉引用等处自动生成可跳转的超链接。</li>
+<li>设置命令：<code>\hypersetup&#123;colorlinks=true&#125;</code>，超链接用红色表示（否则会在其外面加边框）。</li>
+</ul>
+<p>关于ECNU Latex 模板：</p>
+<ul>
+<li>main.tex 文章的主体 tex，<strong>直接编译 main.tex 即可</strong></li>
+<li>packages_and_settings.tex 引入包和环境定义（<del>不要动</del>）</li>
+<li>inner-cover.tex 封面（<del>不要动</del>）</li>
+<li>paper_info.tex <strong>完善基本信息</strong></li>
+<li>sign.tex 信息确认页面（不要动）</li>
+<li>abstract.tex <strong>论文摘要部分</strong></li>
+<li>figures 文件夹中存放论文所需要的图片</li>
+<li>algorithm相关的所有 sty 用于支持伪代码</li>
+<li>intros&#x2F;preli.tex 正文部分的示例</li>
+<li>simsun.ttc 宋体字体</li>
+</ul>
+<p>若要加附录 和 致谢，新建.tex文件</p>
+<p>并在main.tex中加入\input{acknowledge.tex}</p>
+<p>\clearpage用于新起一页</p>
+<p>若要将其加入目录</p>
+<p>\addcontentline{标题名}</p>
+<p>给标题加下划线：</p>
+<p>标题在paper_info中已声明，在  前加、\underline。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/">#论文写作</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Latex/">#Latex</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/06/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">深度学习进阶</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/03/React/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">React</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Hazel Chen</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E4%B8%8E%E7%AC%A6%E5%8F%B7"><span class="nav-text">字体与符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F"><span class="nav-text">字体格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2"><span class="nav-text">字体颜色</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E3%80%81%E5%88%86%E9%A1%B5"><span class="nav-text">换行、分页</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-text">空格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C"><span class="nav-text">换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-text">分页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTex-%E8%A7%A3%E5%86%B3%E7%9B%AE%E5%BD%95%E7%BA%A2%E6%A1%86"><span class="nav-text">LaTex 解决目录红框</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8EAlgorithm2e"><span class="nav-text">伪代码——基于Algorithm2e</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%A0%87%E9%A2%98%E7%BC%96%E5%8F%B7"><span class="nav-text">修改标题编号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8Eminted"><span class="nav-text">插入代码——基于minted</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E7%AE%97%E6%B3%95%E7%B4%A2%E5%BC%95"><span class="nav-text">插入算法索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E8%A1%A8"><span class="nav-text">插入图表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE"><span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%B4%A2%E5%BC%95"><span class="nav-text">插入图索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8"><span class="nav-text">表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E7%AB%A0%E8%8A%82%E7%BC%96%E5%8F%B7"><span class="nav-text">按章节编号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-text">参考文献</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F"><span class="nav-text">字体大小</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-text">超链接</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
